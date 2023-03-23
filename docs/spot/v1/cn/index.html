@@ -6,7 +6,7 @@
     <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <link href="images/favicon.ico" rel="icon" type="image/ico" />
-    <title>API Documentation</title>
+    <title>Antalpha API 文档</title>
     <style>
       .highlight table td { padding: 5px; }
 .highlight table pre { margin: 0; }
@@ -209,10 +209,10 @@
     </style>
     <link href="stylesheets/screen.css" rel="stylesheet" media="screen" />
     <link href="stylesheets/print.css" rel="stylesheet" media="print" />
-      <script src="javascripts/all_nosearch.js"></script>
+      <script src="javascripts/all.js"></script>
   </head>
 
-  <body class="index" data-languages="[]">
+  <body class="index" data-languages="[&quot;json&quot;]">
     <a href="#" id="nav-button">
       <span>
         <img src="images/navbar.png" alt="" />
@@ -255,9 +255,27 @@
       <a href="/docs/spot/v1/cn/" class="lang" id="lang_box">简体中文</a>
     </header>
     <div class="toc-wrapper">
+        <div class="lang-selector">
+              <a href="#" data-language-name="json">json</a>
+        </div>
+        <div class="search">
+          <input type="text" class="search" id="input-search" placeholder="Search">
+        </div>
+        <ul class="search-results"></ul>
       <ul id="toc" class="toc-list-h1">
           <li>
             <a href="#api" class="toc-h1 toc-link" data-title="API规范">API规范</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#instid" class="toc-h2 toc-link" data-title="instId字段枚举">instId字段枚举</a>
+                  </li>
+                  <li>
+                    <a href="#insttype" class="toc-h2 toc-link" data-title="instType字段枚举">instType字段枚举</a>
+                  </li>
+                  <li>
+                    <a href="#92a1fcf914" class="toc-h2 toc-link" data-title="字段简写对照表">字段简写对照表</a>
+                  </li>
+              </ul>
           </li>
           <li>
             <a href="#c64cd15fdc" class="toc-h1 toc-link" data-title="签名认证">签名认证</a>
@@ -330,11 +348,14 @@
               </ul>
           </li>
       </ul>
+        <ul class="toc-footer">
+            <li><a href='https://www.hbg.com/zh-cn/apikey/'>创建 API Key </a></li>
+        </ul>
     </div>
     <div class="page-wrapper">
       <div class="dark-box"></div>
       <div class="content">
-        <h1 id='api'>API规范</h1><h4 id='instid'>instId字段枚举</h4>
+        <h1 id='api'>API规范</h1><h3 id='instid'>instId字段枚举</h3>
 <p>现货/杠杆 ：SPOT_BTC/USDT</p>
 
 <p>币本位永续：PERP_BTC/USD:BTC</p>
@@ -348,7 +369,7 @@
 <p>币本位期权：OPTION_BTC/USD:BTC-20230306-25000-C</p>
 
 <p>U本位期权： OPTION_BTC/USDT:USDT-20230306-25000-C</p>
-<h4 id='insttype'>instType字段枚举</h4>
+<h3 id='insttype'>instType字段枚举</h3>
 <p><code>SPOT</code>：币币</p>
 
 <p><code>MARGIN</code>：币币杠杆</p>
@@ -358,7 +379,7 @@
 <p><code>FUTURES</code>：交割合约</p>
 
 <p><code>OPTION</code>：期权</p>
-<h4 id='5a1a4fb526'>部分长字段简写，对照表如下：</h4>
+<h3 id='92a1fcf914'>字段简写对照表</h3>
 <table><thead>
 <tr>
 <th style="text-align: left">完整名称</th>
@@ -2417,6 +2438,9 @@ api.huobi.pro\n
 
       </div>
       <div class="dark-box">
+          <div class="lang-selector">
+                <a href="#" data-language-name="json">json</a>
+          </div>
       </div>
     </div>
     <script>
