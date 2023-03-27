@@ -264,18 +264,7 @@
         <ul class="search-results"></ul>
       <ul id="toc" class="toc-list-h1">
           <li>
-            <a href="#api" class="toc-h1 toc-link" data-title="API规范">API规范</a>
-              <ul class="toc-list-h2">
-                  <li>
-                    <a href="#instid" class="toc-h2 toc-link" data-title="instId字段例子">instId字段例子</a>
-                  </li>
-                  <li>
-                    <a href="#insttype" class="toc-h2 toc-link" data-title="instType字段枚举">instType字段枚举</a>
-                  </li>
-                  <li>
-                    <a href="#92a1fcf914" class="toc-h2 toc-link" data-title="字段简写对照表">字段简写对照表</a>
-                  </li>
-              </ul>
+            <a href="#api" class="toc-h1 toc-link" data-title="API简介">API简介</a>
           </li>
           <li>
             <a href="#c64cd15fdc" class="toc-h1 toc-link" data-title="签名认证">签名认证</a>
@@ -352,11 +341,33 @@
     <div class="page-wrapper">
       <div class="dark-box"></div>
       <div class="content">
-        <h1 id='api'>API规范</h1><h3 id='instid'>instId字段例子</h3>
+        <h1 id='api'>API简介</h1>
+<p>欢迎使用 API！</p>
+
+<p>此文档是唯一官方文档，此API提供的功能和服务会在此文档持续更新，并会发布公告进行通知。</p>
+
+<p>如何阅读本文档</p>
+
+<p>文档左侧是目录，中间是正文，右侧是请求参数和响应结果的示例。</p>
+
+<p>文档中的接口主要分为以下4类：</p>
+
+<p><code>基础信息</code></p>
+
+<p><code>行情数据</code></p>
+
+<p><code>账户信息</code></p>
+
+<p><code>现货交易</code></p>
+<h4 id='8b4c1c9571'>部分字段的枚举类型</h4>
+<p><strong>instId</strong></p>
+
 <p>现货/杠杆 ：<code>SPOT_BTC/USDT</code></p>
-<h3 id='insttype'>instType字段枚举</h3>
-<p>币币 : <code>SPOT</code></p>
-<h3 id='92a1fcf914'>字段简写对照表</h3>
+
+<p><strong>instType</strong></p>
+
+<p>现货 : <code>SPOT</code></p>
+<h4 id='92a1fcf914'>字段简写对照表</h4>
 <table><thead>
 <tr>
 <th style="text-align: left">完整名称</th>
@@ -582,21 +593,21 @@ AccessKeyId=e2xxxxxx-99xxxxxx-84xxxxxx-7xxxx&amp;SignatureMethod=SHA256WithRSA&a
 <p>Response:</p>
 </blockquote>
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-  </span><span class="nl">"code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"200"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"msg"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"msg"</span><span class="p">:</span><span class="w"> </span><span class="s2">"操作成功"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"code"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w">
   </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
     </span><span class="p">{</span><span class="w">
-      </span><span class="nl">"instId"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"instType"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"baseAsset"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"quoteAsset"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"baseTick"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"baseMin"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"quoteTick"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"quoteMin"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+      </span><span class="nl">"instId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SPOT_ETC/BUSD"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"instType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SPOT"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"baseAsset"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ETC"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"quoteAsset"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BUSD"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"baseTick"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"baseMin"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.03"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"quoteTick"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"quoteMin"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.5"</span><span class="w">
     </span><span class="p">}</span><span class="w">
   </span><span class="p">],</span><span class="w">
-  </span><span class="nl">"ts"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1679885760268"</span><span class="w">
+  </span><span class="nl">"ts"</span><span class="p">:</span><span class="w"> </span><span class="mi">1679903538458</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div><h3 id='2213f4c32f'>响应数据</h3>
 <table><thead>
@@ -687,24 +698,24 @@ AccessKeyId=e2xxxxxx-99xxxxxx-84xxxxxx-7xxxx&amp;SignatureMethod=SHA256WithRSA&a
 <p>Response:</p>
 </blockquote>
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-  </span><span class="nl">"code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"200"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"msg"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"msg"</span><span class="p">:</span><span class="w"> </span><span class="s2">"操作成功"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"code"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w">
   </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
     </span><span class="p">{</span><span class="w">
-      </span><span class="nl">"instId"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"instType"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"askPx"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"askSz"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"bidPx"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"bidSz"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"openPx"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"highPx"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"lowPx"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"lastPx"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"ts"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+      </span><span class="nl">"instId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SPOT_ETC/BUSD"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"instType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SPOT"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"askPx"</span><span class="p">:</span><span class="w"> </span><span class="s2">"20.00"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"askSz"</span><span class="p">:</span><span class="w"> </span><span class="s2">"201.41"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"bidPx"</span><span class="p">:</span><span class="w"> </span><span class="s2">"19.99"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"bidSz"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1.27"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"openPx"</span><span class="p">:</span><span class="w"> </span><span class="s2">"20.43"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"highPx"</span><span class="p">:</span><span class="w"> </span><span class="s2">"21.33"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"lowPx"</span><span class="p">:</span><span class="w"> </span><span class="s2">"19.33"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"lastPx"</span><span class="p">:</span><span class="w"> </span><span class="s2">"19.99"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"ts"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1679902688372"</span><span class="w">
     </span><span class="p">}</span><span class="w">
   </span><span class="p">],</span><span class="w">
-  </span><span class="nl">"ts"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="w">
+  </span><span class="nl">"ts"</span><span class="p">:</span><span class="w"> </span><span class="mi">1679902737056</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div><h3 id='2213f4c32f-2'>响应数据</h3>
 <table><thead>
@@ -813,16 +824,26 @@ AccessKeyId=e2xxxxxx-99xxxxxx-84xxxxxx-7xxxx&amp;SignatureMethod=SHA256WithRSA&a
 <p>Response:</p>
 </blockquote>
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-  </span><span class="nl">"code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"200"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"msg"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"msg"</span><span class="p">:</span><span class="w"> </span><span class="s2">"操作成功"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"code"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w">
   </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
     </span><span class="p">{</span><span class="w">
-      </span><span class="nl">"bids"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"asks"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"ts"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+      </span><span class="nl">"bids"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">[</span><span class="w">
+          </span><span class="s2">"19.90"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"673.30"</span><span class="w">
+        </span><span class="p">]</span><span class="w">
+      </span><span class="p">],</span><span class="w">
+      </span><span class="nl">"asks"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">[</span><span class="w">
+          </span><span class="s2">"19.95"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"1.27"</span><span class="w">
+        </span><span class="p">]</span><span class="w">
+      </span><span class="p">],</span><span class="w">
+      </span><span class="nl">"ts"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1679905338772"</span><span class="w">
     </span><span class="p">}</span><span class="w">
   </span><span class="p">],</span><span class="w">
-  </span><span class="nl">"ts"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="w">
+  </span><span class="nl">"ts"</span><span class="p">:</span><span class="w"> </span><span class="mi">1679905338772</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div><h3 id='2213f4c32f-3'>响应数据</h3>
 <table><thead>
@@ -901,25 +922,25 @@ AccessKeyId=e2xxxxxx-99xxxxxx-84xxxxxx-7xxxx&amp;SignatureMethod=SHA256WithRSA&a
 <p>Response:</p>
 </blockquote>
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-  </span><span class="nl">"code"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"msg"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"msg"</span><span class="p">:</span><span class="w"> </span><span class="s2">"操作成功"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"code"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w">
   </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
     </span><span class="p">[</span><span class="w">
-      </span><span class="s2">"1672531200"</span><span class="p">,</span><span class="w">  </span><span class="err">//ts</span><span class="p">,</span><span class="err">开始时间，Unix时间戳的秒数格式</span><span class="w">
-      </span><span class="s2">"3.721"</span><span class="p">,</span><span class="w"> </span><span class="err">//o</span><span class="p">,</span><span class="err">开盘价格</span><span class="w">
-      </span><span class="s2">"3.743"</span><span class="p">,</span><span class="w">  </span><span class="err">//h</span><span class="p">,</span><span class="err">最高价格</span><span class="w">
-      </span><span class="s2">"3.677"</span><span class="p">,</span><span class="w">  </span><span class="err">//l</span><span class="p">,</span><span class="err">最低价格</span><span class="w">
-      </span><span class="s2">"3.708"</span><span class="p">,</span><span class="w">  </span><span class="err">//c</span><span class="p">,</span><span class="err">收盘价格(当前K线未结束的即为最新价)</span><span class="w">
+      </span><span class="s2">"1679873100"</span><span class="p">,</span><span class="w"> </span><span class="err">//ts</span><span class="p">,</span><span class="err">开始时间，Unix时间戳的秒数格式</span><span class="w">
+      </span><span class="s2">"20.43"</span><span class="p">,</span><span class="w">      </span><span class="err">//o</span><span class="p">,</span><span class="err">开盘价格</span><span class="w">
+      </span><span class="s2">"20.43"</span><span class="p">,</span><span class="w">      </span><span class="err">//h</span><span class="p">,</span><span class="err">最高价格</span><span class="w">
+      </span><span class="s2">"20.43"</span><span class="p">,</span><span class="w">      </span><span class="err">//l</span><span class="p">,</span><span class="err">最低价格</span><span class="w">
+      </span><span class="s2">"20.43"</span><span class="w">       </span><span class="err">//c</span><span class="p">,</span><span class="err">收盘价格(当前K线未结束的即为最新价)</span><span class="w">
     </span><span class="p">],</span><span class="w">
     </span><span class="p">[</span><span class="w">
-      </span><span class="s2">"1672531260"</span><span class="p">,</span><span class="w">  </span><span class="err">//ts</span><span class="p">,</span><span class="err">开始时间，Unix时间戳的秒数格式</span><span class="w">
-      </span><span class="s2">"3.731"</span><span class="p">,</span><span class="w"> </span><span class="err">//o</span><span class="p">,</span><span class="err">开盘价格</span><span class="w">
-      </span><span class="s2">"3.799"</span><span class="p">,</span><span class="w">  </span><span class="err">//h</span><span class="p">,</span><span class="err">最高价格</span><span class="w">
-      </span><span class="s2">"3.494"</span><span class="p">,</span><span class="w">  </span><span class="err">//l</span><span class="p">,</span><span class="err">最低价格</span><span class="w">
-      </span><span class="s2">"3.72"</span><span class="p">,</span><span class="w">  </span><span class="err">//c</span><span class="p">,</span><span class="err">收盘价格(当前K线未结束的即为最新价)</span><span class="w">
+      </span><span class="s2">"1679873400"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"20.43"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"20.43"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"20.43"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"20.43"</span><span class="w">
     </span><span class="p">]</span><span class="w">
   </span><span class="p">],</span><span class="w">
-  </span><span class="nl">"ts"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="w">
+  </span><span class="nl">"ts"</span><span class="p">:</span><span class="w"> </span><span class="mi">1679903108172</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div><h1 id='bd9157656f'>账户信息</h1><h2 id='bad06cdc35'>查看账户余额</h2><h3 id='http-5'>HTTP 请求</h3>
 <ul>
@@ -946,24 +967,22 @@ AccessKeyId=e2xxxxxx-99xxxxxx-84xxxxxx-7xxxx&amp;SignatureMethod=SHA256WithRSA&a
 <p>Response:</p>
 </blockquote>
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-  </span><span class="nl">"code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"200"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"msg"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-    </span><span class="p">{</span><span class="w">
-      </span><span class="nl">"totalValue"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"uTime"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-        </span><span class="p">{</span><span class="w">
-          </span><span class="nl">"asset"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-          </span><span class="nl">"bal"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-          </span><span class="nl">"frozBal"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-          </span><span class="nl">"avlBal"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-          </span><span class="nl">"uTime"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
-        </span><span class="p">}</span><span class="w">
-      </span><span class="p">]</span><span class="w">
-    </span><span class="p">}</span><span class="w">
-  </span><span class="p">],</span><span class="w">
-  </span><span class="nl">"ts"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="w">
+  </span><span class="nl">"msg"</span><span class="p">:</span><span class="w"> </span><span class="s2">"操作成功"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"code"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"totalValue"</span><span class="p">:</span><span class="w"> </span><span class="s2">"99979608.982030863675555489362903"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"asset"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BTC"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"bal"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1.41500000680799135"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"frozBal"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"avlBal"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1.41500000680799135"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"utime"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1679902397025"</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+    </span><span class="nl">"utime"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1679902397025"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="nl">"ts"</span><span class="p">:</span><span class="w"> </span><span class="mi">1679902397025</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div><h3 id='2213f4c32f-4'>响应数据</h3>
 <table><thead>
@@ -1054,15 +1073,17 @@ AccessKeyId=e2xxxxxx-99xxxxxx-84xxxxxx-7xxxx&amp;SignatureMethod=SHA256WithRSA&a
 <p>Response:</p>
 </blockquote>
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-  </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ok"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"msg"</span><span class="p">:</span><span class="w"> </span><span class="s2">"操作成功"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"code"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w">
   </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
     </span><span class="p">{</span><span class="w">
-      </span><span class="nl">"instType"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"asset"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"takerFee"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"makerFee"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+      </span><span class="nl">"instType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SPOT"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"asset"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BTC"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"takerFee"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.07"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"makerFee"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.07"</span><span class="w">
     </span><span class="p">}</span><span class="w">
-  </span><span class="p">]</span><span class="w">
+  </span><span class="p">],</span><span class="w">
+  </span><span class="nl">"ts"</span><span class="p">:</span><span class="w"> </span><span class="mi">1679902503029</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div><h3 id='2213f4c32f-5'>响应数据</h3>
 <table><thead>
