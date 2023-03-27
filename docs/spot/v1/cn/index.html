@@ -267,7 +267,7 @@
             <a href="#api" class="toc-h1 toc-link" data-title="API规范">API规范</a>
               <ul class="toc-list-h2">
                   <li>
-                    <a href="#instid" class="toc-h2 toc-link" data-title="instId字段枚举">instId字段枚举</a>
+                    <a href="#instid" class="toc-h2 toc-link" data-title="instId字段例子">instId字段例子</a>
                   </li>
                   <li>
                     <a href="#insttype" class="toc-h2 toc-link" data-title="instType字段枚举">instType字段枚举</a>
@@ -280,9 +280,6 @@
           <li>
             <a href="#c64cd15fdc" class="toc-h1 toc-link" data-title="签名认证">签名认证</a>
               <ul class="toc-list-h2">
-                  <li>
-                    <a href="#rest-api" class="toc-h2 toc-link" data-title="REST API">REST API</a>
-                  </li>
                   <li>
                     <a href="#34addae335" class="toc-h2 toc-link" data-title="签名说明">签名说明</a>
                   </li>
@@ -355,30 +352,10 @@
     <div class="page-wrapper">
       <div class="dark-box"></div>
       <div class="content">
-        <h1 id='api'>API规范</h1><h3 id='instid'>instId字段枚举</h3>
-<p>现货/杠杆 ：SPOT_BTC/USDT</p>
-
-<p>币本位永续：PERP_BTC/USD:BTC</p>
-
-<p>币本位交割：FUTURES_BTC/USD:BTC-20230306</p>
-
-<p>U本位永续： PERP_BTC/USDT:USDT</p>
-
-<p>U本位交割： FUTURES_BTC/USDT:USDT-20230306</p>
-
-<p>币本位期权：OPTION_BTC/USD:BTC-20230306-25000-C</p>
-
-<p>U本位期权： OPTION_BTC/USDT:USDT-20230306-25000-C</p>
+        <h1 id='api'>API规范</h1><h3 id='instid'>instId字段例子</h3>
+<p>现货/杠杆 ：<code>SPOT_BTC/USDT</code></p>
 <h3 id='insttype'>instType字段枚举</h3>
-<p><code>SPOT</code>：币币</p>
-
-<p><code>MARGIN</code>：币币杠杆</p>
-
-<p><code>PERP</code>：永续合约</p>
-
-<p><code>FUTURES</code>：交割合约</p>
-
-<p><code>OPTION</code>：期权</p>
+<p>币币 : <code>SPOT</code></p>
 <h3 id='92a1fcf914'>字段简写对照表</h3>
 <table><thead>
 <tr>
@@ -463,165 +440,117 @@
 <td></td>
 </tr>
 </tbody></table>
-<h1 id='c64cd15fdc'>签名认证</h1><h3 id='rest-api'>REST API</h3>
-<p><strong><code>https://baidu.com</code></strong></p>
-<h3 id='34addae335'>签名说明</h3>
-<p>API 请求在通过 internet 传输的过程中极有可能被篡改，为了确保请求未被更改，除公共接口（基础信息，行情数据）外的私有接口均必须使用您的
-API Key 做签名认证，以校验参数或参数值在传输途中是否发生了更改。<br>
-每一个API Key需要有适当的权限才能访问相应的接口，每个新创建的API
-Key都需要分配权限。在使用接口前，请查看每个接口的权限类型，并确认你的API Key有相应的权限。</p>
+<h1 id='c64cd15fdc'>签名认证</h1><h2 id='34addae335'>签名说明</h2>
+<p>API 请求在通过 internet 传输的过程中极有可能被篡改，为了确保请求未被更改，除公共接口（基础信息，行情数据）外的私有接口均必须使用您的 API Key 做签名认证，以校验参数或参数值在传输途中是否发生了更改。（编码集统一 &quot;UTF-8&quot;）</p>
 
 <p>一个合法的请求由以下几部分组成：</p>
 
 <ul>
-<li>方法请求地址：即访问服务器地址 api.baidu.com，比如 api.baidu.com/v1/order。</li>
-<li>API 访问Id（AccessKeyId）：您申请的 API Key 中的 Access Key。</li>
-<li>签名方法（SignatureMethod）：用户计算签名的基于哈希的协议，此处使用 HmacSHA256。</li>
-<li>签名版本（SignatureVersion）：签名协议的版本，此处使用2。</li>
-<li>时间戳（Timestamp）：您发出请求的时间 (UTC 时间)  。如：2017-05-11T16:22:06。在查询请求中包含此值有助于防止第三方截取您的请求。</li>
-<li>必选和可选参数：每个方法都有一组用于定义 API 调用的必需参数和可选参数。可以在每个方法的说明中查看这些参数及其含义。
-
-<ul>
-<li>对于 GET 请求，每个方法自带的参数都需要进行签名运算。</li>
-<li>对于 POST 请求，每个方法自带的参数不进行签名认证，并且需要放在 body 中。</li>
-</ul></li>
+<li>方法请求地址：即访问服务器地址 api.antalpha.com，比如 api.antalpha.com/api/v1/order。</li>
+<li>API 访问密钥（AccessKeyId）：您申请的 API Key 中的 Access Key。</li>
+<li>签名方法（SignatureMethod）：用户计算签名的基于哈希的协议，此处使用 SHA256WithRSA。</li>
+<li>签名版本（SignatureVersion）：签名协议的版本，此处使用1。</li>
+<li>时间戳（Timestamp）：系统当前毫秒数。</li>
+<li>必选和可选参数：每个方法都有一组用于定义 API 调用的必需参数和可选参数。可以在每个方法的说明中查看这些参数及其含义。 请一定注意：对于 GET 请求，每个方法自带的参数都需要进行签名运算； 对于 POST 请求，每个方法自带的参数不进行签名认证，即 POST 请求中需要进行签名运算的只有 AccessKeyId、SignatureMethod、SignatureVersion、Timestamp 四个参数，其它参数放在 body 中。</li>
 <li>签名：签名计算得出的值，用于确保签名有效和未被篡改。</li>
 </ul>
-<h3 id='1fbac240b7'>签名步骤</h3>
-<p>规范要计算签名的请求 因为使用 HMAC
-进行签名计算时，使用不同内容计算得到的结果会完全不同。所以在进行签名计算前，请先对请求进行规范化处理。下面以查询某订单详情请求为例进行说明：</p>
-
-<p>查询某订单详情时完整的请求URL</p>
-
-<p><code>https://api.baidu.com/v1/order/orders?</code></p>
-
-<p><code>AccessKeyId=e2xxxxxx-99xxxxxx-84xxxxxx-7xxxx</code></p>
-
-<p><code>&amp;SignatureMethod=HmacSHA256</code></p>
-
-<p><code>&amp;SignatureVersion=2</code></p>
-
-<p><code>&amp;Timestamp=2017-05-11T15:19:30</code></p>
-
-<p><code>&amp;order-id=1234567890</code></p>
-
-<p><strong>1. 请求方法（GET 或 POST，WebSocket用GET），后面添加换行符 “\n”</strong></p>
-
-<p>例如：
-<code>GET\n</code></p>
-
-<p><strong>2. 添加小写的访问域名，后面添加换行符 “\n”</strong></p>
-
-<p>例如：
-<code>
-api.huobi.pro\n
-</code></p>
-
-<p><strong>3. 访问方法的路径，后面添加换行符 “\n”</strong></p>
-
-<p>例如查询订单：<br>
-<code>
-/v1/order/orders\n
-</code></p>
-
-<p>例如WebSocket v2<br>
-<code>
-/ws/v2
-</code></p>
-
-<p><strong>4. 对参数进行URL编码，并且按照ASCII码顺序进行排序</strong></p>
-
-<p>例如，下面是请求参数的原始顺序，且进行URL编码后</p>
-
-<p><code>AccessKeyId=e2xxxxxx-99xxxxxx-84xxxxxx-7xxxx</code></p>
-
-<p><code>order-id=1234567890</code></p>
-
-<p><code>SignatureMethod=HmacSHA256</code></p>
-
-<p><code>SignatureVersion=2</code></p>
-
-<p><code>Timestamp=2017-05-11T15%3A19%3A30</code></p>
-
-<aside class="notice">
-使用 UTF-8 编码，且进行了 URL 编码，十六进制字符必须大写，如 “:” 会被编码为 “%3A” ，空格被编码为 “%20”。
-</aside>
-
-<aside class="notice">
-时间戳（Timestamp）需要以YYYY-MM-DDThh:mm:ss格式添加并且进行 URL 编码。时间戳有效时间5分钟。
-</aside>
-
-<p>经过排序之后</p>
-
-<p><code>AccessKeyId=e2xxxxxx-99xxxxxx-84xxxxxx-7xxxx</code></p>
-
-<p><code>SignatureMethod=HmacSHA256</code></p>
-
-<p><code>SignatureVersion=2</code></p>
-
-<p><code>Timestamp=2017-05-11T15%3A19%3A30</code></p>
-
-<p><code>order-id=1234567890</code></p>
-
-<p><strong>5. 按照以上顺序，将各参数使用字符 “&amp;” 连接</strong></p>
-
-<p><code>AccessKeyId=e2xxxxxx-99xxxxxx-84xxxxxx-7xxxx&amp;SignatureMethod=HmacSHA256&amp;SignatureVersion=2&amp;Timestamp=2017-05-11T15%3A19%3A30&amp;order-id=1234567890</code></p>
-
-<p><strong>6. 组成最终的要进行签名计算的字符串如下</strong></p>
-
-<p><code>GET\n</code></p>
-
-<p><code>api.huobi.pro\n</code></p>
-
-<p><code>/v1/order/orders\n</code></p>
-
-<p><code>AccessKeyId=e2xxxxxx-99xxxxxx-84xxxxxx-7xxxx&amp;SignatureMethod=HmacSHA256&amp;SignatureVersion=2&amp;Timestamp=2017-05-11T15%3A19%3A30&amp;order-id=1234567890</code></p>
-
-<p><strong>7. 用上一步里生成的 “请求字符串” 和你的密钥 (Secret Key) 生成一个数字签名</strong></p>
-
+<h2 id='1fbac240b7'>签名步骤</h2><h3 id='rsa-keys'>创建 RSA Keys</h3>
 <ol>
-<li>将上一步得到的请求字符串和 API 私钥作为两个参数，调用HmacSHA256哈希函数来获得哈希值。</li>
-<li>将此哈希值用base-64编码，得到的值作为此次接口调用的数字签名。</li>
+<li><p>第一条命令生成原始 RSA 私钥文件 rsa_private_key.pem。</p>
+
+<p><code>openssl genrsa -out rsa_private_key.pem 1024</code></p></li>
+<li><p>第二条命令将原始 RSA 私钥转换为 pkcs8格式。</p>
+
+<p><code>openssl pkcs8 -topk8 -inform PEM -in rsa_private_key.pem -outform PEM -nocrypt -out pkcs8_private_key.pem</code></p>
+
+<p>例子：打开文件pkcs8_private_key.pem 复制 粘贴具体内容，并去除换行符后使用</p>
+
+<p><code>-----BEGIN RSA PRIVATE KEY-----
+MIICXAIBAAKBgQDeQwbdDuIqTVCu+cwc5PtMMG9rLh2L3+AWmqhtTBIXHvlNVTW2
+dIyjT+Dfhm2JvEL81PgHR8QoQhAgq0VwOLCh2/i0ldMIKpeiQIT0Ae//zGwIv06k
+zBTK/HY7P/9oniNl/FuSbuzG5bo5XbmRU/OKZFffzTwtgM+zhirH1f+EuwIDAQAB
+AoGACzf+5LGXoOL+K5bYQq0cMiBPv204eJL4UKvFzJ6GWzxpAQpIB8miP6wMgbvb
+U5R5HSHy0wtAT3fmMH/0pVF3ONw45uL7323pQiNtIU/WJPAY82d/j2Hp+HFCHxuW
+kPjHsTcowig1St32cl6AJdDP1IJ9//GB70H7qQFNvidiAEECQQDvYkW3vRUTm4w0
+sw7O79PqK4d00R1IAqOOnkIR85ZYhogry8Bog70U24V6eVFRDX0GM/SYpYAo3yYE
+nhQyWG4zAkEA7bCBI9TBu50MtORpTaoOTYVDp77ue5u4+n3df1Q2nhfp+eObeA8H
+tOiVKy6UwSVogYtuLy5Mdb2ODPH3p1r3WQJBAI5FU7Yd1HbwzWVMvhJTCxlzgW/2
+EHcJyncqq43LvaEjY67Ty6jSEwBgb3YYwDFx2Mpk+ov2YLLp3MiFwu8hC20CQFJI
+6GwfG3J3zA5ThKD+XjU4DVPlJWplXoRZTnTmEoJohPeddBT8Hw7h9cIdPiIfcS5n
+tp1eydl45dRVcAbf1wECQGeqOzjI0hOJQjC2th83aDshbrbENzZoVKunUqK3J34W
+VyZ0mcKXexhg4Hk8ZXzFWbv6VkUg2x8O6f3CKR15KYc=
+-----END RSA PRIVATE KEY-----
+</code></p></li>
+<li><p>第三条生成 RSA 公钥 rsa_public_key.pem。</p>
+
+<p><code>openssl rsa -in rsa_private_key.pem -pubout -out rsa_public_key.pem</code></p>
+
+<p>例子：打开文件rsa_public_key.pem 复制 粘贴具体内容，并去除换行符后使用</p>
+
+<p><code>-----BEGIN PUBLIC KEY-----
+MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQDeQwbdDuIqTVCu+cwc5PtMMG9r
+Lh2L3+AWmqhtTBIXHvlNVTW2dIyjT+Dfhm2JvEL81PgHR8QoQhAgq0VwOLCh2/i0
+ldMIKpeiQIT0Ae//zGwIv06kzBTK/HY7P/9oniNl/FuSbuzG5bo5XbmRU/OKZFff
+zTwtgM+zhirH1f+EuwIDAQAB
+-----END PUBLIC KEY-----
+</code></p></li>
 </ol>
 
+<p>通过管理后台录入用户RSA公钥,并生成 AccessKeyId返还给用户</p>
+
+<p><code>AccessKeyId</code> API 访问密钥</p>
+
+<p>创建 API Key 时可以选择绑定 IP 地址，未绑定 IP 地址的 API Key 有效期为90天。</p>
+
+<p>API Key 具有包括交易、借贷和充提币等所有操作权限。</p>
+
+<p>密钥与账号安全紧密相关，无论何时都请勿向其它人透露。</p>
+<h3 id='1fbac240b7-2'>签名步骤</h3>
+<p>规范要计算签名的请求 因为使用 SHA256WithRSA进行签名计算时，使用不同内容计算得到的结果会完全不同。所以在进行签名计算前，请先对请求进行规范化处理。下面以查询某订单详情请求为例进行说明：</p>
+
+<p>查询某订单详情</p>
+
+<p><code>https://api.antalpha.com/api/v1/order?AccessKeyId=e2xxxxxx-99xxxxxx-84xxxxxx-7xxxx&amp;SignatureMethod=SHA256WithRSA&amp;SignatureVersion=1&amp;Timestamp=1662022581951</code></p>
+<h4 id='1-get-post-n'>1. 请求方法（GET 或 POST），后面添加换行符 “\n”</h4>
+<p><code>GET\n</code></p>
+<h4 id='2-n'>2. 添加小写的访问地址，后面添加换行符 “\n”</h4>
+<p><code>api.antalpha.com\n</code></p>
+<h4 id='3-n'>3. 访问方法的路径，后面添加换行符 “\n”</h4>
+<p><code>/api/v1/order\n</code></p>
+<h4 id='4-ascii'>4. 按照ASCII码的顺序对参数名进行排序。例如，下面是请求参数的原始顺序，进行过编码后</h4>
+<p><code>AccessKeyId=e2xxxxxx-99xxxxxx-84xxxxxx-7xxxxSignatureMethod=SHA256WithRSASignatureVersion=1Timestamp=1662022581951
+</code></p>
+
+<p>使用 UTF-8 编码，且进行了 URI 编码，十六进制字符必须大写，如 “:” 会被编码为 “%3A” ，空格被编码为 “%20”。</p>
+
+<p>时间戳（Timestamp）需要以YYYY-MM-DDThh:mm:ss格式添加并且进行 URI 编码。</p>
+<h4 id='5'>5. 经过排序之后</h4>
+<p><code>AccessKeyId=e2xxxxxx-99xxxxxx-84xxxxxx-7xxxxSignatureMethod=SHA256WithRSASignatureVersion=1Timestamp=1662022581951
+</code></p>
+<h4 id='6-amp'>6. 按照以上顺序，将各参数使用字符 “&amp;” 连接</h4>
+<p><code>AccessKeyId=e2xxxxxx-99xxxxxx-84xxxxxx-7xxxx&amp;SignatureMethod=HmacSHA256&amp;SignatureVersion=2&amp;Timestamp=1662022581951</code></p>
+<h4 id='7'>7. 组成最终的要进行签名计算的字符串如下</h4>
+<p><code>POST\n
+api.antalpha.com\n
+/api/v1/order\n
+AccessKeyId=e2xxxxxx-99xxxxxx-84xxxxxx-7xxxx&amp;SignatureMethod=SHA256WithRSA&amp;SignatureVersion=1&amp;Timestamp=1662022581951
+</code></p>
+<h4 id='8-secret-key'>8. 用上一步里生成的 “请求字符串” 和你的密钥 (Secret Key) 生成一个数字签名</h4>
 <p><code>4F65x5A2bLyMWVQj3Aqp+B4w+ivaA7n5Oi2SuYtCJ9o=</code></p>
 
-<p><strong>8. 将生成的数字签名加入到请求里</strong></p>
+<ol>
+<li>将上一步得到的请求字符串和 RSA私钥作为两个参数，调用SHA256WithRSA验签函数获得验签信息。</li>
+<li>将此验签信息用base-64编码，得到的值作为此次接口调用的数字签名。</li>
+</ol>
+<h4 id='9'>9. 将生成的数字签名加入到请求的路径参数里</h4>
+<p>最终，发送到服务器的 API 请求应该为</p>
 
-<p>对于Rest接口：</p>
+<p><code>https://api.antalpha.com/api/v1/order?AccessKeyId=e2xxxxxx-99xxxxxx-84xxxxxx-7xxxx&amp;SignatureMethod=SHA256WithRSA&amp;SignatureVersion=1&amp;Timestamp=1662022581951&amp;Signature=4F65x5A2bLyMWVQj3Aqp%2BB4w%2BivaA7n5Oi2SuYtCJ9o%3D</code></p>
 
 <ol>
 <li>把所有必须的认证参数添加到接口调用的路径参数里</li>
 <li>把数字签名在URL编码后加入到路径参数里，参数名为“Signature”。</li>
 </ol>
-
-<p>最终，发送到服务器的 API 请求应该为</p>
-
-<p><code>https://api.huobi.pro/v1/order/orders?AccessKeyId=e2xxxxxx-99xxxxxx-84xxxxxx-7xxxx&amp;order-id=1234567890&amp;SignatureMethod=HmacSHA256&amp;SignatureVersion=2&amp;Timestamp=2017-05-11T15%3A19%3A30&amp;Signature=4F65x5A2bLyMWVQj3Aqp%2BB4w%2BivaA7n5Oi2SuYtCJ9o%3D</code></p>
-
-<p>对于WebSocket接口：</p>
-
-<ol>
-<li>按照要求的JSON格式，填入参数和签名。</li>
-<li>JSON请求中的参数不需要URL编码</li>
-</ol>
-
-<p>例如：</p>
-
-<p><code>
-{
-&quot;action&quot;: &quot;req&quot;,
-&quot;ch&quot;: &quot;auth&quot;,
-&quot;params&quot;: {
-&quot;authType&quot;:&quot;api&quot;,
-&quot;accessKey&quot;: &quot;e2xxxxxx-99xxxxxx-84xxxxxx-7xxxx&quot;,
-&quot;signatureMethod&quot;: &quot;HmacSHA256&quot;,
-&quot;signatureVersion&quot;: &quot;2.1&quot;,
-&quot;timestamp&quot;: &quot;2019-09-01T18:16:16&quot;,
-&quot;signature&quot;: &quot;4F65x5A2bLyMWVQj3Aqp+B4w+ivaA7n5Oi2SuYtCJ9o=&quot;
-}
-}
-</code></p>
 <h1 id='41654e0268'>基础信息</h1><h2 id='ccc7ef231c'>获取产品基础信息</h2><h3 id='http'>HTTP 请求</h3>
 <ul>
 <li>GET <code>/api/v1/public/instruments</code></li>
@@ -1029,7 +958,7 @@ api.huobi.pro\n
           </span><span class="nl">"bal"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
           </span><span class="nl">"frozBal"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
           </span><span class="nl">"avlBal"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-          </span><span class="nl">"uTIme"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+          </span><span class="nl">"uTime"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
         </span><span class="p">}</span><span class="w">
       </span><span class="p">]</span><span class="w">
     </span><span class="p">}</span><span class="w">
@@ -1052,7 +981,7 @@ api.huobi.pro\n
 <td style="text-align: left">美金估值总权益</td>
 </tr>
 <tr>
-<td style="text-align: left">uTIme</td>
+<td style="text-align: left">uTime</td>
 <td style="text-align: left">String</td>
 <td style="text-align: left"></td>
 <td style="text-align: left">账户信息更新时间</td>
@@ -1088,7 +1017,7 @@ api.huobi.pro\n
 <td style="text-align: left">可用余额</td>
 </tr>
 <tr>
-<td style="text-align: left">&gt; uTIme</td>
+<td style="text-align: left">&gt; uTime</td>
 <td style="text-align: left">String</td>
 <td style="text-align: left"></td>
 <td style="text-align: left">币种余额更新时间</td>
@@ -1178,14 +1107,14 @@ api.huobi.pro\n
 <p>Request:</p>
 </blockquote>
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-  </span><span class="nl">"instId"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"clOrdId"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"side"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"ordPx"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"ordType"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"ordQty"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"ordAmt"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"ordTag"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+  </span><span class="nl">"instId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SPOT_ETC/BUSD"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"clOrdId"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"side"</span><span class="p">:</span><span class="w"> </span><span class="s2">"buy"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"ordPx"</span><span class="p">:</span><span class="w"> </span><span class="s2">"33"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"ordType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"limit"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"ordQty"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.05"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"ordAmt"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"ordTag"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div><h3 id='1f9ac54b15-7'>请求参数</h3>
 <table><thead>
@@ -1250,21 +1179,23 @@ api.huobi.pro\n
 <p>Response:</p>
 </blockquote>
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-  </span><span class="nl">"code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"200"</span><span class="p">,</span><span class="w">
   </span><span class="nl">"msg"</span><span class="p">:</span><span class="w"> </span><span class="s2">"操作成功"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="nl">"instId"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"ordId"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"side"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"clOrdId"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"ordPx"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"ordType"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"ordQty"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"ordAmt"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"ordTag"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"cTime"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
-  </span><span class="p">},</span><span class="w">
-  </span><span class="nl">"ts"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1679727504233"</span><span class="w">
+  </span><span class="nl">"code"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"instId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SPOT_ETC/BUSD"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"clOrdId"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"side"</span><span class="p">:</span><span class="w"> </span><span class="s2">"buy"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"ordPx"</span><span class="p">:</span><span class="w"> </span><span class="s2">"33"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"ordType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"limit"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"ordQty"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.05"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"ordAmt"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"ordTag"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"ordId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"22148"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"ctime"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1679897698010"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">],</span><span class="w">
+  </span><span class="nl">"ts"</span><span class="p">:</span><span class="w"> </span><span class="mi">1679897698037</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div><h3 id='2213f4c32f-6'>响应数据</h3>
 <table><thead>
@@ -1351,10 +1282,10 @@ api.huobi.pro\n
 <p>Request:</p>
 </blockquote>
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-  </span><span class="nl">"instId"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"instType"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"clOrdId"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"ordId"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+  </span><span class="nl">"instId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SPOT_ETC/BUSD"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"instType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SPOT"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"clOrdId"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"ordId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"22149"</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div><h3 id='1f9ac54b15-8'>请求参数</h3>
 <table><thead>
@@ -1395,17 +1326,17 @@ api.huobi.pro\n
 <p>Response:</p>
 </blockquote>
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-  </span><span class="nl">"code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"200"</span><span class="p">,</span><span class="w">
   </span><span class="nl">"msg"</span><span class="p">:</span><span class="w"> </span><span class="s2">"操作成功"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"code"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w">
   </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
     </span><span class="p">{</span><span class="w">
       </span><span class="nl">"instId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SPOT_ETC/BUSD"</span><span class="p">,</span><span class="w">
       </span><span class="nl">"instType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SPOT"</span><span class="p">,</span><span class="w">
       </span><span class="nl">"clOrdId"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"ordId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"14883"</span><span class="w">
+      </span><span class="nl">"ordId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"22149"</span><span class="w">
     </span><span class="p">}</span><span class="w">
   </span><span class="p">],</span><span class="w">
-  </span><span class="nl">"ts"</span><span class="p">:</span><span class="w"> </span><span class="mi">1679730429866</span><span class="w">
+  </span><span class="nl">"ts"</span><span class="p">:</span><span class="w"> </span><span class="mi">1679897917815</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div><h3 id='2213f4c32f-7'>响应数据</h3>
 <table><thead>
@@ -1484,31 +1415,29 @@ api.huobi.pro\n
 <p>Response:</p>
 </blockquote>
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-  </span><span class="nl">"code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"200"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"msg"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-    </span><span class="p">{</span><span class="w">
-      </span><span class="nl">"instId"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"instType"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"ordId"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"clOrdId"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"side"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"ordPx"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"ordType"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"ordQty"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"ordAmt"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"fillQty"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"fillAmt"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"ordTag"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"totalFee"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"feeAseet"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"cTime"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"uTime"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"avgFillPx"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
-    </span><span class="p">}</span><span class="w">
-  </span><span class="p">],</span><span class="w">
-  </span><span class="nl">"ts"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="w">
+  </span><span class="nl">"msg"</span><span class="p">:</span><span class="w"> </span><span class="s2">"操作成功"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"code"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"instId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SPOT_ETC/BUSD"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"instType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SPOT"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"ordId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"22149"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"clOrdId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0255c8c5b6ad4d70bbb4c8f9d1d7557f"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"side"</span><span class="p">:</span><span class="w"> </span><span class="s2">"buy"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"ordPx"</span><span class="p">:</span><span class="w"> </span><span class="s2">"10"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"ordType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"limit"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"ordQty"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.05"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"ordAmt"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"fillQty"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.000000000000000000"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"fillAmt"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"ordTag"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"totalFee"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"feeAseet"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BUSD"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"avgFillPx"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CANCELLED"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"utime"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1679897917759"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"ctime"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1679897908029"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="nl">"ts"</span><span class="p">:</span><span class="w"> </span><span class="mi">1679897995189</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div><h3 id='2213f4c32f-8'>响应数据</h3>
 <table><thead>
@@ -1610,7 +1539,7 @@ api.huobi.pro\n
 <td style="text-align: left">订单创建时间</td>
 </tr>
 <tr>
-<td style="text-align: left">uTIme</td>
+<td style="text-align: left">uTime</td>
 <td style="text-align: left">String</td>
 <td style="text-align: left"></td>
 <td style="text-align: left">订单最后更新时间</td>
@@ -1689,31 +1618,31 @@ api.huobi.pro\n
 <p>Response:</p>
 </blockquote>
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-  </span><span class="nl">"code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"200"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"msg"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"msg"</span><span class="p">:</span><span class="w"> </span><span class="s2">"操作成功"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"code"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w">
   </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
     </span><span class="p">{</span><span class="w">
-      </span><span class="nl">"instId"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"instType"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"ordId"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"clOrdId"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"side"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"ordPx"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"ordType"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"ordQty"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"instId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SPOT_ETC/BUSD"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"instType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SPOT"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"ordId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"22150"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"clOrdId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"a861ca99d3a9460ab7719372776f2863"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"side"</span><span class="p">:</span><span class="w"> </span><span class="s2">"buy"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"ordPx"</span><span class="p">:</span><span class="w"> </span><span class="s2">"10"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"ordType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"limit"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"ordQty"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.05"</span><span class="p">,</span><span class="w">
       </span><span class="nl">"ordAmt"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"fillQty"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"fillQty"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.000000000000000000"</span><span class="p">,</span><span class="w">
       </span><span class="nl">"fillAmt"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"ordTag"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"totalFee"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"feeAseet"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"cTime"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"uTime"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"ordTag"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"totalFee"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"feeAseet"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BUSD"</span><span class="p">,</span><span class="w">
       </span><span class="nl">"avgFillPx"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+      </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"NEW"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"utime"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1679898094933"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"ctime"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1679898094933"</span><span class="w">
     </span><span class="p">}</span><span class="w">
   </span><span class="p">],</span><span class="w">
-  </span><span class="nl">"ts"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="w">
+  </span><span class="nl">"ts"</span><span class="p">:</span><span class="w"> </span><span class="mi">1679898098638</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div><h3 id='2213f4c32f-9'>响应数据</h3>
 <table><thead>
@@ -1815,7 +1744,7 @@ api.huobi.pro\n
 <td style="text-align: left">订单创建时间</td>
 </tr>
 <tr>
-<td style="text-align: left">uTIme</td>
+<td style="text-align: left">uTime</td>
 <td style="text-align: left">String</td>
 <td style="text-align: left"></td>
 <td style="text-align: left">订单最后更新时间</td>
@@ -1924,31 +1853,51 @@ api.huobi.pro\n
 <p>Response:</p>
 </blockquote>
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-  </span><span class="nl">"code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"200"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"msg"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"msg"</span><span class="p">:</span><span class="w"> </span><span class="s2">"操作成功"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"code"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w">
   </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
     </span><span class="p">{</span><span class="w">
-      </span><span class="nl">"instId"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"instType"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"ordId"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"clOrdId"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"side"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"ordPx"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"ordType"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"ordQty"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"instId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SPOT_ETC/BUSD"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"instType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SPOT"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"ordId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"22149"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"clOrdId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0255c8c5b6ad4d70bbb4c8f9d1d7557f"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"side"</span><span class="p">:</span><span class="w"> </span><span class="s2">"buy"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"ordPx"</span><span class="p">:</span><span class="w"> </span><span class="s2">"10"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"ordType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"limit"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"ordQty"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.05"</span><span class="p">,</span><span class="w">
       </span><span class="nl">"ordAmt"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"fillQty"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"fillQty"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.000000000000000000"</span><span class="p">,</span><span class="w">
       </span><span class="nl">"fillAmt"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"ordTag"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"totalFee"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"feeAseet"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"cTime"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"uTime"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"ordTag"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"totalFee"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"feeAseet"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BUSD"</span><span class="p">,</span><span class="w">
       </span><span class="nl">"avgFillPx"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+      </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CANCELLED"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"utime"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1679897917759"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"ctime"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1679897908029"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"instId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SPOT_ETC/BUSD"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"instType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SPOT"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"ordId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"22148"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"clOrdId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"f6d6538acf8f4262a2e30ee1d603945b"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"side"</span><span class="p">:</span><span class="w"> </span><span class="s2">"buy"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"ordPx"</span><span class="p">:</span><span class="w"> </span><span class="s2">"33"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"ordType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"limit"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"ordQty"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.05"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"ordAmt"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"fillQty"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.050000000000000000"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"fillAmt"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"ordTag"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"totalFee"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.0015"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"feeAseet"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ETC"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"avgFillPx"</span><span class="p">:</span><span class="w"> </span><span class="s2">"20.7168"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"FILLED"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"utime"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1679897802005"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"ctime"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1679897698010"</span><span class="w">
     </span><span class="p">}</span><span class="w">
   </span><span class="p">],</span><span class="w">
-  </span><span class="nl">"ts"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="w">
+  </span><span class="nl">"ts"</span><span class="p">:</span><span class="w"> </span><span class="mi">1679898148424</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div><h3 id='2213f4c32f-10'>响应数据</h3>
 <table><thead>
@@ -2050,7 +1999,7 @@ api.huobi.pro\n
 <td style="text-align: left">订单创建时间</td>
 </tr>
 <tr>
-<td style="text-align: left">uTIme</td>
+<td style="text-align: left">uTime</td>
 <td style="text-align: left">String</td>
 <td style="text-align: left"></td>
 <td style="text-align: left">订单最后更新时间</td>
