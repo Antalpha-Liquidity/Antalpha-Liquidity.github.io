@@ -626,20 +626,7 @@ api.huobi.pro\n
 <ul>
 <li>GET <code>/api/v1/public/instruments</code></li>
 </ul>
-
-<blockquote>
-<p>Request:</p>
-</blockquote>
-<div class="highlight"><pre class="highlight json tab-json"><code><span class="w">
-</span><span class="p">{</span><span class="w">
-  </span><span class="nl">"account-id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"100009"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"amount"</span><span class="p">:</span><span class="w"> </span><span class="s2">"10.1"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"price"</span><span class="p">:</span><span class="w"> </span><span class="s2">"100.1"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"source"</span><span class="p">:</span><span class="w"> </span><span class="s2">"api"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"symbol"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ethusdt"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"buy-limit"</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></code></pre></div><h3 id='1f9ac54b15'>请求参数</h3>
+<h3 id='1f9ac54b15'>请求参数</h3>
 <table><thead>
 <tr>
 <th style="text-align: left">Name</th>
@@ -666,31 +653,21 @@ api.huobi.pro\n
 <p>Response:</p>
 </blockquote>
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-  </span><span class="nl">"code"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"200"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"msg"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
   </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
     </span><span class="p">{</span><span class="w">
-      </span><span class="nl">"symbol"</span><span class="p">:</span><span class="w"> </span><span class="s2">"btcusdt"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"actualMakerRate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.002"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"actualTakerRate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.002"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"takerFeeRate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.002"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"makerFeeRate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.002"</span><span class="w">
-    </span><span class="p">},</span><span class="w">
-    </span><span class="p">{</span><span class="w">
-      </span><span class="nl">"symbol"</span><span class="p">:</span><span class="w"> </span><span class="s2">"apnusdt"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"actualMakerRate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.002"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"actualTakerRate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.002"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"takerFeeRate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.002"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"makerFeeRate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.002"</span><span class="w">
-    </span><span class="p">},</span><span class="w">
-    </span><span class="p">{</span><span class="w">
-      </span><span class="nl">"symbol"</span><span class="p">:</span><span class="w"> </span><span class="s2">"htusdt"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"actualMakerRate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.002"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"actualTakerRate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.002"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"takerFeeRate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.002"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"makerFeeRate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.002"</span><span class="w">
+      </span><span class="nl">"instId"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"instType"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"baseAsset"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"quoteAsset"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"baseTick"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"baseMin"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"quoteTick"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"quoteMin"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
     </span><span class="p">}</span><span class="w">
   </span><span class="p">],</span><span class="w">
-  </span><span class="nl">"success"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+  </span><span class="nl">"ts"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1679885760268"</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div><h3 id='2213f4c32f'>响应数据</h3>
 <table><thead>
@@ -754,20 +731,7 @@ api.huobi.pro\n
 <ul>
 <li>GET <code>/api/v1/market/tickers</code></li>
 </ul>
-
-<blockquote>
-<p>Request:</p>
-</blockquote>
-<div class="highlight"><pre class="highlight json tab-json"><code><span class="w">
-</span><span class="p">{</span><span class="w">
-  </span><span class="nl">"account-id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"100009"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"amount"</span><span class="p">:</span><span class="w"> </span><span class="s2">"10.1"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"price"</span><span class="p">:</span><span class="w"> </span><span class="s2">"100.1"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"source"</span><span class="p">:</span><span class="w"> </span><span class="s2">"api"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"symbol"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ethusdt"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"buy-limit"</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></code></pre></div><h3 id='1f9ac54b15-2'>请求参数</h3>
+<h3 id='1f9ac54b15-2'>请求参数</h3>
 <table><thead>
 <tr>
 <th style="text-align: left">Name</th>
@@ -794,26 +758,24 @@ api.huobi.pro\n
 <p>Response:</p>
 </blockquote>
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-  </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ok"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"200"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"msg"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
   </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
     </span><span class="p">{</span><span class="w">
-      </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">345487249132375</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"symbol"</span><span class="p">:</span><span class="w"> </span><span class="s2">"polyusdt"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"account-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">13496526</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"client-order-id"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"amount"</span><span class="p">:</span><span class="w"> </span><span class="s2">"50.000000000000000000"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"price"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.0"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"created-at"</span><span class="p">:</span><span class="w"> </span><span class="mi">1629443051822</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"buy-market"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"field-amount"</span><span class="p">:</span><span class="w"> </span><span class="s2">"147.928994082840236000"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"field-cash-amount"</span><span class="p">:</span><span class="w"> </span><span class="s2">"49.999999999999999768"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"field-fees"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.295857988165680472"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"finished-at"</span><span class="p">:</span><span class="w"> </span><span class="mi">1629443051838</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"source"</span><span class="p">:</span><span class="w"> </span><span class="s2">"spot-web"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"state"</span><span class="p">:</span><span class="w"> </span><span class="s2">"filled"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"canceled-at"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
+      </span><span class="nl">"instId"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"instType"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"askPx"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"askSz"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"bidPx"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"bidSz"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"openPx"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"highPx"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"lowPx"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"lastPx"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"ts"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
     </span><span class="p">}</span><span class="w">
-  </span><span class="p">]</span><span class="w">
+  </span><span class="p">],</span><span class="w">
+  </span><span class="nl">"ts"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div><h3 id='2213f4c32f-2'>响应数据</h3>
 <table><thead>
@@ -895,18 +857,7 @@ api.huobi.pro\n
 <ul>
 <li>GET <code>/api/v1/market/depth</code></li>
 </ul>
-
-<blockquote>
-<p>Request:</p>
-</blockquote>
-<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-  </span><span class="nl">"symbol"</span><span class="p">:</span><span class="w"> </span><span class="s2">"btcusdt"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"start-time"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1556417645419"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"end-time"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1556533539282"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"direct"</span><span class="p">:</span><span class="w"> </span><span class="s2">"prev"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"size"</span><span class="p">:</span><span class="w"> </span><span class="s2">"10"</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></code></pre></div><h3 id='1f9ac54b15-3'>请求参数</h3>
+<h3 id='1f9ac54b15-3'>请求参数</h3>
 <table><thead>
 <tr>
 <th style="text-align: left">Name</th>
@@ -933,43 +884,16 @@ api.huobi.pro\n
 <p>Response:</p>
 </blockquote>
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-  </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ok"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"200"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"msg"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
   </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
     </span><span class="p">{</span><span class="w">
-      </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">357632718898331</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"symbol"</span><span class="p">:</span><span class="w"> </span><span class="s2">"adausdt"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"account-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">13496526</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"client-order-id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"23456"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"amount"</span><span class="p">:</span><span class="w"> </span><span class="s2">"5.000000000000000000"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"price"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1.000000000000000000"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"created-at"</span><span class="p">:</span><span class="w"> </span><span class="mi">1630649406687</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"buy-limit-maker"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"field-amount"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.0"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"field-cash-amount"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.0"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"field-fees"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.0"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"finished-at"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"source"</span><span class="p">:</span><span class="w"> </span><span class="s2">"spot-api"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"state"</span><span class="p">:</span><span class="w"> </span><span class="s2">"submitted"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"canceled-at"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
-    </span><span class="p">},</span><span class="w">
-    </span><span class="p">{</span><span class="w">
-      </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">357632718898330</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"symbol"</span><span class="p">:</span><span class="w"> </span><span class="s2">"adausdt"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"account-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">13496526</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"client-order-id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2345"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"amount"</span><span class="p">:</span><span class="w"> </span><span class="s2">"5.000000000000000000"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"price"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1.000000000000000000"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"created-at"</span><span class="p">:</span><span class="w"> </span><span class="mi">1630649406687</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"buy-limit-maker"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"field-amount"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.0"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"field-cash-amount"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.0"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"field-fees"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.0"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"finished-at"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"source"</span><span class="p">:</span><span class="w"> </span><span class="s2">"spot-api"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"state"</span><span class="p">:</span><span class="w"> </span><span class="s2">"submitted"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"canceled-at"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
+      </span><span class="nl">"bids"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"asks"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"ts"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
     </span><span class="p">}</span><span class="w">
-  </span><span class="p">]</span><span class="w">
+  </span><span class="p">],</span><span class="w">
+  </span><span class="nl">"ts"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div><h3 id='2213f4c32f-3'>响应数据</h3>
 <table><thead>
@@ -1003,20 +927,7 @@ api.huobi.pro\n
 <ul>
 <li>GET <code>/api/v1/market/candles</code></li>
 </ul>
-
-<blockquote>
-<p>Request:</p>
-</blockquote>
-<div class="highlight"><pre class="highlight json tab-json"><code><span class="w">
-</span><span class="p">{</span><span class="w">
-  </span><span class="nl">"account-id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"100009"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"amount"</span><span class="p">:</span><span class="w"> </span><span class="s2">"10.1"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"price"</span><span class="p">:</span><span class="w"> </span><span class="s2">"100.1"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"source"</span><span class="p">:</span><span class="w"> </span><span class="s2">"api"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"symbol"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ethusdt"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"buy-limit"</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></code></pre></div><h3 id='1f9ac54b15-4'>请求参数</h3>
+<h3 id='1f9ac54b15-4'>请求参数</h3>
 <table><thead>
 <tr>
 <th style="text-align: left">Name</th>
@@ -1061,190 +972,31 @@ api.huobi.pro\n
 <p>Response:</p>
 </blockquote>
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-  </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ok"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"code"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"msg"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
   </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-    </span><span class="p">{</span><span class="w">
-      </span><span class="nl">"symbol"</span><span class="p">:</span><span class="w"> </span><span class="s2">"polyusdt"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"fee-currency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"poly"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"source"</span><span class="p">:</span><span class="w"> </span><span class="s2">"spot-web"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"price"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.338"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"created-at"</span><span class="p">:</span><span class="w"> </span><span class="mi">1629443051839</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"role"</span><span class="p">:</span><span class="w"> </span><span class="s2">"taker"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"order-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">345487249132375</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"match-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">5014</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"trade-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1085</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"filled-amount"</span><span class="p">:</span><span class="w"> </span><span class="s2">"147.928994082840236"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"filled-fees"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"filled-points"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.1"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"fee-deduct-currency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"hbpoint"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"fee-deduct-state"</span><span class="p">:</span><span class="w"> </span><span class="s2">"done"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">313288753120940</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"buy-market"</span><span class="w">
-    </span><span class="p">}</span><span class="w">
-  </span><span class="p">]</span><span class="w">
+    </span><span class="p">[</span><span class="w">
+      </span><span class="s2">"1672531200"</span><span class="p">,</span><span class="w">  </span><span class="err">//ts</span><span class="p">,</span><span class="err">开始时间，Unix时间戳的秒数格式</span><span class="w">
+      </span><span class="s2">"3.721"</span><span class="p">,</span><span class="w"> </span><span class="err">//o</span><span class="p">,</span><span class="err">开盘价格</span><span class="w">
+      </span><span class="s2">"3.743"</span><span class="p">,</span><span class="w">  </span><span class="err">//h</span><span class="p">,</span><span class="err">最高价格</span><span class="w">
+      </span><span class="s2">"3.677"</span><span class="p">,</span><span class="w">  </span><span class="err">//l</span><span class="p">,</span><span class="err">最低价格</span><span class="w">
+      </span><span class="s2">"3.708"</span><span class="p">,</span><span class="w">  </span><span class="err">//c</span><span class="p">,</span><span class="err">收盘价格(当前K线未结束的即为最新价)</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+    </span><span class="p">[</span><span class="w">
+      </span><span class="s2">"1672531260"</span><span class="p">,</span><span class="w">  </span><span class="err">//ts</span><span class="p">,</span><span class="err">开始时间，Unix时间戳的秒数格式</span><span class="w">
+      </span><span class="s2">"3.731"</span><span class="p">,</span><span class="w"> </span><span class="err">//o</span><span class="p">,</span><span class="err">开盘价格</span><span class="w">
+      </span><span class="s2">"3.799"</span><span class="p">,</span><span class="w">  </span><span class="err">//h</span><span class="p">,</span><span class="err">最高价格</span><span class="w">
+      </span><span class="s2">"3.494"</span><span class="p">,</span><span class="w">  </span><span class="err">//l</span><span class="p">,</span><span class="err">最低价格</span><span class="w">
+      </span><span class="s2">"3.72"</span><span class="p">,</span><span class="w">  </span><span class="err">//c</span><span class="p">,</span><span class="err">收盘价格(当前K线未结束的即为最新价)</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+  </span><span class="p">],</span><span class="w">
+  </span><span class="nl">"ts"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="w">
 </span><span class="p">}</span><span class="w">
-</span></code></pre></div><h3 id='2213f4c32f-4'>响应数据</h3>
-<table><thead>
-<tr>
-<th>参数名称</th>
-<th>是否必须</th>
-<th>数据类型</th>
-<th>描述</th>
-<th>取值范围</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>status</td>
-<td>true</td>
-<td>string</td>
-<td>状态</td>
-<td></td>
-</tr>
-<tr>
-<td>&lt;data&gt;</td>
-<td>true</td>
-<td>object</td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>created-at</td>
-<td>true</td>
-<td>long</td>
-<td>该成交记录创建的时间戳（略晚于成交时间）</td>
-<td></td>
-</tr>
-<tr>
-<td>filled-amount</td>
-<td>true</td>
-<td>string</td>
-<td>成交数量</td>
-<td></td>
-</tr>
-<tr>
-<td>filled-fees</td>
-<td>true</td>
-<td>string</td>
-<td>交易手续费（正值）或交易返佣（负值）</td>
-<td></td>
-</tr>
-<tr>
-<td>fee-currency</td>
-<td>true</td>
-<td>string</td>
-<td>交易手续费或交易返佣币种（买单的交易手续费币种为基础币种，卖单的交易手续费币种为计价币种；买单的交易返佣币种为计价币种，卖单的交易返佣币种为基础币种）</td>
-<td></td>
-</tr>
-<tr>
-<td>id</td>
-<td>true</td>
-<td>long</td>
-<td>订单成交记录 ID，无大小顺序，可作为下一次翻页查询请求的from字段</td>
-<td></td>
-</tr>
-<tr>
-<td>match-id</td>
-<td>true</td>
-<td>long</td>
-<td>撮合 ID</td>
-<td></td>
-</tr>
-<tr>
-<td>order-id</td>
-<td>true</td>
-<td>long</td>
-<td>订单 ID</td>
-<td></td>
-</tr>
-<tr>
-<td>trade-id</td>
-<td>false</td>
-<td>integer</td>
-<td>唯一成交编号</td>
-<td></td>
-</tr>
-<tr>
-<td>price</td>
-<td>true</td>
-<td>string</td>
-<td>成交价格</td>
-<td></td>
-</tr>
-<tr>
-<td>source</td>
-<td>true</td>
-<td>string</td>
-<td>订单来源</td>
-<td>api</td>
-</tr>
-<tr>
-<td>symbol</td>
-<td>true</td>
-<td>string</td>
-<td>交易对</td>
-<td>btcusdt, ethbtc, rcneth ...</td>
-</tr>
-<tr>
-<td>type</td>
-<td>true</td>
-<td>string</td>
-<td>订单类型</td>
-<td>所有可能的订单类型（见本章节简介）</td>
-</tr>
-<tr>
-<td>role</td>
-<td>true</td>
-<td>string</td>
-<td>成交角色</td>
-<td>maker,taker</td>
-</tr>
-<tr>
-<td>filled-points</td>
-<td>true</td>
-<td>string</td>
-<td>抵扣数量（可为ht或hbpoint）</td>
-<td></td>
-</tr>
-<tr>
-<td>fee-deduct-currency</td>
-<td>true</td>
-<td>string</td>
-<td>抵扣类型</td>
-<td>ht,hbpoint</td>
-</tr>
-<tr>
-<td>fee-deduct-state</td>
-<td>true</td>
-<td>string</td>
-<td>抵扣状态</td>
-<td>抵扣中：ongoing，抵扣完成：done</td>
-</tr>
-<tr>
-<td>&lt;/data&gt;</td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-</tbody></table>
-<h1 id='bd9157656f'>账户信息</h1><h2 id='bad06cdc35'>查看账户余额</h2><h3 id='http-5'>HTTP 请求</h3>
+</span></code></pre></div><h1 id='bd9157656f'>账户信息</h1><h2 id='bad06cdc35'>查看账户余额</h2><h3 id='http-5'>HTTP 请求</h3>
 <ul>
 <li>GET <code>/api/v1/account/balance</code></li>
 </ul>
-
-<blockquote>
-<p>Request:</p>
-</blockquote>
-<div class="highlight"><pre class="highlight json tab-json"><code><span class="w">
-</span><span class="p">{</span><span class="w">
-  </span><span class="nl">"account-id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"100009"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"amount"</span><span class="p">:</span><span class="w"> </span><span class="s2">"10.1"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"price"</span><span class="p">:</span><span class="w"> </span><span class="s2">"100.1"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"source"</span><span class="p">:</span><span class="w"> </span><span class="s2">"api"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"symbol"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ethusdt"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"buy-limit"</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></code></pre></div><h3 id='1f9ac54b15-5'>请求参数</h3>
+<h3 id='1f9ac54b15-5'>请求参数</h3>
 <table><thead>
 <tr>
 <th style="text-align: left">Name</th>
@@ -1265,26 +1017,26 @@ api.huobi.pro\n
 <p>Response:</p>
 </blockquote>
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-  </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ok"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">357632718898331</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"symbol"</span><span class="p">:</span><span class="w"> </span><span class="s2">"adausdt"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"account-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">13496526</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"client-order-id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"23456"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"amount"</span><span class="p">:</span><span class="w"> </span><span class="s2">"5.000000000000000000"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"price"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1.000000000000000000"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"created-at"</span><span class="p">:</span><span class="w"> </span><span class="mi">1630649406687</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"buy-limit-maker"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"field-amount"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.0"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"field-cash-amount"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.0"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"field-fees"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.0"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"finished-at"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"source"</span><span class="p">:</span><span class="w"> </span><span class="s2">"spot-api"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"state"</span><span class="p">:</span><span class="w"> </span><span class="s2">"submitted"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"canceled-at"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
-  </span><span class="p">}</span><span class="w">
+  </span><span class="nl">"code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"200"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"msg"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"totalValue"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"uTime"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"asset"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"bal"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"frozBal"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"avlBal"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"uTIme"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+      </span><span class="p">]</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">],</span><span class="w">
+  </span><span class="nl">"ts"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="w">
 </span><span class="p">}</span><span class="w">
-</span></code></pre></div><h3 id='2213f4c32f-5'>响应数据</h3>
+</span></code></pre></div><h3 id='2213f4c32f-4'>响应数据</h3>
 <table><thead>
 <tr>
 <th style="text-align: left">Name</th>
@@ -1346,20 +1098,7 @@ api.huobi.pro\n
 <ul>
 <li>GET <code>/api/v1/account/tradeFee</code></li>
 </ul>
-
-<blockquote>
-<p>Request:</p>
-</blockquote>
-<div class="highlight"><pre class="highlight json tab-json"><code><span class="w">
-</span><span class="p">{</span><span class="w">
-  </span><span class="nl">"account-id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"100009"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"amount"</span><span class="p">:</span><span class="w"> </span><span class="s2">"10.1"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"price"</span><span class="p">:</span><span class="w"> </span><span class="s2">"100.1"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"source"</span><span class="p">:</span><span class="w"> </span><span class="s2">"api"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"symbol"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ethusdt"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"buy-limit"</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></code></pre></div><h3 id='1f9ac54b15-6'>请求参数</h3>
+<h3 id='1f9ac54b15-6'>请求参数</h3>
 <table><thead>
 <tr>
 <th style="text-align: left">Name</th>
@@ -1369,10 +1108,10 @@ api.huobi.pro\n
 </tr>
 </thead><tbody>
 <tr>
-<td style="text-align: left">instId</td>
+<td style="text-align: left">asset</td>
 <td style="text-align: left">String</td>
 <td style="text-align: left">N</td>
-<td style="text-align: left">产品ID，如果同时有instId和instType，则以instId为准</td>
+<td style="text-align: left">币种，支持多币种查询，币种之间半角逗号分隔</td>
 </tr>
 <tr>
 <td style="text-align: left">instType</td>
@@ -1389,26 +1128,14 @@ api.huobi.pro\n
   </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ok"</span><span class="p">,</span><span class="w">
   </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
     </span><span class="p">{</span><span class="w">
-      </span><span class="nl">"symbol"</span><span class="p">:</span><span class="w"> </span><span class="s2">"polyusdt"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"fee-currency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"poly"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"source"</span><span class="p">:</span><span class="w"> </span><span class="s2">"spot-web"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"order-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">345487249132375</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"price"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.338"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"created-at"</span><span class="p">:</span><span class="w"> </span><span class="mi">1629443051839</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"role"</span><span class="p">:</span><span class="w"> </span><span class="s2">"taker"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"match-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">5014</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"filled-amount"</span><span class="p">:</span><span class="w"> </span><span class="s2">"147.928994082840236"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"filled-fees"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"filled-points"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.1"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"fee-deduct-currency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"hbpoint"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"fee-deduct-state"</span><span class="p">:</span><span class="w"> </span><span class="s2">"done"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"trade-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1085</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">313288753120940</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"buy-market"</span><span class="w">
+      </span><span class="nl">"instType"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"asset"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"takerFee"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"makerFee"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
     </span><span class="p">}</span><span class="w">
   </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
-</span></code></pre></div><h3 id='2213f4c32f-6'>响应数据</h3>
+</span></code></pre></div><h3 id='2213f4c32f-5'>响应数据</h3>
 <table><thead>
 <tr>
 <th style="text-align: left">Name</th>
@@ -1417,12 +1144,6 @@ api.huobi.pro\n
 <th style="text-align: left">Description</th>
 </tr>
 </thead><tbody>
-<tr>
-<td style="text-align: left">instId</td>
-<td style="text-align: left">String</td>
-<td style="text-align: left"></td>
-<td style="text-align: left">产品ID<br />如“SPOT_BTC/USDT”</td>
-</tr>
 <tr>
 <td style="text-align: left">instType</td>
 <td style="text-align: left">String</td>
@@ -1442,18 +1163,13 @@ api.huobi.pro\n
 <td style="text-align: left">挂单手续费费率</td>
 </tr>
 <tr>
-<td style="text-align: left">feeAsset</td>
+<td style="text-align: left">asset</td>
 <td style="text-align: left">String</td>
 <td style="text-align: left"></td>
-<td style="text-align: left">手续费币种</td>
+<td style="text-align: left">币种</td>
 </tr>
 </tbody></table>
-<h1 id='57aa173947'>现货交易</h1><h2 id='fd6ce2a756'>下单</h2>
-<p>API Key 权限：交易
-限频值；100次/2s</p>
-
-<p>发送一个新订单到火币以进行撮合。</p>
-<h3 id='http-7'>HTTP 请求</h3>
+<h1 id='57aa173947'>现货交易</h1><h2 id='fd6ce2a756'>下单</h2><h3 id='http-7'>HTTP 请求</h3>
 <ul>
 <li>POST <code>/api/v1/order</code></li>
 </ul>
@@ -1462,13 +1178,14 @@ api.huobi.pro\n
 <p>Request:</p>
 </blockquote>
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-  </span><span class="nl">"instId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SPOT_BTC/USDT"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"clOrdId"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"ordPx"</span><span class="p">:</span><span class="w"> </span><span class="s2">"18000"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"ordQty"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.001"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"side"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sell"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"ordType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"limit"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"ordTag"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="w">
+  </span><span class="nl">"instId"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"clOrdId"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"side"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"ordPx"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"ordType"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"ordQty"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"ordAmt"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"ordTag"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div><h3 id='1f9ac54b15-7'>请求参数</h3>
 <table><thead>
@@ -1532,19 +1249,24 @@ api.huobi.pro\n
 <blockquote>
 <p>Response:</p>
 </blockquote>
-<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="nl">"msg"</span><span class="p">:</span><span class="s2">"操作成功"</span><span class="p">,</span><span class="nl">"code"</span><span class="p">:</span><span class="mi">200</span><span class="p">,</span><span class="nl">"data"</span><span class="p">:[</span><span class="w">
-</span><span class="p">{</span><span class="nl">"instId"</span><span class="p">:</span><span class="s2">"SPOT_BTC/USDT"</span><span class="p">,</span><span class="w">
-</span><span class="nl">"clOrdId"</span><span class="p">:</span><span class="s2">""</span><span class="p">,</span><span class="w">
-</span><span class="nl">"side"</span><span class="p">:</span><span class="s2">"sell"</span><span class="p">,</span><span class="w">
-</span><span class="nl">"ordPx"</span><span class="p">:</span><span class="s2">"18000"</span><span class="p">,</span><span class="w">
-</span><span class="nl">"ordType"</span><span class="p">:</span><span class="s2">"limit"</span><span class="p">,</span><span class="w">
-</span><span class="nl">"ordQty"</span><span class="p">:</span><span class="s2">"0.001"</span><span class="p">,</span><span class="w">
-</span><span class="nl">"ordAmt"</span><span class="p">:</span><span class="kc">null</span><span class="p">,</span><span class="w">
-</span><span class="nl">"ordTag"</span><span class="p">:</span><span class="s2">""</span><span class="p">,</span><span class="w">
-</span><span class="nl">"ordId"</span><span class="p">:</span><span class="s2">"14869"</span><span class="p">,</span><span class="w">
-</span><span class="nl">"ctime"</span><span class="p">:</span><span class="s2">"1679727504211"</span><span class="p">}],</span><span class="w">
-</span><span class="nl">"ts"</span><span class="p">:</span><span class="mi">1679727504233</span><span class="p">}</span><span class="w">
-</span></code></pre></div><h3 id='2213f4c32f-7'>响应数据</h3>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"200"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"msg"</span><span class="p">:</span><span class="w"> </span><span class="s2">"操作成功"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"instId"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"ordId"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"side"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"clOrdId"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"ordPx"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"ordType"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"ordQty"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"ordAmt"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"ordTag"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"cTime"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="nl">"ts"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1679727504233"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div><h3 id='2213f4c32f-6'>响应数据</h3>
 <table><thead>
 <tr>
 <th style="text-align: left">Name</th>
@@ -1560,16 +1282,16 @@ api.huobi.pro\n
 <td style="text-align: left">产品ID<br />如“SPOT_BTC/USDT”</td>
 </tr>
 <tr>
-<td style="text-align: left">instType</td>
-<td style="text-align: left">String</td>
-<td style="text-align: left"></td>
-<td style="text-align: left">产品类型<br /> SPOT：币币</td>
-</tr>
-<tr>
 <td style="text-align: left">ordId</td>
 <td style="text-align: left">String</td>
 <td style="text-align: left"></td>
 <td style="text-align: left">订单ID</td>
+</tr>
+<tr>
+<td style="text-align: left">instType</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left"></td>
+<td style="text-align: left">产品类型<br /> SPOT：币币</td>
 </tr>
 <tr>
 <td style="text-align: left">side</td>
@@ -1628,12 +1350,11 @@ api.huobi.pro\n
 <blockquote>
 <p>Request:</p>
 </blockquote>
-<div class="highlight"><pre class="highlight json tab-json"><code><span class="w">
-</span><span class="p">{</span><span class="w">
-  </span><span class="nl">"instId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SPOT_ETC/BUSD"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"instType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SPOT"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"ordId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"14883"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"clOrdId"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="w">
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"instId"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"instType"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"clOrdId"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"ordId"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div><h3 id='1f9ac54b15-8'>请求参数</h3>
 <table><thead>
@@ -1673,13 +1394,20 @@ api.huobi.pro\n
 <blockquote>
 <p>Response:</p>
 </blockquote>
-<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="nl">"msg"</span><span class="p">:</span><span class="s2">"操作成功"</span><span class="p">,</span><span class="nl">"code"</span><span class="p">:</span><span class="mi">200</span><span class="p">,</span><span class="nl">"data"</span><span class="p">:[{</span><span class="w">
-</span><span class="nl">"instId"</span><span class="p">:</span><span class="s2">"SPOT_ETC/BUSD"</span><span class="p">,</span><span class="w">
-</span><span class="nl">"instType"</span><span class="p">:</span><span class="s2">"SPOT"</span><span class="p">,</span><span class="w">
-</span><span class="nl">"clOrdId"</span><span class="p">:</span><span class="s2">""</span><span class="p">,</span><span class="w">
-</span><span class="nl">"ordId"</span><span class="p">:</span><span class="s2">"14883"</span><span class="w">
-</span><span class="p">}],</span><span class="nl">"ts"</span><span class="p">:</span><span class="mi">1679730429866</span><span class="p">}</span><span class="w">
-</span></code></pre></div><h3 id='2213f4c32f-8'>响应数据</h3>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"200"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"msg"</span><span class="p">:</span><span class="w"> </span><span class="s2">"操作成功"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"instId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SPOT_ETC/BUSD"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"instType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SPOT"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"clOrdId"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"ordId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"14883"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">],</span><span class="w">
+  </span><span class="nl">"ts"</span><span class="p">:</span><span class="w"> </span><span class="mi">1679730429866</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div><h3 id='2213f4c32f-7'>响应数据</h3>
 <table><thead>
 <tr>
 <th style="text-align: left">Name</th>
@@ -1717,16 +1445,7 @@ api.huobi.pro\n
 <ul>
 <li>GET <code>/api/v1/orderInfo</code></li>
 </ul>
-
-<blockquote>
-<p>Request:</p>
-</blockquote>
-<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-  </span><span class="nl">"account-id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"100009"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"symbol"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ethusdt"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"side"</span><span class="p">:</span><span class="w"> </span><span class="s2">"buy"</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></code></pre></div><h3 id='1f9ac54b15-9'>请求参数</h3>
+<h3 id='1f9ac54b15-9'>请求参数</h3>
 <table><thead>
 <tr>
 <th style="text-align: left">Name</th>
@@ -1740,6 +1459,12 @@ api.huobi.pro\n
 <td style="text-align: left">String</td>
 <td style="text-align: left">Y</td>
 <td style="text-align: left">产品ID</td>
+</tr>
+<tr>
+<td style="text-align: left">instType</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left">Y</td>
+<td style="text-align: left">产品类型<br /> SPOT：币币</td>
 </tr>
 <tr>
 <td style="text-align: left">ordId</td>
@@ -1759,26 +1484,33 @@ api.huobi.pro\n
 <p>Response:</p>
 </blockquote>
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-  </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ok"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"200"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"msg"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
   </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
     </span><span class="p">{</span><span class="w">
-      </span><span class="nl">"symbol"</span><span class="p">:</span><span class="w"> </span><span class="s2">"apnusdt"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"source"</span><span class="p">:</span><span class="w"> </span><span class="s2">"web"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"price"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1.555550000000000000"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"created-at"</span><span class="p">:</span><span class="w"> </span><span class="mi">1630633835224</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"amount"</span><span class="p">:</span><span class="w"> </span><span class="s2">"572.330000000000000000"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"account-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">13496526</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"filled-cash-amount"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.0"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"client-order-id"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"filled-amount"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.0"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"filled-fees"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.0"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">357630527817871</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"state"</span><span class="p">:</span><span class="w"> </span><span class="s2">"submitted"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sell-limit"</span><span class="w">
+      </span><span class="nl">"instId"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"instType"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"ordId"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"clOrdId"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"side"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"ordPx"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"ordType"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"ordQty"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"ordAmt"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"fillQty"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"fillAmt"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"ordTag"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"totalFee"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"feeAseet"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"cTime"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"uTime"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"avgFillPx"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
     </span><span class="p">}</span><span class="w">
-  </span><span class="p">]</span><span class="w">
+  </span><span class="p">],</span><span class="w">
+  </span><span class="nl">"ts"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="w">
 </span><span class="p">}</span><span class="w">
-</span></code></pre></div><h3 id='2213f4c32f-9'>响应数据</h3>
+</span></code></pre></div><h3 id='2213f4c32f-8'>响应数据</h3>
 <table><thead>
 <tr>
 <th style="text-align: left">Name</th>
@@ -1898,18 +1630,9 @@ api.huobi.pro\n
 </tbody></table>
 <h2 id='cee6a1fd93'>获取当前委托</h2><h3 id='http-10'>HTTP 请求</h3>
 <ul>
-<li>POST <code>/api/v1/openOrders</code></li>
+<li>GET <code>/api/v1/openOrders</code></li>
 </ul>
-
-<blockquote>
-<p>Request:</p>
-</blockquote>
-<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-  </span><span class="nl">"account-id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"100009"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"symbol"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ethusdt"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"side"</span><span class="p">:</span><span class="w"> </span><span class="s2">"buy"</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></code></pre></div><h3 id='1f9ac54b15-10'>请求参数</h3>
+<h3 id='1f9ac54b15-10'>请求参数</h3>
 <table><thead>
 <tr>
 <th style="text-align: left">Name</th>
@@ -1966,14 +1689,33 @@ api.huobi.pro\n
 <p>Response:</p>
 </blockquote>
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-  </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ok"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="nl">"success-count"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"failed-count"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"next-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">5454600</span><span class="w">
-  </span><span class="p">}</span><span class="w">
+  </span><span class="nl">"code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"200"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"msg"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"instId"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"instType"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"ordId"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"clOrdId"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"side"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"ordPx"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"ordType"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"ordQty"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"ordAmt"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"fillQty"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"fillAmt"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"ordTag"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"totalFee"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"feeAseet"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"cTime"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"uTime"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"avgFillPx"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">],</span><span class="w">
+  </span><span class="nl">"ts"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="w">
 </span><span class="p">}</span><span class="w">
-</span></code></pre></div><h3 id='2213f4c32f-10'>响应数据</h3>
+</span></code></pre></div><h3 id='2213f4c32f-9'>响应数据</h3>
 <table><thead>
 <tr>
 <th style="text-align: left">Name</th>
@@ -2093,19 +1835,9 @@ api.huobi.pro\n
 </tbody></table>
 <h2 id='4212d667d1'>获取历史委托</h2><h3 id='http-11'>HTTP 请求</h3>
 <ul>
-<li>POST <code>/api/v1/hisOrders</code></li>
+<li>GET <code>/api/v1/hisOrders</code></li>
 </ul>
-
-<blockquote>
-<p>Request:</p>
-</blockquote>
-<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-  </span><span class="nl">"client-order-ids"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-    </span><span class="s2">"12345"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"123456"</span><span class="w">
-  </span><span class="p">]</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></code></pre></div><h3 id='1f9ac54b15-11'>请求参数</h3>
+<h3 id='1f9ac54b15-11'>请求参数</h3>
 <table><thead>
 <tr>
 <th style="text-align: left">Name</th>
@@ -2192,23 +1924,33 @@ api.huobi.pro\n
 <p>Response:</p>
 </blockquote>
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-  </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ok"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="nl">"success"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-      </span><span class="s2">"12345"</span><span class="w">
-    </span><span class="p">],</span><span class="w">
-    </span><span class="nl">"failed"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-      </span><span class="p">{</span><span class="w">
-        </span><span class="nl">"err-msg"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Incorrect order state"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"order-state"</span><span class="p">:</span><span class="w"> </span><span class="mi">7</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"order-id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"357631450723117"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"err-code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"order-orderstate-error"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"client-order-id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"123456"</span><span class="w">
-      </span><span class="p">}</span><span class="w">
-    </span><span class="p">]</span><span class="w">
-  </span><span class="p">}</span><span class="w">
+  </span><span class="nl">"code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"200"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"msg"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"instId"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"instType"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"ordId"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"clOrdId"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"side"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"ordPx"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"ordType"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"ordQty"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"ordAmt"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"fillQty"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"fillAmt"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"ordTag"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"totalFee"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"feeAseet"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"cTime"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"uTime"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"avgFillPx"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">],</span><span class="w">
+  </span><span class="nl">"ts"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="w">
 </span><span class="p">}</span><span class="w">
-</span></code></pre></div><h3 id='2213f4c32f-11'>响应数据</h3>
+</span></code></pre></div><h3 id='2213f4c32f-10'>响应数据</h3>
 <table><thead>
 <tr>
 <th style="text-align: left">Name</th>
@@ -2330,16 +2072,7 @@ api.huobi.pro\n
 <ul>
 <li>GET <code>/api/v1/hisTrades</code></li>
 </ul>
-
-<blockquote>
-<p>Request:</p>
-</blockquote>
-<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-  </span><span class="nl">"account-id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"100009"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"symbol"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ethusdt"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"side"</span><span class="p">:</span><span class="w"> </span><span class="s2">"buy"</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></code></pre></div><h3 id='1f9ac54b15-12'>请求参数</h3>
+<h3 id='1f9ac54b15-12'>请求参数</h3>
 <table><thead>
 <tr>
 <th style="text-align: left">Name</th>
@@ -2414,26 +2147,27 @@ api.huobi.pro\n
 <p>Response:</p>
 </blockquote>
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-  </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ok"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">357632718898331</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"symbol"</span><span class="p">:</span><span class="w"> </span><span class="s2">"adausdt"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"account-id"</span><span class="p">:</span><span class="w"> </span><span class="mi">13496526</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"client-order-id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"23456"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"amount"</span><span class="p">:</span><span class="w"> </span><span class="s2">"5.000000000000000000"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"price"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1.000000000000000000"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"created-at"</span><span class="p">:</span><span class="w"> </span><span class="mi">1630649406687</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"buy-limit-maker"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"field-amount"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.0"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"field-cash-amount"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.0"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"field-fees"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.0"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"finished-at"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"source"</span><span class="p">:</span><span class="w"> </span><span class="s2">"spot-api"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"state"</span><span class="p">:</span><span class="w"> </span><span class="s2">"submitted"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"canceled-at"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
-  </span><span class="p">}</span><span class="w">
+  </span><span class="nl">"code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"200"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"msg"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"instId"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"instType"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"tradeId"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"ordId"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"clOrdId"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"side"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"fillPx"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"fillQty"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"ordTag"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"fee"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"feeAsset"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"fillTime"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">],</span><span class="w">
+  </span><span class="nl">"ts"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="w">
 </span><span class="p">}</span><span class="w">
-</span></code></pre></div><h3 id='2213f4c32f-12'>响应数据</h3>
+</span></code></pre></div><h3 id='2213f4c32f-11'>响应数据</h3>
 <table><thead>
 <tr>
 <th style="text-align: left">Name</th>
