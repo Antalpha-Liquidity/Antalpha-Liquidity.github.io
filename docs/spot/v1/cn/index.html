@@ -280,6 +280,9 @@
                   <li>
                     <a href="#1fbac240b7" class="toc-h2 toc-link" data-title="签名步骤">签名步骤</a>
                   </li>
+                  <li>
+                    <a href="#b84d53c00e" class="toc-h2 toc-link" data-title="签名安全">签名安全</a>
+                  </li>
               </ul>
           </li>
           <li>
@@ -516,8 +519,13 @@ AccessKeyId=e2xxxxxx-99xxxxxx-84xxxxxx-7xxxx&amp;SignatureMethod=SHA256WithRSA&a
 <li>把所有必须的认证参数添加到接口调用的路径参数里</li>
 <li>把数字签名在URL编码后加入到路径参数里，参数名为“Signature”。</li>
 </ol>
+<h2 id='b84d53c00e'>签名安全</h2>
+<ul>
+<li><strong>强烈建议</strong>：在申请API Key时，请绑定您的IP地址，以此来保证您的API Key仅能在您自己的IP上使用。</li>
+<li><strong>强烈建议</strong>：不要将API Key暴露给任何人（包括第三方软件或机构），API Key代表了您的账户权限，API Key的暴露可能会对您的信息、资金造成损失，若API Key泄露，请尽快删除并重新创建。</li>
+</ul>
 <h1 id='c1fd2fc5ac'>限频规则</h1>
-<p>限频规则针对接口进行限频，目前所有接口访问1s内5次</p>
+<p>限频规则针对接口进行限频，目前每个接口访问限制为1s内10次</p>
 
 <p>用户可根据Http Header中的信息调整访问策略</p>
 
