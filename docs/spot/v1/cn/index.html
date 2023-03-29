@@ -362,98 +362,6 @@
 <p><code>账户信息</code></p>
 
 <p><code>现货交易</code></p>
-<h4 id='8b4c1c9571'>部分字段的枚举类型</h4>
-<p><strong>instId</strong></p>
-
-<p>现货/杠杆 ：<code>SPOT_BTC/USDT</code></p>
-
-<p><strong>instType</strong></p>
-
-<p>现货 : <code>SPOT</code></p>
-<h4 id='92a1fcf914'>字段简写对照表</h4>
-<table><thead>
-<tr>
-<th style="text-align: left">完整名称</th>
-<th style="text-align: left">简写</th>
-<th style="text-align: left"></th>
-<th style="text-align: left">完整名称</th>
-<th>简写</th>
-<th></th>
-</tr>
-</thead><tbody>
-<tr>
-<td style="text-align: left">instrument</td>
-<td style="text-align: left">inst</td>
-<td style="text-align: left"></td>
-<td style="text-align: left">size</td>
-<td>sz</td>
-<td></td>
-</tr>
-<tr>
-<td style="text-align: left">client</td>
-<td style="text-align: left">cl</td>
-<td style="text-align: left"></td>
-<td style="text-align: left">frozen</td>
-<td>froz</td>
-<td></td>
-</tr>
-<tr>
-<td style="text-align: left">order</td>
-<td style="text-align: left">ord</td>
-<td style="text-align: left"></td>
-<td style="text-align: left">balance</td>
-<td>bal</td>
-<td></td>
-</tr>
-<tr>
-<td style="text-align: left">price</td>
-<td style="text-align: left">px</td>
-<td style="text-align: left"></td>
-<td style="text-align: left">available</td>
-<td>avl</td>
-<td></td>
-</tr>
-<tr>
-<td style="text-align: left">quantity</td>
-<td style="text-align: left">qty</td>
-<td style="text-align: left"></td>
-<td style="text-align: left">volome</td>
-<td>vol</td>
-<td></td>
-</tr>
-<tr>
-<td style="text-align: left">amount</td>
-<td style="text-align: left">amt</td>
-<td style="text-align: left"></td>
-<td style="text-align: left">timestamp</td>
-<td>ts</td>
-<td></td>
-</tr>
-<tr>
-<td style="text-align: left">createdTime</td>
-<td style="text-align: left">cTime</td>
-<td style="text-align: left"></td>
-<td style="text-align: left">quote</td>
-<td>qte</td>
-<td></td>
-</tr>
-<tr>
-<td style="text-align: left">updatedTime</td>
-<td style="text-align: left">uTime</td>
-<td style="text-align: left"></td>
-<td style="text-align: left">message</td>
-<td>msg</td>
-<td></td>
-</tr>
-<tr>
-<td style="text-align: left">average</td>
-<td style="text-align: left">avg</td>
-<td style="text-align: left"></td>
-<td style="text-align: left"></td>
-<td></td>
-<td></td>
-</tr>
-</tbody></table>
 <h1 id='c64cd15fdc'>签名认证</h1><h2 id='34addae335'>签名说明</h2>
 <p>API 请求在通过 internet 传输的过程中极有可能被篡改，为了确保请求未被更改，除公共接口（基础信息，行情数据）外的私有接口均必须使用您的 API Key 做签名认证，以校验参数或参数值在传输途中是否发生了更改。（编码集统一 &quot;UTF-8&quot;）</p>
 
@@ -1208,12 +1116,6 @@ AccessKeyId=e2xxxxxx-99xxxxxx-84xxxxxx-7xxxx&amp;SignatureMethod=SHA256WithRSA&a
 <td style="text-align: left">String</td>
 <td style="text-align: left"></td>
 <td style="text-align: left">订单ID</td>
-</tr>
-<tr>
-<td style="text-align: left">instType</td>
-<td style="text-align: left">String</td>
-<td style="text-align: left"></td>
-<td style="text-align: left">产品类型<br /> SPOT：币币</td>
 </tr>
 <tr>
 <td style="text-align: left">side</td>
