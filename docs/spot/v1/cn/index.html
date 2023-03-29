@@ -265,11 +265,6 @@
       <ul id="toc" class="toc-list-h1">
           <li>
             <a href="#api" class="toc-h1 toc-link" data-title="API简介">API简介</a>
-              <ul class="toc-list-h2">
-                  <li>
-                    <a href="#1553e8aa79" class="toc-h2 toc-link" data-title="接口功能分类">接口功能分类</a>
-                  </li>
-              </ul>
           </li>
           <li>
             <a href="#c64cd15fdc" class="toc-h1 toc-link" data-title="签名认证">签名认证</a>
@@ -289,7 +284,7 @@
             <a href="#c1fd2fc5ac" class="toc-h1 toc-link" data-title="限频规则">限频规则</a>
           </li>
           <li>
-            <a href="#41654e0268" class="toc-h1 toc-link" data-title="基础信息">基础信息</a>
+            <a href="#6fbfb00794" class="toc-h1 toc-link" data-title="公共数据">公共数据</a>
               <ul class="toc-list-h2">
                   <li>
                     <a href="#ccc7ef231c" class="toc-h2 toc-link" data-title="获取产品基础信息">获取产品基础信息</a>
@@ -370,88 +365,6 @@
 <p><code>账户信息</code></p>
 
 <p><code>现货交易</code></p>
-<h3 id='1553e8aa79'>接口功能分类</h3>
-<table><thead>
-<tr>
-<th>接口协议类型</th>
-<th>接口分类</th>
-<th>接口功能分类</th>
-<th>接口具体功能</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>rest</td>
-<td>私有</td>
-<td>交易</td>
-<td>下单</td>
-</tr>
-<tr>
-<td>rest</td>
-<td>私有</td>
-<td>交易</td>
-<td>撤单</td>
-</tr>
-<tr>
-<td>rest</td>
-<td>私有</td>
-<td>交易</td>
-<td>获取订单信息</td>
-</tr>
-<tr>
-<td>rest</td>
-<td>私有</td>
-<td>交易</td>
-<td>获取当前委托</td>
-</tr>
-<tr>
-<td>rest</td>
-<td>私有</td>
-<td>交易</td>
-<td>获取历史委托</td>
-</tr>
-<tr>
-<td>rest</td>
-<td>私有</td>
-<td>交易</td>
-<td>获取成交明细</td>
-</tr>
-<tr>
-<td>rest</td>
-<td>私有</td>
-<td>账户</td>
-<td>查看账户余额</td>
-</tr>
-<tr>
-<td>rest</td>
-<td>私有</td>
-<td>账户</td>
-<td>获取交易费率</td>
-</tr>
-<tr>
-<td>rest</td>
-<td>公开</td>
-<td>行情</td>
-<td>获取行情信息</td>
-</tr>
-<tr>
-<td>rest</td>
-<td>公开</td>
-<td>行情</td>
-<td>获取深度</td>
-</tr>
-<tr>
-<td>rest</td>
-<td>公开</td>
-<td>行情</td>
-<td>获取K线数据</td>
-</tr>
-<tr>
-<td>rest</td>
-<td>公开</td>
-<td>行情</td>
-<td>获取产品基础信息</td>
-</tr>
-</tbody></table>
 <h1 id='c64cd15fdc'>签名认证</h1><h2 id='34addae335'>签名说明</h2>
 <p>API 请求在通过 internet 传输的过程中极有可能被篡改，为了确保请求未被更改，除公共接口（基础信息，行情数据）外的私有接口均必须使用您的 API Key 做签名认证，以校验参数或参数值在传输途中是否发生了更改。（编码集统一 &quot;UTF-8&quot;）</p>
 
@@ -535,7 +448,7 @@ AccessKeyId=e2xxxxxx-99xxxxxx-84xxxxxx-7xxxx&amp;SignatureMethod=SHA256WithRSA&a
 <li>rateLimit-remaining：本轮剩余可用请求数，单位：次数</li>
 <li>rateLimit-reset：请求数上限重置时间，单位：毫秒</li>
 </ul>
-<h1 id='41654e0268'>基础信息</h1><h2 id='ccc7ef231c'>获取产品基础信息</h2><h3 id='http'>HTTP 请求</h3>
+<h1 id='6fbfb00794'>公共数据</h1><h2 id='ccc7ef231c'>获取产品基础信息</h2><h3 id='http'>HTTP 请求</h3>
 <ul>
 <li>GET <code>/api/v1/public/instruments</code></li>
 </ul>
