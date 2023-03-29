@@ -416,56 +416,37 @@
 
 <p><code>https://api.liquidity.antalpha.com/api/v1/order?AccessKeyId=e2xxxxxx-99xxxxxx-84xxxxxx-7xxxx&amp;SignatureMethod=HmacSHA256&amp;SignatureVersion=1&amp;Timestamp=1662022581951</code></p>
 <h4 id='1-get-post-n'>1. 请求方法（GET 或 POST），后面添加换行符 “\n”</h4>
-<blockquote>
-<p>GET\n</p>
-</blockquote>
+<p><code>GET\n</code></p>
 <h4 id='2-n'>2. 添加小写的访问地址，后面添加换行符 “\n”</h4>
-<blockquote>
-<p>api.liquidity.antalpha.com\n</p>
-</blockquote>
+<p><code>api.liquidity.antalpha.com\n</code></p>
 <h4 id='3-n'>3. 访问方法的路径，后面添加换行符 “\n”</h4>
-<blockquote>
-<p>/api/v1/order\n</p>
-</blockquote>
+<p><code>/api/v1/order\n</code></p>
 <h4 id='4-ascii'>4. 按照ASCII码的顺序对参数名进行排序。例如，下面是请求参数的原始顺序，进行过编码后</h4>
-<blockquote>
-<p>AccessKeyId=e2xxxxxx-99xxxxxx-84xxxxxx-7xxxxSignatureMethod=HmacSHA256SignatureVersion=1Timestamp=1662022581951</p>
-</blockquote>
+<p><code>AccessKeyId=e2xxxxxx-99xxxxxx-84xxxxxx-7xxxxSignatureMethod=HmacSHA256SignatureVersion=1Timestamp=1662022581951</code></p>
 
 <p>使用 UTF-8 编码，且进行了 URI 编码，十六进制字符必须大写，如 “:” 会被编码为 “%3A” ，空格被编码为 “%20”。</p>
 <h4 id='5'>5. 经过排序之后</h4>
-<blockquote>
-<p>AccessKeyId=e2xxxxxx-99xxxxxx-84xxxxxx-7xxxx<br>
-SignatureMethod=HmacSHA256<br>
-SignatureVersion=1<br>
-Timestamp=1662022581951</p>
-</blockquote>
+<p><code>AccessKeyId=e2xxxxxx-99xxxxxx-84xxxxxx-7xxxx</code><br>
+<code>SignatureMethod=HmacSHA256</code><br>
+<code>SignatureVersion=1</code><br>
+<code>Timestamp=1662022581951</code></p>
 <h4 id='6-amp'>6. 按照以上顺序，将各参数使用字符 “&amp;” 连接</h4>
-<blockquote>
-<p>AccessKeyId=e2xxxxxx-99xxxxxx-84xxxxxx-7xxxx&amp;SignatureMethod=HmacSHA256&amp;SignatureVersion=1&amp;Timestamp=1662022581951</p>
-</blockquote>
+<p><code>AccessKeyId=e2xxxxxx-99xxxxxx-84xxxxxx-7xxxx&amp;SignatureMethod=HmacSHA256&amp;SignatureVersion=1&amp;Timestamp=16620225819511</code></p>
 <h4 id='7'>7. 组成最终的要进行签名计算的字符串如下</h4>
-<blockquote>
-<p>POST\n<br>
-api.liquidity.antalpha.com\n<br>
-/api/v1/order\n<br>
-AccessKeyId=e2xxxxxx-99xxxxxx-84xxxxxx-7xxxx&amp;SignatureMethod=HmacSHA256&amp;SignatureVersion=1&amp;Timestamp=1662022581951</p>
-</blockquote>
+<p><code>POST\n</code><br>
+<code>api.liquidity.antalpha.com\n</code><br>
+<code>/api/v1/order\n</code><br>
+<code>AccessKeyId=e2xxxxxx-99xxxxxx-84xxxxxx-7xxxx&amp;SignatureMethod=HmacSHA256&amp;SignatureVersion=1&amp;Timestamp=1662022581951</code></p>
 <h4 id='8-secret-key'>8. 用上一步里生成的 “请求字符串” 和你的密钥 (Secret Key) 生成一个数字签名</h4>
-<blockquote>
-<p>4F65x5A2bLyMWVQj3Aqp+B4w+ivaA7n5Oi2SuYtCJ9o=</p>
-</blockquote>
+<p><code>4F65x5A2bLyMWVQj3Aqp+B4w+ivaA7n5Oi2SuYtCJ9o=</code></p>
 
 <ol>
 <li>将上一步得到的请求字符串和 RSA私钥作为两个参数，调用HmacSHA256验签函数获得验签信息。</li>
 <li>将此验签信息用base-64编码，得到的值作为此次接口调用的数字签名。</li>
 </ol>
 <h4 id='9'>9. 将生成的数字签名加入到请求的路径参数里</h4>
-<p>最终，发送到服务器的 API 请求应该为</p>
-
-<blockquote>
-<p>https://api.liquidity.antalpha.com/api/v1/order?AccessKeyId=e2xxxxxx-99xxxxxx-84xxxxxx-7xxxx&amp;SignatureMethod=HmacSHA256&amp;SignatureVersion=1&amp;Timestamp=1662022581951&amp;Signature=4F65x5A2bLyMWVQj3Aqp%2BB4w%2BivaA7n5Oi2SuYtCJ9o%3D</p>
-</blockquote>
+<p>最终，发送到服务器的 API 请求应该为<br>
+<code>https://api.liquidity.antalpha.com/api/v1/order?AccessKeyId=e2xxxxxx-99xxxxxx-84xxxxxx-7xxxx&amp;SignatureMethod=HmacSHA256&amp;SignatureVersion=1&amp;Timestamp=1662022581951&amp;Signature=4F65x5A2bLyMWVQj3Aqp%2BB4w%2BivaA7n5Oi2SuYtCJ9o%3D</code></p>
 
 <ol>
 <li>把所有必须的认证参数添加到接口调用的路径参数里</li>
