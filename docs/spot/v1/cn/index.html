@@ -267,6 +267,17 @@
             <a href="#api" class="toc-h1 toc-link" data-title="API简介">API简介</a>
           </li>
           <li>
+            <a href="#2d07d50c97" class="toc-h1 toc-link" data-title="接入说明">接入说明</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#acd1786863" class="toc-h2 toc-link" data-title="签名代码示例">签名代码示例</a>
+                  </li>
+                  <li>
+                    <a href="#c1fd2fc5ac" class="toc-h2 toc-link" data-title="限频规则">限频规则</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
             <a href="#c64cd15fdc" class="toc-h1 toc-link" data-title="签名认证">签名认证</a>
               <ul class="toc-list-h2">
                   <li>
@@ -279,9 +290,6 @@
                     <a href="#b84d53c00e" class="toc-h2 toc-link" data-title="签名安全">签名安全</a>
                   </li>
               </ul>
-          </li>
-          <li>
-            <a href="#c1fd2fc5ac" class="toc-h1 toc-link" data-title="限频规则">限频规则</a>
           </li>
           <li>
             <a href="#6fbfb00794" class="toc-h1 toc-link" data-title="公共数据">公共数据</a>
@@ -365,6 +373,19 @@
 <p><code>账户信息</code></p>
 
 <p><code>现货交易</code></p>
+<h1 id='2d07d50c97'>接入说明</h1><h3 id='acd1786863'>签名代码示例</h3>
+<p>目前支持<a href="https://github.com/Antalpha-Liquidity/Api-demo">go</a>和<a href="https://github.com/Antalpha-Liquidity/Api-demo">java</a>签名</p>
+<h3 id='c1fd2fc5ac'>限频规则</h3>
+<p>限频规则针对接口进行限频，目前每个接口访问限制为1s内10次</p>
+
+<p>用户可根据Http Header中的信息调整访问策略</p>
+
+<ul>
+<li>rateLimit-times： 单轮请求数上限，单位：次数</li>
+<li>rateLimit-interval：请求数重置的时间间隔，单位：毫秒</li>
+<li>rateLimit-remaining：本轮剩余可用请求数，单位：次数</li>
+<li>rateLimit-reset：请求数上限重置时间，单位：毫秒</li>
+</ul>
 <h1 id='c64cd15fdc'>签名认证</h1><h2 id='34addae335'>签名说明</h2>
 <p>API 请求在通过 internet 传输的过程中极有可能被篡改，为了确保请求未被更改，除公共接口（基础信息，行情数据）外的私有接口均必须使用您的 API Key 做签名认证，以校验参数或参数值在传输途中是否发生了更改。（编码集统一 &quot;UTF-8&quot;）</p>
 
@@ -454,17 +475,6 @@ AccessKeyId=e2xxxxxx-99xxxxxx-84xxxxxx-7xxxx&amp;SignatureMethod=HmacSHA256&amp;
 <ul>
 <li><strong>强烈建议</strong>：在申请API Key时，请绑定您的IP地址，以此来保证您的API Key仅能在您自己的IP上使用。</li>
 <li><strong>强烈建议</strong>：不要将API Key暴露给任何人（包括第三方软件或机构），API Key代表了您的账户权限，API Key的暴露可能会对您的信息、资金造成损失，若API Key泄露，请尽快删除并重新创建。</li>
-</ul>
-<h1 id='c1fd2fc5ac'>限频规则</h1>
-<p>限频规则针对接口进行限频，目前每个接口访问限制为1s内10次</p>
-
-<p>用户可根据Http Header中的信息调整访问策略</p>
-
-<ul>
-<li>rateLimit-times： 单轮请求数上限，单位：次数</li>
-<li>rateLimit-interval：请求数重置的时间间隔，单位：毫秒</li>
-<li>rateLimit-remaining：本轮剩余可用请求数，单位：次数</li>
-<li>rateLimit-reset：请求数上限重置时间，单位：毫秒</li>
 </ul>
 <h1 id='6fbfb00794'>公共数据</h1><h2 id='ccc7ef231c'>获取产品基础信息</h2><h3 id='http'>HTTP 请求</h3>
 <ul>
