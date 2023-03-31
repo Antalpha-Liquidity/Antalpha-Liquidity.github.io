@@ -273,13 +273,21 @@
                     <a href="#access-urls" class="toc-h2 toc-link" data-title="Access URLs">Access URLs</a>
                   </li>
                   <li>
-                    <a href="#rate-limit-rule" class="toc-h2 toc-link" data-title="Rate limit Rule">Rate limit Rule</a>
+                    <a href="#rate-limit-rule" class="toc-h2 toc-link" data-title="Rate limit rule">Rate limit rule</a>
                   </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#authentication" class="toc-h1 toc-link" data-title="Authentication">Authentication</a>
+              <ul class="toc-list-h2">
                   <li>
-                    <a href="#authentication" class="toc-h2 toc-link" data-title="Authentication">Authentication</a>
+                    <a href="#overview" class="toc-h2 toc-link" data-title="overview">overview</a>
                   </li>
                   <li>
                     <a href="#signature-method" class="toc-h2 toc-link" data-title="Signature Method">Signature Method</a>
+                  </li>
+                  <li>
+                    <a href="#demo" class="toc-h2 toc-link" data-title="demo">demo</a>
                   </li>
                   <li>
                     <a href="#security-best-practice" class="toc-h2 toc-link" data-title="Security Best Practice">Security Best Practice</a>
@@ -368,20 +376,17 @@ and the right hand side is the request and response samples.</p>
 
 <p>The document is mainly divided into the following four categories:</p>
 
-<p><code>Basic Info</code></p>
-
-<p><code>Market Data</code></p>
-
-<p><code>Account Data</code></p>
-
-<p><code>Trading</code></p>
+<p><code>Basic Info</code>
+<code>Market Data</code>
+<code>Account Data</code>
+<code>Trading</code></p>
 <h1 id='api-access'>API Access</h1><h2 id='access-urls'>Access URLs</h2>
 <p><strong>REST API</strong></p>
 
 <ul>
 <li>https://api.liquidity.antalpha.com</li>
 </ul>
-<h2 id='rate-limit-rule'>Rate limit Rule</h2>
+<h2 id='rate-limit-rule'>Rate limit rule</h2>
 <p>The rate limit rule limits the frequency of api access, and currently each api is limited to 10
 times within 1s.</p>
 
@@ -393,7 +398,7 @@ times within 1s.</p>
 <li>rateLimit-remaining: the remaining count for current rate limit time window</li>
 <li>rateLimit-reset: the expiring timestamp for current rate limit time window</li>
 </ul>
-<h2 id='authentication'>Authentication</h2><h3 id='overview'>overview</h3>
+<h1 id='authentication'>Authentication</h1><h3 id='overview'>overview</h3>
 <p>The API request may be tampered during internet, therefore all private API must be signed by your
 API Key (Secrete Key).</p>
 
@@ -423,13 +428,13 @@ normalized before signing. Below signing steps take the order query as an exampl
 <p>This is a full URL to query one order:</p>
 
 <p><code>https://api.liquidity.antalpha.com/api/v1/order?AccessKeyId=e2xxxxxx-99xxxxxx-84xxxxxx-7xxxx&amp;SignatureMethod=HmacSHA256&amp;SignatureVersion=1&amp;Timestamp=1662022581951</code></p>
-<h4 id='1-the-request-method-get-or-post-append-line-break-quot-n-quot'>1. The request Method (GET or POST), append line break &quot;\n&quot;</h4>
+<h3 id='1-the-request-method-get-or-post-append-line-break-quot-n-quot'>1. The request Method (GET or POST), append line break &quot;\n&quot;</h3>
 <p><code>GET\n</code></p>
-<h4 id='2-the-host-with-lower-case-append-line-break-quot-n-quot'>2. The host with lower case, append line break &quot;\n&quot;</h4>
+<h3 id='2-the-host-with-lower-case-append-line-break-quot-n-quot'>2. The host with lower case, append line break &quot;\n&quot;</h3>
 <p><code>api.liquidity.antalpha.com\n</code></p>
-<h4 id='3-the-path-append-line-break-quot-n-quot'>3. The path, append line break &quot;\n&quot;</h4>
+<h3 id='3-the-path-append-line-break-quot-n-quot'>3. The path, append line break &quot;\n&quot;</h3>
 <p><code>/api/v1/order\n</code></p>
-<h4 id='4-the-parameters-are-url-encoded-and-ordered-based-on-ascii'>4. The parameters are URL encoded, and ordered based on ASCII</h4>
+<h3 id='4-the-parameters-are-url-encoded-and-ordered-based-on-ascii'>4. The parameters are URL encoded, and ordered based on ASCII</h3>
 <p><code>AccessKeyId=e2xxxxxx-99xxxxxx-84xxxxxx-7xxxxSignatureMethod=HmacSHA256SignatureVersion=1Timestamp=1662022581951</code></p>
 
 <p>Use UTF-8 encoding and URL encoded, the hex must be upper case.
@@ -441,14 +446,14 @@ For example, The semicolon &#39;:&#39; should be encoded as &#39;%3A&#39;, The s
 <code>SignatureMethod=HmacSHA256</code><br>
 <code>SignatureVersion=1</code><br>
 <code>Timestamp=1662022581951</code></p>
-<h4 id='5-use-char-quot-amp-quot-to-concatenate-all-parameters'>5. Use char &quot;&amp;&quot; to concatenate all parameters</h4>
+<h3 id='5-use-char-quot-amp-quot-to-concatenate-all-parameters'>5. Use char &quot;&amp;&quot; to concatenate all parameters</h3>
 <p><code>AccessKeyId=e2xxxxxx-99xxxxxx-84xxxxxx-7xxxx&amp;SignatureMethod=HmacSHA256&amp;SignatureVersion=1&amp;Timestamp=16620225819511</code></p>
-<h4 id='6-assemble-the-pre-signed-text'>6. Assemble the pre-signed text</h4>
+<h3 id='6-assemble-the-pre-signed-text'>6. Assemble the pre-signed text</h3>
 <p><code>POST\n</code><br>
 <code>api.liquidity.antalpha.com\n</code><br>
 <code>/api/v1/order\n</code><br>
 <code>AccessKeyId=e2xxxxxx-99xxxxxx-84xxxxxx-7xxxx&amp;SignatureMethod=HmacSHA256&amp;SignatureVersion=1&amp;Timestamp=1662022581951</code></p>
-<h4 id='7-use-the-pre-signed-text-and-your-secret-key-to-generate-a-signature'>7. Use the pre-signed text and your Secret Key to generate a signature</h4>
+<h3 id='7-use-the-pre-signed-text-and-your-secret-key-to-generate-a-signature'>7. Use the pre-signed text and your Secret Key to generate a signature</h3>
 <ul>
 <li>Use the pre-signed text in step 6 and your API Secret Key to generate hash code by HmacSHA256 hash
 function.</li>
@@ -456,7 +461,7 @@ function.</li>
 </ul>
 
 <p><code>4F65x5A2bLyMWVQj3Aqp+B4w+ivaA7n5Oi2SuYtCJ9o=</code></p>
-<h4 id='8-put-the-signature-into-request-url'>8. Put the signature into request URL</h4>
+<h3 id='8-put-the-signature-into-request-url'>8. Put the signature into request URL</h3>
 <p>For Rest interface:</p>
 
 <ul>
@@ -466,7 +471,7 @@ function.</li>
 
 <p>Finally, the request sent to API should be:<br>
 <code>https://api.liquidity.antalpha.com/api/v1/order?AccessKeyId=e2xxxxxx-99xxxxxx-84xxxxxx-7xxxx&amp;SignatureMethod=HmacSHA256&amp;SignatureVersion=1&amp;Timestamp=1662022581951&amp;Signature=4F65x5A2bLyMWVQj3Aqp%2BB4w%2BivaA7n5Oi2SuYtCJ9o%3D</code></p>
-<h3 id='demo'>demo</h3>
+<h2 id='demo'>demo</h2>
 <p>Currently, we provide <a href="https://github.com/Antalpha-Liquidity/Api-demo">go</a>
 and <a href="https://github.com/Antalpha-Liquidity/Api-demo">java</a> demo.</p>
 <h2 id='security-best-practice'>Security Best Practice</h2>
