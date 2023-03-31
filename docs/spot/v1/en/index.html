@@ -415,8 +415,8 @@ has proper permission.</p>
 <li>API Access Key: The &#39;Access Key&#39; in your API Key</li>
 <li>Signature Method: The Hash method that is used to sign, it uses HmacSHA256</li>
 <li>Signature Version: The version for the signature protocol, it uses 1</li>
-<li>Timestamp: The UTC time when the request is sent, e.g. 2017-05-11T16:22:06. It is useful to
-prevent the request to be intercepted by third-party.</li>
+<li>Timestamp: Unix timestamp format in milliseconds. It is useful to prevent the request to be
+intercepted by third-party.</li>
 <li>Parameters: Each API Method has a group of parameters, you can refer to detailed document for each
 of them.</li>
 <li>For GET request, all the parameters must be signed.</li>
