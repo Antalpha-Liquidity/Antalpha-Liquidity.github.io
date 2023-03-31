@@ -503,13 +503,13 @@ do delete the API Key and create a new one.</li>
 <td style="text-align: left">instId</td>
 <td style="text-align: left">String</td>
 <td style="text-align: left">N</td>
-<td style="text-align: left">Instrument ID, e.g. <code>SPOT_BTC/USDT</code>, if both instId and instType is sent，instType will be ignored.</td>
+<td style="text-align: left">Instrument ID, e.g. <code>SPOT_BTC/USDT</code>, if both instId and instType is sent, instType will be ignored.</td>
 </tr>
 <tr>
 <td style="text-align: left">instType</td>
 <td style="text-align: left">String</td>
 <td style="text-align: left">Y</td>
-<td style="text-align: left">Instrument type, currently only SPOT is supported</td>
+<td style="text-align: left">Instrument type, currently only <code>SPOT</code> is supported</td>
 </tr>
 </tbody></table>
 
@@ -608,13 +608,13 @@ do delete the API Key and create a new one.</li>
 <td style="text-align: left">instId</td>
 <td style="text-align: left">String</td>
 <td style="text-align: left">N</td>
-<td style="text-align: left">Instrument ID, e.g. <code>SPOT_BTC/USDT</code>，if both instId and instType is sent，instType will be ignored.</td>
+<td style="text-align: left">Instrument ID, e.g. <code>SPOT_BTC/USDT</code>, if both instId and instType is sent, instType will be ignored.</td>
 </tr>
 <tr>
 <td style="text-align: left">instType</td>
 <td style="text-align: left">String</td>
 <td style="text-align: left">Y</td>
-<td style="text-align: left">Instrument type, currently only SPOT is supported</td>
+<td style="text-align: left">Instrument type, currently only <code>SPOT</code> is supported</td>
 </tr>
 </tbody></table>
 
@@ -740,7 +740,7 @@ do delete the API Key and create a new one.</li>
 <td style="text-align: left">sz</td>
 <td style="text-align: left">String</td>
 <td style="text-align: left">N</td>
-<td style="text-align: left">Order book depth per side, default returns to 100 depth data, options: [5, 10, 20, 50, 100, 400]</td>
+<td style="text-align: left">Order book depth per side, default returns to 100 depth data, e.g. [5/10/20/50/100/400]</td>
 </tr>
 </tbody></table>
 
@@ -872,7 +872,7 @@ do delete the API Key and create a new one.</li>
   </span><span class="nl">"ts"</span><span class="p">:</span><span class="w"> </span><span class="mi">1679903108172</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div><h1 id='account'>Account</h1><h2 id='get-balance'>Get balance</h2>
-<p>API Key Permission：Read</p>
+<p>API Key Permission: Read</p>
 <h3 id='http-request-5'>HTTP Request</h3>
 <ul>
 <li>GET <code>/api/v1/account/balance</code></li>
@@ -952,7 +952,7 @@ do delete the API Key and create a new one.</li>
 <td style="text-align: left">&gt; bal</td>
 <td style="text-align: left">String</td>
 <td style="text-align: left"></td>
-<td style="text-align: left">balance</td>
+<td style="text-align: left">Balance</td>
 </tr>
 <tr>
 <td style="text-align: left">&gt; frozBal</td>
@@ -974,7 +974,7 @@ do delete the API Key and create a new one.</li>
 </tr>
 </tbody></table>
 <h2 id='get-fee-rates'>Get fee rates</h2>
-<p>API Key Permission：Read</p>
+<p>API Key Permission: Read</p>
 <h3 id='http-request-6'>HTTP Request</h3>
 <ul>
 <li>GET <code>/api/v1/account/tradeFee</code></li>
@@ -992,13 +992,13 @@ do delete the API Key and create a new one.</li>
 <td style="text-align: left">instId</td>
 <td style="text-align: left">String</td>
 <td style="text-align: left">N</td>
-<td style="text-align: left">Instrument ID, e.g. <code>SPOT_BTC/USDT</code>，if both instId and instType is sent，instType will be ignored.</td>
+<td style="text-align: left">Instrument ID, e.g. <code>SPOT_BTC/USDT</code>, if both instId and instType is sent, instType will be ignored.</td>
 </tr>
 <tr>
 <td style="text-align: left">instType</td>
 <td style="text-align: left">String</td>
 <td style="text-align: left">Y</td>
-<td style="text-align: left">Instrument type, currently only SPOT is supported</td>
+<td style="text-align: left">Instrument type, currently only <code>SPOT</code> is supported</td>
 </tr>
 </tbody></table>
 
@@ -1053,7 +1053,7 @@ do delete the API Key and create a new one.</li>
 </tr>
 </tbody></table>
 <h1 id='trade'>Trade</h1><h2 id='place-order'>Place order</h2>
-<p>API Key Permission：Trade</p>
+<p>API Key Permission: Trade</p>
 <h3 id='http-request-7'>HTTP Request</h3>
 <ul>
 <li>POST <code>/api/v1/order</code></li>
@@ -1224,7 +1224,7 @@ do delete the API Key and create a new one.</li>
 </tr>
 </tbody></table>
 <h2 id='cancel-order'>Cancel order</h2>
-<p>API Key Permission：Trade</p>
+<p>API Key Permission: Trade</p>
 <h3 id='http-request-8'>HTTP Request</h3>
 <ul>
 <li>POST <code>/api/v1/cancelOrder</code></li>
@@ -1257,7 +1257,7 @@ do delete the API Key and create a new one.</li>
 <td style="text-align: left">ordId</td>
 <td style="text-align: left">String</td>
 <td style="text-align: left">N</td>
-<td style="text-align: left">Order id, when both ordId and clOrdId is sent，clOrdId will be ignored. If none of them is sent, all open order of the instrument id will be cancelled.</td>
+<td style="text-align: left">Order id, when both ordId and clOrdId is sent, clOrdId will be ignored. If none of them is sent, all open order of the instrument id will be cancelled.</td>
 </tr>
 <tr>
 <td style="text-align: left">clOrdId</td>
@@ -1311,7 +1311,7 @@ do delete the API Key and create a new one.</li>
 </tr>
 </tbody></table>
 <h2 id='get-order-info'>Get order info</h2>
-<p>API Key Permission：Read</p>
+<p>API Key Permission: Read</p>
 <h3 id='http-request-9'>HTTP Request</h3>
 <ul>
 <li>GET <code>/api/v1/orderInfo</code></li>
@@ -1335,7 +1335,7 @@ do delete the API Key and create a new one.</li>
 <td style="text-align: left">ordId</td>
 <td style="text-align: left">String</td>
 <td style="text-align: left">N</td>
-<td style="text-align: left">Order id, when both ordId and clOrdId is sent，clOrdId will be ignored.</td>
+<td style="text-align: left">Order id, when both ordId and clOrdId is sent, clOrdId will be ignored.</td>
 </tr>
 <tr>
 <td style="text-align: left">clOrdId</td>
@@ -1492,7 +1492,7 @@ do delete the API Key and create a new one.</li>
 </tr>
 </tbody></table>
 <h2 id='get-open-order-list'>Get open order list</h2>
-<p>API Key Permission：Read</p>
+<p>API Key Permission: Read</p>
 <h3 id='http-request-10'>HTTP Request</h3>
 <ul>
 <li>GET <code>/api/v1/openOrders</code></li>
@@ -1510,13 +1510,13 @@ do delete the API Key and create a new one.</li>
 <td style="text-align: left">instId</td>
 <td style="text-align: left">String</td>
 <td style="text-align: left">N</td>
-<td style="text-align: left">Instrument ID, e.g. <code>SPOT_BTC/USDT</code>，if both instId and instType is sent，instType will be ignored.</td>
+<td style="text-align: left">Instrument ID, e.g. <code>SPOT_BTC/USDT</code>, if both instId and instType is sent, instType will be ignored.</td>
 </tr>
 <tr>
 <td style="text-align: left">instType</td>
 <td style="text-align: left">String</td>
 <td style="text-align: left">Y</td>
-<td style="text-align: left">Instrument type, currently only SPOT is supported</td>
+<td style="text-align: left">Instrument type, currently only <code>SPOT</code> is supported</td>
 </tr>
 <tr>
 <td style="text-align: left">side</td>
@@ -1540,7 +1540,7 @@ do delete the API Key and create a new one.</li>
 <td style="text-align: left">status</td>
 <td style="text-align: left">String</td>
 <td style="text-align: left">N</td>
-<td style="text-align: left">Order status:<br /><code>NEW</code><code>&lt;br /&gt;</code>CANCELLING`<code>&lt;br /&gt;</code>PARTIAL_FILLED`</td>
+<td style="text-align: left">Order status:<br /><code>NEW</code><br /><code>CANCELLING</code><br /><code>PARTIAL_FILLED</code></td>
 </tr>
 <tr>
 <td style="text-align: left">sortBy</td>
@@ -1568,7 +1568,7 @@ do delete the API Key and create a new one.</li>
 <td style="text-align: left">ordId</td>
 <td style="text-align: left">String</td>
 <td style="text-align: left">N</td>
-<td style="text-align: left">Order id, when both ordId and clOrdId is sent，clOrdId will be ignored.</td>
+<td style="text-align: left">Order id, when both ordId and clOrdId is sent, clOrdId will be ignored.</td>
 </tr>
 <tr>
 <td style="text-align: left">clOrdId</td>
@@ -1727,7 +1727,7 @@ do delete the API Key and create a new one.</li>
 </tr>
 </tbody></table>
 <h2 id='get-order-history'>Get order history</h2>
-<p>API Key Permission：Read</p>
+<p>API Key Permission: Read</p>
 <h3 id='http-request-11'>HTTP Request</h3>
 <ul>
 <li>GET <code>/api/v1/hisOrders</code></li>
@@ -1745,7 +1745,7 @@ do delete the API Key and create a new one.</li>
 <td style="text-align: left">instId</td>
 <td style="text-align: left">String</td>
 <td style="text-align: left">N</td>
-<td style="text-align: left">Instrument ID, if both instId and instType is sent，instType will be ignored.</td>
+<td style="text-align: left">Instrument ID, if both instId and instType is sent, instType will be ignored.</td>
 </tr>
 <tr>
 <td style="text-align: left">instType</td>
@@ -1984,7 +1984,7 @@ do delete the API Key and create a new one.</li>
 </tr>
 </tbody></table>
 <h2 id='get-trade-list'>Get trade list</h2>
-<p>API Key Permission：Read</p>
+<p>API Key Permission: Read</p>
 <h3 id='http-request-12'>HTTP Request</h3>
 <ul>
 <li>GET <code>/api/v1/hisTrades</code></li>
@@ -2002,7 +2002,7 @@ do delete the API Key and create a new one.</li>
 <td style="text-align: left">instId</td>
 <td style="text-align: left">String</td>
 <td style="text-align: left">N</td>
-<td style="text-align: left">Instrument ID, if both instId and instType is sent，instType will be ignored.</td>
+<td style="text-align: left">Instrument ID, if both instId and instType is sent, instType will be ignored.</td>
 </tr>
 <tr>
 <td style="text-align: left">instType</td>
