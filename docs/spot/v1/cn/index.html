@@ -270,6 +270,9 @@
             <a href="#2d07d50c97" class="toc-h1 toc-link" data-title="接入说明">接入说明</a>
               <ul class="toc-list-h2">
                   <li>
+                    <a href="#urls" class="toc-h2 toc-link" data-title="接入URLs">接入URLs</a>
+                  </li>
+                  <li>
                     <a href="#c1fd2fc5ac" class="toc-h2 toc-link" data-title="限频规则">限频规则</a>
                   </li>
               </ul>
@@ -370,7 +373,13 @@
 <p><code>账户信息</code></p>
 
 <p><code>现货交易</code></p>
-<h1 id='2d07d50c97'>接入说明</h1><h3 id='c1fd2fc5ac'>限频规则</h3>
+<h1 id='2d07d50c97'>接入说明</h1><h2 id='urls'>接入URLs</h2>
+<p><strong>REST API</strong></p>
+
+<ul>
+<li>https://api.liquidity.antalpha.com</li>
+</ul>
+<h2 id='c1fd2fc5ac'>限频规则</h2>
 <p>限频规则针对接口进行限频，目前每个接口访问限制为1s内10次</p>
 
 <p>用户可根据Http Header中的信息调整访问策略</p>
@@ -486,7 +495,7 @@ Key的暴露可能会对您的信息、资金造成损失，若API Key泄露，�
 <p>Response:</p>
 </blockquote>
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-  </span><span class="nl">"msg"</span><span class="p">:</span><span class="w"> </span><span class="s2">"操作成功"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"msg"</span><span class="p">:</span><span class="w"> </span><span class="s2">"success"</span><span class="p">,</span><span class="w">
   </span><span class="nl">"code"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w">
   </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
     </span><span class="p">{</span><span class="w">
@@ -591,7 +600,7 @@ Key的暴露可能会对您的信息、资金造成损失，若API Key泄露，�
 <p>Response:</p>
 </blockquote>
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-  </span><span class="nl">"msg"</span><span class="p">:</span><span class="w"> </span><span class="s2">"操作成功"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"msg"</span><span class="p">:</span><span class="w"> </span><span class="s2">"success"</span><span class="p">,</span><span class="w">
   </span><span class="nl">"code"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w">
   </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
     </span><span class="p">{</span><span class="w">
@@ -717,7 +726,7 @@ Key的暴露可能会对您的信息、资金造成损失，若API Key泄露，�
 <p>Response:</p>
 </blockquote>
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-  </span><span class="nl">"msg"</span><span class="p">:</span><span class="w"> </span><span class="s2">"操作成功"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"msg"</span><span class="p">:</span><span class="w"> </span><span class="s2">"success"</span><span class="p">,</span><span class="w">
   </span><span class="nl">"code"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w">
   </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
     </span><span class="p">{</span><span class="w">
@@ -815,7 +824,7 @@ Key的暴露可能会对您的信息、资金造成损失，若API Key泄露，�
 <p>Response:</p>
 </blockquote>
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-  </span><span class="nl">"msg"</span><span class="p">:</span><span class="w"> </span><span class="s2">"操作成功"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"msg"</span><span class="p">:</span><span class="w"> </span><span class="s2">"success"</span><span class="p">,</span><span class="w">
   </span><span class="nl">"code"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w">
   </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
     </span><span class="p">[</span><span class="w">
@@ -867,7 +876,7 @@ Key的暴露可能会对您的信息、资金造成损失，若API Key泄露，�
 <p>Response:</p>
 </blockquote>
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-  </span><span class="nl">"msg"</span><span class="p">:</span><span class="w"> </span><span class="s2">"操作成功"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"msg"</span><span class="p">:</span><span class="w"> </span><span class="s2">"success"</span><span class="p">,</span><span class="w">
   </span><span class="nl">"code"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w">
   </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
     </span><span class="nl">"totalValue"</span><span class="p">:</span><span class="w"> </span><span class="s2">"99979608.982030863675555489362903"</span><span class="p">,</span><span class="w">
@@ -975,7 +984,7 @@ Key的暴露可能会对您的信息、资金造成损失，若API Key泄露，�
 <p>Response:</p>
 </blockquote>
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-  </span><span class="nl">"msg"</span><span class="p">:</span><span class="w"> </span><span class="s2">"操作成功"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"msg"</span><span class="p">:</span><span class="w"> </span><span class="s2">"success"</span><span class="p">,</span><span class="w">
   </span><span class="nl">"code"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w">
   </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
     </span><span class="p">{</span><span class="w">
@@ -1104,7 +1113,7 @@ Key的暴露可能会对您的信息、资金造成损失，若API Key泄露，�
 <p>Response:</p>
 </blockquote>
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-  </span><span class="nl">"msg"</span><span class="p">:</span><span class="w"> </span><span class="s2">"操作成功"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"msg"</span><span class="p">:</span><span class="w"> </span><span class="s2">"success"</span><span class="p">,</span><span class="w">
   </span><span class="nl">"code"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w">
   </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
     </span><span class="p">{</span><span class="w">
@@ -1240,7 +1249,7 @@ Key的暴露可能会对您的信息、资金造成损失，若API Key泄露，�
 <p>Response:</p>
 </blockquote>
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-  </span><span class="nl">"msg"</span><span class="p">:</span><span class="w"> </span><span class="s2">"操作成功"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"msg"</span><span class="p">:</span><span class="w"> </span><span class="s2">"success"</span><span class="p">,</span><span class="w">
   </span><span class="nl">"code"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w">
   </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
     </span><span class="p">{</span><span class="w">
@@ -1318,7 +1327,7 @@ Key的暴露可能会对您的信息、资金造成损失，若API Key泄露，�
 <p>Response:</p>
 </blockquote>
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-  </span><span class="nl">"msg"</span><span class="p">:</span><span class="w"> </span><span class="s2">"操作成功"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"msg"</span><span class="p">:</span><span class="w"> </span><span class="s2">"success"</span><span class="p">,</span><span class="w">
   </span><span class="nl">"code"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w">
   </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
     </span><span class="nl">"instId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SPOT_ETC/BUSD"</span><span class="p">,</span><span class="w">
@@ -1523,7 +1532,7 @@ Key的暴露可能会对您的信息、资金造成损失，若API Key泄露，�
 <p>Response:</p>
 </blockquote>
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-  </span><span class="nl">"msg"</span><span class="p">:</span><span class="w"> </span><span class="s2">"操作成功"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"msg"</span><span class="p">:</span><span class="w"> </span><span class="s2">"success"</span><span class="p">,</span><span class="w">
   </span><span class="nl">"code"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w">
   </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
     </span><span class="p">{</span><span class="w">
@@ -1760,7 +1769,7 @@ Key的暴露可能会对您的信息、资金造成损失，若API Key泄露，�
 <p>Response:</p>
 </blockquote>
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-  </span><span class="nl">"msg"</span><span class="p">:</span><span class="w"> </span><span class="s2">"操作成功"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"msg"</span><span class="p">:</span><span class="w"> </span><span class="s2">"success"</span><span class="p">,</span><span class="w">
   </span><span class="nl">"code"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w">
   </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
     </span><span class="p">{</span><span class="w">
@@ -2022,7 +2031,7 @@ Key的暴露可能会对您的信息、资金造成损失，若API Key泄露，�
       </span><span class="nl">"tradeId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"3"</span><span class="w">
     </span><span class="p">}</span><span class="w">
   </span><span class="p">],</span><span class="w">
-  </span><span class="nl">"msg"</span><span class="p">:</span><span class="w"> </span><span class="s2">"操作成功"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"msg"</span><span class="p">:</span><span class="w"> </span><span class="s2">"success"</span><span class="p">,</span><span class="w">
   </span><span class="nl">"ts"</span><span class="p">:</span><span class="w"> </span><span class="mi">1680084241409</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div><h3 id='2213f4c32f-11'>响应数据</h3>
@@ -2118,7 +2127,7 @@ Key的暴露可能会对您的信息、资金造成损失，若API Key泄露，�
 <tr>
 <td>40000</td>
 <td>400</td>
-<td>{0}</td>
+<td>通用请求错误</td>
 </tr>
 <tr>
 <td>40001</td>
@@ -2129,11 +2138,6 @@ Key的暴露可能会对您的信息、资金造成损失，若API Key泄露，�
 <td>40002</td>
 <td>400</td>
 <td>{0}参数非法，请检查后重试</td>
-</tr>
-<tr>
-<td>45007</td>
-<td>400</td>
-<td>可用余额不足，请划转或充值后重试</td>
 </tr>
 <tr>
 <td>45050</td>
@@ -2188,7 +2192,7 @@ Key的暴露可能会对您的信息、资金造成损失，若API Key泄露，�
 <tr>
 <td>45068</td>
 <td>400</td>
-<td>当前委托数量超限，请重新输入</td>
+<td>委托数量超限，请重新输入</td>
 </tr>
 <tr>
 <td>46000</td>

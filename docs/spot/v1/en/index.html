@@ -270,6 +270,9 @@
             <a href="#api-access" class="toc-h1 toc-link" data-title="API Access">API Access</a>
               <ul class="toc-list-h2">
                   <li>
+                    <a href="#access-urls" class="toc-h2 toc-link" data-title="Access URLs">Access URLs</a>
+                  </li>
+                  <li>
                     <a href="#rate-limit-rule" class="toc-h2 toc-link" data-title="Rate limit Rule">Rate limit Rule</a>
                   </li>
                   <li>
@@ -317,7 +320,7 @@
               </ul>
           </li>
           <li>
-            <a href="#trading" class="toc-h1 toc-link" data-title="Trading">Trading</a>
+            <a href="#trade" class="toc-h1 toc-link" data-title="Trade">Trade</a>
               <ul class="toc-list-h2">
                   <li>
                     <a href="#place-order" class="toc-h2 toc-link" data-title="Place order">Place order</a>
@@ -329,18 +332,18 @@
                     <a href="#get-order-info" class="toc-h2 toc-link" data-title="Get order info">Get order info</a>
                   </li>
                   <li>
-                    <a href="#cee6a1fd93" class="toc-h2 toc-link" data-title="获取当前委托">获取当前委托</a>
+                    <a href="#get-open-order-list" class="toc-h2 toc-link" data-title="Get open order list">Get open order list</a>
                   </li>
                   <li>
                     <a href="#4212d667d1" class="toc-h2 toc-link" data-title="获取历史委托">获取历史委托</a>
                   </li>
                   <li>
-                    <a href="#106a02279b" class="toc-h2 toc-link" data-title="获取成交明细">获取成交明细</a>
+                    <a href="#get-trade-list" class="toc-h2 toc-link" data-title="Get trade list">Get trade list</a>
                   </li>
               </ul>
           </li>
           <li>
-            <a href="#e08c1d4f9a" class="toc-h1 toc-link" data-title="错误码">错误码</a>
+            <a href="#error-code" class="toc-h1 toc-link" data-title="Error Code">Error Code</a>
           </li>
       </ul>
     </div>
@@ -372,14 +375,20 @@ and the right hand side is the request and response samples.</p>
 <p><code>Account Data</code></p>
 
 <p><code>Trading</code></p>
-<h1 id='api-access'>API Access</h1><h2 id='rate-limit-rule'>Rate limit Rule</h2>
+<h1 id='api-access'>API Access</h1><h2 id='access-urls'>Access URLs</h2>
+<p><strong>REST API</strong></p>
+
+<ul>
+<li>https://api.liquidity.antalpha.com</li>
+</ul>
+<h2 id='rate-limit-rule'>Rate limit Rule</h2>
 <p>The rate limit rule limits the frequency of api access, and currently each api is limited to 10
 times within 1s.</p>
 
 <p>It is suggested to adjust visiting strategy according the HTTP Header below:</p>
 
 <ul>
-<li>rateLimit-times: time of rate limit time window</li>
+<li>rateLimit-times: request times allowed per rate limit time window</li>
 <li>rateLimit-interval: interval of rate limit time window</li>
 <li>rateLimit-remaining: the remaining count for current rate limit time window</li>
 <li>rateLimit-reset: the expiring timestamp for current rate limit time window</li>
@@ -486,7 +495,7 @@ do delete the API Key and create a new one.</li>
 <td style="text-align: left">instId</td>
 <td style="text-align: left">String</td>
 <td style="text-align: left">N</td>
-<td style="text-align: left">Instrument ID, e.g. <code>SPOT_BTC/USDT</code>，if both instId and instType is sent，instType will be ignored.</td>
+<td style="text-align: left">Instrument ID, e.g. <code>SPOT_BTC/USDT</code>, if both instId and instType is sent，instType will be ignored.</td>
 </tr>
 <tr>
 <td style="text-align: left">instType</td>
@@ -854,7 +863,9 @@ do delete the API Key and create a new one.</li>
   </span><span class="p">],</span><span class="w">
   </span><span class="nl">"ts"</span><span class="p">:</span><span class="w"> </span><span class="mi">1679903108172</span><span class="w">
 </span><span class="p">}</span><span class="w">
-</span></code></pre></div><h1 id='account'>Account</h1><h2 id='get-balance'>Get balance</h2><h3 id='http-request-5'>HTTP Request</h3>
+</span></code></pre></div><h1 id='account'>Account</h1><h2 id='get-balance'>Get balance</h2>
+<p>API Key Permission：Read</p>
+<h3 id='http-request-5'>HTTP Request</h3>
 <ul>
 <li>GET <code>/api/v1/account/balance</code></li>
 </ul>
@@ -1033,7 +1044,7 @@ do delete the API Key and create a new one.</li>
 <td style="text-align: left">Maker fee rate</td>
 </tr>
 </tbody></table>
-<h1 id='trading'>Trading</h1><h2 id='place-order'>Place order</h2>
+<h1 id='trade'>Trade</h1><h2 id='place-order'>Place order</h2>
 <p>API Key Permission：Trade</p>
 <h3 id='http-request-7'>HTTP Request</h3>
 <ul>
@@ -1170,25 +1181,25 @@ do delete the API Key and create a new one.</li>
 <tr>
 <td style="text-align: left">ordPx</td>
 <td style="text-align: left">String</td>
-<td style="text-align: left">N</td>
+<td style="text-align: left"></td>
 <td style="text-align: left">Order price</td>
 </tr>
 <tr>
 <td style="text-align: left">ordType</td>
 <td style="text-align: left">String</td>
-<td style="text-align: left">Y</td>
+<td style="text-align: left"></td>
 <td style="text-align: left">Order type</td>
 </tr>
 <tr>
 <td style="text-align: left">ordQty</td>
 <td style="text-align: left">String</td>
-<td style="text-align: left">N</td>
+<td style="text-align: left"></td>
 <td style="text-align: left">Quantity to buy or sell in base asset.</td>
 </tr>
 <tr>
 <td style="text-align: left">ordAmt</td>
 <td style="text-align: left">String</td>
-<td style="text-align: left">N</td>
+<td style="text-align: left"></td>
 <td style="text-align: left">Amount to buy or sell in quote asset.</td>
 </tr>
 <tr>
@@ -1463,16 +1474,16 @@ do delete the API Key and create a new one.</li>
 <td style="text-align: left">avgFillPx</td>
 <td style="text-align: left">String</td>
 <td style="text-align: left"></td>
-<td style="text-align: left">Average filled price. If none is filled, it will return &quot;&quot;.</td>
+<td style="text-align: left">Average filled price</td>
 </tr>
 <tr>
 <td style="text-align: left">status</td>
 <td style="text-align: left">String</td>
 <td style="text-align: left"></td>
-<td style="text-align: left">订单状态<br />NEW：已创建 <br />CANCELLING：撤单中<br />PARTIAL_FILLED：部分成交<br />CANCELLED：已撤单 <br />PARTIAL_CANCELED：部分成交已撤单 <br />FILLED：完全成交</td>
+<td style="text-align: left">Order status: <br /><code>NEW</code>  <br /><code>CANCELLING</code> <br /><code>PARTIAL_FILLED</code> <br /><code>CANCELLED</code> <br /><code>PARTIAL_CANCELED</code><br /><code>FILLED</code></td>
 </tr>
 </tbody></table>
-<h2 id='cee6a1fd93'>获取当前委托</h2>
+<h2 id='get-open-order-list'>Get open order list</h2>
 <p>API Key Permission：Read</p>
 <h3 id='http-request-10'>HTTP Request</h3>
 <ul>
@@ -1491,43 +1502,71 @@ do delete the API Key and create a new one.</li>
 <td style="text-align: left">instId</td>
 <td style="text-align: left">String</td>
 <td style="text-align: left">N</td>
-<td style="text-align: left">产品ID<br />如“SPOT_BTC/USDT”，如果同时有instId和instType，则以instId为准</td>
+<td style="text-align: left">Instrument ID, e.g. <code>SPOT_BTC/USDT</code>，if both instId and instType is sent，instType will be ignored.</td>
 </tr>
 <tr>
 <td style="text-align: left">instType</td>
 <td style="text-align: left">String</td>
 <td style="text-align: left">Y</td>
-<td style="text-align: left">产品类型<br />SPOT：现货</td>
+<td style="text-align: left">Instrument type, currently only SPOT is supported</td>
 </tr>
 <tr>
 <td style="text-align: left">side</td>
 <td style="text-align: left">String</td>
 <td style="text-align: left">N</td>
-<td style="text-align: left">订单方向<br/>buy：买<br />sell：卖</td>
+<td style="text-align: left">Order side</td>
 </tr>
 <tr>
 <td style="text-align: left">ordType</td>
 <td style="text-align: left">String</td>
 <td style="text-align: left">N</td>
-<td style="text-align: left">订单类型<br />limit：限价单<br />market：市价单</td>
+<td style="text-align: left">Order type</td>
 </tr>
 <tr>
 <td style="text-align: left">ordTag</td>
 <td style="text-align: left">String</td>
 <td style="text-align: left">N</td>
-<td style="text-align: left">订单标签</td>
+<td style="text-align: left">Order tag</td>
 </tr>
 <tr>
 <td style="text-align: left">status</td>
 <td style="text-align: left">String</td>
 <td style="text-align: left">N</td>
-<td style="text-align: left">订单状态<br />NEW：已创建 <br />CANCELLING：撤单中<br />PARTIAL_FILLED：部分成交</td>
+<td style="text-align: left">Order status:<br /><code>NEW</code><code>&lt;br /&gt;</code>CANCELLING`<code>&lt;br /&gt;</code>PARTIAL_FILLED`</td>
 </tr>
 <tr>
 <td style="text-align: left">sortBy</td>
 <td style="text-align: left">String</td>
 <td style="text-align: left">N</td>
-<td style="text-align: left">排序字段，不填默认按创建时间倒序;“cTime”(按照创建时间倒序)，“uTime”(按照更新时间倒序)</td>
+<td style="text-align: left">Sort field, default sort by cTime, e.g. <code>cTime</code> <code>uTime</code></td>
+</tr>
+</tbody></table>
+
+<table><thead>
+<tr>
+<th style="text-align: left">Name</th>
+<th style="text-align: left">Type</th>
+<th style="text-align: left">Required</th>
+<th style="text-align: left">Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td style="text-align: left">instId</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left">N</td>
+<td style="text-align: left">Instrument ID</td>
+</tr>
+<tr>
+<td style="text-align: left">ordId</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left">N</td>
+<td style="text-align: left">Order id, when both ordId and clOrdId is sent，clOrdId will be ignored.</td>
+</tr>
+<tr>
+<td style="text-align: left">clOrdId</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left">N</td>
+<td style="text-align: left">Client Order ID</td>
 </tr>
 </tbody></table>
 
@@ -1574,109 +1613,109 @@ do delete the API Key and create a new one.</li>
 <td style="text-align: left">instId</td>
 <td style="text-align: left">String</td>
 <td style="text-align: left"></td>
-<td style="text-align: left">产品ID<br />如“SPOT_BTC/USDT”</td>
+<td style="text-align: left">Instrument ID</td>
 </tr>
 <tr>
 <td style="text-align: left">instType</td>
 <td style="text-align: left">String</td>
 <td style="text-align: left"></td>
-<td style="text-align: left">产品类型<br />SPOT：现货</td>
+<td style="text-align: left">Instrument type</td>
 </tr>
 <tr>
 <td style="text-align: left">ordId</td>
 <td style="text-align: left">String</td>
 <td style="text-align: left"></td>
-<td style="text-align: left">订单ID</td>
+<td style="text-align: left">Order ID</td>
 </tr>
 <tr>
 <td style="text-align: left">clOrdId</td>
 <td style="text-align: left">String</td>
 <td style="text-align: left"></td>
-<td style="text-align: left">客户自定义的唯一订单ID</td>
+<td style="text-align: left">Client Order ID</td>
 </tr>
 <tr>
 <td style="text-align: left">side</td>
 <td style="text-align: left">String</td>
 <td style="text-align: left"></td>
-<td style="text-align: left">订单方向<br/>buy：买<br />sell：卖</td>
+<td style="text-align: left">Order side</td>
 </tr>
 <tr>
 <td style="text-align: left">ordPx</td>
 <td style="text-align: left">String</td>
 <td style="text-align: left"></td>
-<td style="text-align: left">订单价格</td>
+<td style="text-align: left">Order price</td>
 </tr>
 <tr>
 <td style="text-align: left">ordType</td>
 <td style="text-align: left">String</td>
 <td style="text-align: left"></td>
-<td style="text-align: left">订单类型<br />limit：限价单<br />market：市价单</td>
+<td style="text-align: left">Order type</td>
 </tr>
 <tr>
 <td style="text-align: left">ordQty</td>
 <td style="text-align: left">String</td>
 <td style="text-align: left"></td>
-<td style="text-align: left">下单数量（标的币种）</td>
+<td style="text-align: left">Quantity to buy or sell in base asset.</td>
 </tr>
 <tr>
 <td style="text-align: left">ordAmt</td>
 <td style="text-align: left">String</td>
 <td style="text-align: left"></td>
-<td style="text-align: left">下单数量（计价币种）</td>
+<td style="text-align: left">Amount to buy or sell in quote asset.</td>
 </tr>
 <tr>
 <td style="text-align: left">fillQty</td>
 <td style="text-align: left">String</td>
 <td style="text-align: left"></td>
-<td style="text-align: left">成交数量 （标的币种）</td>
+<td style="text-align: left">Filled quantity in base asset.</td>
 </tr>
 <tr>
 <td style="text-align: left">fillAmt</td>
 <td style="text-align: left">String</td>
 <td style="text-align: left"></td>
-<td style="text-align: left">成交数量 （计价币种）</td>
+<td style="text-align: left">Filled amount in quote asset.</td>
 </tr>
 <tr>
 <td style="text-align: left">ordTag</td>
 <td style="text-align: left">String</td>
 <td style="text-align: left"></td>
-<td style="text-align: left">订单标签</td>
+<td style="text-align: left">Order tag</td>
 </tr>
 <tr>
 <td style="text-align: left">totalFee</td>
 <td style="text-align: left">String</td>
 <td style="text-align: left"></td>
-<td style="text-align: left">总手续费</td>
+<td style="text-align: left">Total fee</td>
 </tr>
 <tr>
 <td style="text-align: left">feeAsset</td>
 <td style="text-align: left">String</td>
 <td style="text-align: left"></td>
-<td style="text-align: left">手续费币种</td>
+<td style="text-align: left">Fee asset</td>
 </tr>
 <tr>
 <td style="text-align: left">cTime</td>
 <td style="text-align: left">String</td>
 <td style="text-align: left"></td>
-<td style="text-align: left">订单创建时间</td>
+<td style="text-align: left">Order creation timestamp</td>
 </tr>
 <tr>
 <td style="text-align: left">uTime</td>
 <td style="text-align: left">String</td>
 <td style="text-align: left"></td>
-<td style="text-align: left">订单最后更新时间</td>
+<td style="text-align: left">Order last updated timestamp</td>
 </tr>
 <tr>
 <td style="text-align: left">avgFillPx</td>
 <td style="text-align: left">String</td>
 <td style="text-align: left"></td>
-<td style="text-align: left">平均成交均价</td>
+<td style="text-align: left">Average filled price</td>
 </tr>
 <tr>
 <td style="text-align: left">status</td>
 <td style="text-align: left">String</td>
 <td style="text-align: left"></td>
-<td style="text-align: left">订单状态<br />NEW：已创建 <br />CANCELLING：撤单中<br />PARTIAL_FILLED：部分成交</td>
+<td style="text-align: left">Order status: <br /><code>NEW</code><br /><code>CANCELLING</code><br /><code>PARTIAL_FILLED</code></td>
 </tr>
 </tbody></table>
 <h2 id='4212d667d1'>获取历史委托</h2>
@@ -1698,73 +1737,73 @@ do delete the API Key and create a new one.</li>
 <td style="text-align: left">instId</td>
 <td style="text-align: left">String</td>
 <td style="text-align: left">N</td>
-<td style="text-align: left">产品ID<br />如“SPOT_BTC/USDT”，如果同时有instId和instType，则以instId为准</td>
+<td style="text-align: left">Instrument ID, if both instId and instType is sent，instType will be ignored.</td>
 </tr>
 <tr>
 <td style="text-align: left">instType</td>
 <td style="text-align: left">String</td>
 <td style="text-align: left">Y</td>
-<td style="text-align: left">产品类型<br /> SPOT：现货</td>
+<td style="text-align: left">Instrument type</td>
 </tr>
 <tr>
 <td style="text-align: left">side</td>
 <td style="text-align: left">String</td>
 <td style="text-align: left">N</td>
-<td style="text-align: left">订单方向<br/>buy：买<br />sell：卖</td>
+<td style="text-align: left">Order side</td>
 </tr>
 <tr>
 <td style="text-align: left">ordType</td>
 <td style="text-align: left">String</td>
 <td style="text-align: left">N</td>
-<td style="text-align: left">订单类型<br />limit：限价单<br />market：市价单</td>
+<td style="text-align: left">Order type</td>
 </tr>
 <tr>
 <td style="text-align: left">ordTag</td>
 <td style="text-align: left">String</td>
 <td style="text-align: left">N</td>
-<td style="text-align: left">订单标签</td>
+<td style="text-align: left">Order tag</td>
 </tr>
 <tr>
 <td style="text-align: left">status</td>
 <td style="text-align: left">String</td>
 <td style="text-align: left">N</td>
-<td style="text-align: left">订单状态<br /> CANCELLED：已撤单 <br />PARTIAL_CANCELED：部分成交已撤单 <br />FILLED：完全成交</td>
+<td style="text-align: left">Order status<br /> <code>CANCELLED</code>  <br /><code>PARTIAL_CANCELED</code> <br /><code>FILLED</code></td>
 </tr>
 <tr>
 <td style="text-align: left">after</td>
 <td style="text-align: left">String</td>
 <td style="text-align: left">N</td>
-<td style="text-align: left">请求此ID之前的分页内容，传的值为对应接口的<code>ordId</code></td>
+<td style="text-align: left">Pagination of data to return records earlier than the requested <code>ordId</code></td>
 </tr>
 <tr>
 <td style="text-align: left">before</td>
 <td style="text-align: left">String</td>
 <td style="text-align: left">N</td>
-<td style="text-align: left">请求此ID之后的分页内容，传的值为对应接口的<code>ordId</code></td>
+<td style="text-align: left">Pagination of data to return records newer than the requested <code>ordId</code></td>
 </tr>
 <tr>
 <td style="text-align: left">start</td>
 <td style="text-align: left">String</td>
 <td style="text-align: left">N</td>
-<td style="text-align: left">筛选的开始时间戳</td>
+<td style="text-align: left">Filter with a begin timestamp. Unix timestamp format in milliseconds, e.g. 1597026383085</td>
 </tr>
 <tr>
 <td style="text-align: left">end</td>
 <td style="text-align: left">String</td>
 <td style="text-align: left">N</td>
-<td style="text-align: left">筛选的结束时间戳</td>
+<td style="text-align: left">Filter with an end timestamp. Unix timestamp format in milliseconds, e.g. 1597026383085</td>
 </tr>
 <tr>
 <td style="text-align: left">limit</td>
 <td style="text-align: left">String</td>
 <td style="text-align: left">N</td>
-<td style="text-align: left">返回结果的数量，最大为100，默认100条</td>
+<td style="text-align: left">Number of results per request. The maximum is <code>100</code>; The default is <code>100</code></td>
 </tr>
 <tr>
 <td style="text-align: left">sortBy</td>
 <td style="text-align: left">String</td>
 <td style="text-align: left">N</td>
-<td style="text-align: left">排序字段，不填默认按创建时间倒序;“cTime”(按照创建时间倒序)，“uTime”(按照更新时间倒序)</td>
+<td style="text-align: left">Sort field, default sort by cTime, e.g. <code>cTime</code> <code>uTime</code></td>
 </tr>
 </tbody></table>
 
@@ -1831,112 +1870,112 @@ do delete the API Key and create a new one.</li>
 <td style="text-align: left">instId</td>
 <td style="text-align: left">String</td>
 <td style="text-align: left"></td>
-<td style="text-align: left">产品ID<br />如“SPOT_BTC/USDT”</td>
+<td style="text-align: left">Instrument ID</td>
 </tr>
 <tr>
 <td style="text-align: left">instType</td>
 <td style="text-align: left">String</td>
 <td style="text-align: left"></td>
-<td style="text-align: left">产品类型<br /> SPOT：现货</td>
+<td style="text-align: left">Instrument type</td>
 </tr>
 <tr>
 <td style="text-align: left">ordId</td>
 <td style="text-align: left">String</td>
 <td style="text-align: left"></td>
-<td style="text-align: left">订单ID</td>
+<td style="text-align: left">Order ID</td>
 </tr>
 <tr>
 <td style="text-align: left">clOrdId</td>
 <td style="text-align: left">String</td>
 <td style="text-align: left"></td>
-<td style="text-align: left">客户自定义的唯一订单ID</td>
+<td style="text-align: left">Client Order ID</td>
 </tr>
 <tr>
 <td style="text-align: left">side</td>
 <td style="text-align: left">String</td>
 <td style="text-align: left"></td>
-<td style="text-align: left">订单方向<br/>buy：买<br />sell：卖</td>
+<td style="text-align: left">Order side</td>
 </tr>
 <tr>
 <td style="text-align: left">ordPx</td>
 <td style="text-align: left">String</td>
 <td style="text-align: left"></td>
-<td style="text-align: left">订单价格</td>
+<td style="text-align: left">Order price</td>
 </tr>
 <tr>
 <td style="text-align: left">ordType</td>
 <td style="text-align: left">String</td>
 <td style="text-align: left"></td>
-<td style="text-align: left">订单类型<br />limit：限价单<br />market：市价单</td>
+<td style="text-align: left">Order type</td>
 </tr>
 <tr>
 <td style="text-align: left">ordQty</td>
 <td style="text-align: left">String</td>
 <td style="text-align: left"></td>
-<td style="text-align: left">下单数量（标的币种）</td>
+<td style="text-align: left">Quantity to buy or sell in base asset.</td>
 </tr>
 <tr>
 <td style="text-align: left">ordAmt</td>
 <td style="text-align: left">String</td>
 <td style="text-align: left"></td>
-<td style="text-align: left">下单数量（计价币种）</td>
+<td style="text-align: left">Amount to buy or sell in quote asset.</td>
 </tr>
 <tr>
 <td style="text-align: left">fillQty</td>
 <td style="text-align: left">String</td>
 <td style="text-align: left"></td>
-<td style="text-align: left">成交数量（标的币种）</td>
+<td style="text-align: left">Filled quantity in base asset.</td>
 </tr>
 <tr>
 <td style="text-align: left">fillAmt</td>
 <td style="text-align: left">String</td>
 <td style="text-align: left"></td>
-<td style="text-align: left">成交数量（计价币种）</td>
+<td style="text-align: left">Filled amount in quote asset.</td>
 </tr>
 <tr>
 <td style="text-align: left">ordTag</td>
 <td style="text-align: left">String</td>
 <td style="text-align: left"></td>
-<td style="text-align: left">订单标签</td>
+<td style="text-align: left">Order tag</td>
 </tr>
 <tr>
 <td style="text-align: left">totalFee</td>
 <td style="text-align: left">String</td>
 <td style="text-align: left"></td>
-<td style="text-align: left">总手续费</td>
+<td style="text-align: left">Total fee</td>
 </tr>
 <tr>
 <td style="text-align: left">feeAsset</td>
 <td style="text-align: left">String</td>
 <td style="text-align: left"></td>
-<td style="text-align: left">手续费币种</td>
+<td style="text-align: left">Fee asset</td>
 </tr>
 <tr>
 <td style="text-align: left">cTime</td>
 <td style="text-align: left">String</td>
 <td style="text-align: left"></td>
-<td style="text-align: left">订单创建时间</td>
+<td style="text-align: left">Order creation timestamp</td>
 </tr>
 <tr>
 <td style="text-align: left">uTime</td>
 <td style="text-align: left">String</td>
 <td style="text-align: left"></td>
-<td style="text-align: left">订单最后更新时间</td>
+<td style="text-align: left">Order last updated timestamp</td>
 </tr>
 <tr>
 <td style="text-align: left">avgFillPx</td>
 <td style="text-align: left">String</td>
 <td style="text-align: left"></td>
-<td style="text-align: left">平均成交均价</td>
+<td style="text-align: left">Average filled price</td>
 </tr>
 <tr>
 <td style="text-align: left">status</td>
 <td style="text-align: left">String</td>
 <td style="text-align: left"></td>
-<td style="text-align: left">订单状态<br />CANCELLED：已撤单 <br />PARTIAL_CANCELED：部分成交已撤单 <br />FILLED：完全成交</td>
+<td style="text-align: left">Order status:<br /><code>CANCELLED</code> <br /><code>PARTIAL_CANCELED</code> <br /><code>FILLED</code></td>
 </tr>
 </tbody></table>
-<h2 id='106a02279b'>获取成交明细</h2>
+<h2 id='get-trade-list'>Get trade list</h2>
 <p>API Key Permission：Read</p>
 <h3 id='http-request-12'>HTTP Request</h3>
 <ul>
@@ -1955,61 +1994,61 @@ do delete the API Key and create a new one.</li>
 <td style="text-align: left">instId</td>
 <td style="text-align: left">String</td>
 <td style="text-align: left">N</td>
-<td style="text-align: left">产品ID<br />如“SPOT_BTC/USDT”，如果同时有instId和instType，则以instId为准</td>
+<td style="text-align: left">Instrument ID, if both instId and instType is sent，instType will be ignored.</td>
 </tr>
 <tr>
 <td style="text-align: left">instType</td>
 <td style="text-align: left">String</td>
 <td style="text-align: left">Y</td>
-<td style="text-align: left">产品类型<br /> SPOT：现货</td>
+<td style="text-align: left">Instrument type</td>
 </tr>
 <tr>
 <td style="text-align: left">ordId</td>
 <td style="text-align: left">String</td>
 <td style="text-align: left">N</td>
-<td style="text-align: left">订单ID</td>
+<td style="text-align: left">Order ID</td>
 </tr>
 <tr>
 <td style="text-align: left">ordTag</td>
 <td style="text-align: left">String</td>
 <td style="text-align: left">N</td>
-<td style="text-align: left">订单标签</td>
+<td style="text-align: left">Order tag</td>
 </tr>
 <tr>
 <td style="text-align: left">after</td>
 <td style="text-align: left">String</td>
 <td style="text-align: left">N</td>
-<td style="text-align: left">请求此ID之前的分页内容，传的值为对应接口的tradeId</td>
+<td style="text-align: left">Pagination of data to return records earlier than the requested <code>ordId</code></td>
 </tr>
 <tr>
 <td style="text-align: left">before</td>
 <td style="text-align: left">String</td>
 <td style="text-align: left">N</td>
-<td style="text-align: left">请求此ID之后的分页内容，传的值为对应接口的tradeId</td>
+<td style="text-align: left">Pagination of data to return records newer than the requested <code>ordId</code></td>
 </tr>
 <tr>
 <td style="text-align: left">start</td>
 <td style="text-align: left">String</td>
 <td style="text-align: left">N</td>
-<td style="text-align: left">筛选的开始时间戳</td>
+<td style="text-align: left">Filter with a begin timestamp. Unix timestamp format in milliseconds, e.g. 1597026383085</td>
 </tr>
 <tr>
 <td style="text-align: left">end</td>
 <td style="text-align: left">String</td>
 <td style="text-align: left">N</td>
-<td style="text-align: left">筛选的结束时间戳</td>
+<td style="text-align: left">Filter with an end timestamp. Unix timestamp format in milliseconds, e.g. 1597026383085</td>
 </tr>
 <tr>
 <td style="text-align: left">limit</td>
 <td style="text-align: left">String</td>
 <td style="text-align: left">N</td>
-<td style="text-align: left">返回结果的数量，最大为100，默认100条</td>
+<td style="text-align: left">Number of results per request. The maximum is <code>100</code>; The default is <code>100</code></td>
 </tr>
 <tr>
 <td style="text-align: left">sortBy</td>
 <td style="text-align: left">String</td>
 <td style="text-align: left">N</td>
-<td style="text-align: left">排序字段，不填默认按创建时间倒序;“cTime”(按照创建时间倒序)，“uTime”(按照更新时间倒序)</td>
+<td style="text-align: left">Sort field, default sort by cTime, e.g. <code>cTime</code> <code>uTime</code></td>
 </tr>
 </tbody></table>
 
@@ -2050,172 +2089,167 @@ do delete the API Key and create a new one.</li>
 <td style="text-align: left">instId</td>
 <td style="text-align: left">String</td>
 <td style="text-align: left"></td>
-<td style="text-align: left">产品ID<br />如“SPOT_BTC/USDT”</td>
+<td style="text-align: left">Instrument ID</td>
 </tr>
 <tr>
 <td style="text-align: left">instType</td>
 <td style="text-align: left">String</td>
 <td style="text-align: left"></td>
-<td style="text-align: left">产品类型<br /> SPOT：现货</td>
+<td style="text-align: left">Instrument type</td>
 </tr>
 <tr>
 <td style="text-align: left">tradeId</td>
 <td style="text-align: left">String</td>
 <td style="text-align: left"></td>
-<td style="text-align: left">成交ID</td>
+<td style="text-align: left">Trade ID</td>
 </tr>
 <tr>
 <td style="text-align: left">ordId</td>
 <td style="text-align: left">String</td>
 <td style="text-align: left"></td>
-<td style="text-align: left">订单ID</td>
+<td style="text-align: left">Order ID</td>
 </tr>
 <tr>
 <td style="text-align: left">clOrdId</td>
 <td style="text-align: left">String</td>
 <td style="text-align: left"></td>
-<td style="text-align: left">客户自定义的唯一订单ID</td>
+<td style="text-align: left">Client Order ID</td>
 </tr>
 <tr>
 <td style="text-align: left">side</td>
 <td style="text-align: left">String</td>
 <td style="text-align: left"></td>
-<td style="text-align: left">订单方向<br/>buy：买<br />sell：卖</td>
+<td style="text-align: left">Order side</td>
 </tr>
 <tr>
 <td style="text-align: left">fillPx</td>
 <td style="text-align: left">String</td>
 <td style="text-align: left"></td>
-<td style="text-align: left">成交价格</td>
+<td style="text-align: left">Filled price</td>
 </tr>
 <tr>
 <td style="text-align: left">fillQty</td>
 <td style="text-align: left">String</td>
 <td style="text-align: left"></td>
-<td style="text-align: left">成交数量</td>
+<td style="text-align: left">Filled quantity</td>
 </tr>
 <tr>
 <td style="text-align: left">ordTag</td>
 <td style="text-align: left">String</td>
 <td style="text-align: left"></td>
-<td style="text-align: left">订单标签</td>
+<td style="text-align: left">Order tag</td>
 </tr>
 <tr>
 <td style="text-align: left">fee</td>
 <td style="text-align: left">String</td>
 <td style="text-align: left"></td>
-<td style="text-align: left">手续费</td>
+<td style="text-align: left">fee</td>
 </tr>
 <tr>
 <td style="text-align: left">feeAsset</td>
 <td style="text-align: left">String</td>
 <td style="text-align: left"></td>
-<td style="text-align: left">手续费币种</td>
+<td style="text-align: left">Fee asset</td>
 </tr>
 <tr>
 <td style="text-align: left">fillTime</td>
 <td style="text-align: left">String</td>
 <td style="text-align: left"></td>
-<td style="text-align: left">成交时间</td>
+<td style="text-align: left">filled time, Unix timestamp format in milliseconds, e.g. 1597026383085</td>
 </tr>
 </tbody></table>
-<h1 id='e08c1d4f9a'>错误码</h1>
+<h1 id='error-code'>Error Code</h1>
 <table><thead>
 <tr>
-<th>错误码</th>
-<th>状态码</th>
-<th>描述</th>
+<th>Error Code</th>
+<th>Http Status Code</th>
+<th>Description</th>
 </tr>
 </thead><tbody>
 <tr>
 <td>40000</td>
 <td>400</td>
-<td>{0}</td>
+<td>General request fail</td>
 </tr>
 <tr>
 <td>40001</td>
 <td>400</td>
-<td>必填参数{0}不能为空</td>
+<td>Mandatory parameter {0} cannot be empty</td>
 </tr>
 <tr>
 <td>40002</td>
 <td>400</td>
-<td>{0}参数非法，请检查后重试</td>
-</tr>
-<tr>
-<td>45007</td>
-<td>400</td>
-<td>可用余额不足，请划转或充值后重试</td>
+<td>{0} parameter is illegal, please check and try again.</td>
 </tr>
 <tr>
 <td>45050</td>
 <td>400</td>
-<td>您暂无该订单类型下单权限，请联系您的客户经理</td>
+<td>You do not have permission to place this type of order, please contact your account manager</td>
 </tr>
 <tr>
 <td>45051</td>
 <td>400</td>
-<td>下单数量小于最小值限制，请重新输入</td>
+<td>The order quantity is less than the minimum limit, please re-enter</td>
 </tr>
 <tr>
 <td>45052</td>
 <td>400</td>
-<td>下单数量大于最大值限制，请重新输入</td>
+<td>The order quantity is greater than the maximum limit, please re-enter</td>
 </tr>
 <tr>
 <td>45053</td>
 <td>400</td>
-<td>挂单数量超出上限，请稍后再试</td>
+<td>The number of pending orders exceeded the limit, please try again later</td>
 </tr>
 <tr>
 <td>45054</td>
 <td>400</td>
-<td>撤单失败，订单不存在</td>
+<td>Failed to cancel order, order does not exist</td>
 </tr>
 <tr>
 <td>45055</td>
 <td>400</td>
-<td>暂无现货交易权限，请联系您的客户经理</td>
+<td>You do not have access to spot function, please contact your account manager</td>
 </tr>
 <tr>
 <td>45062</td>
 <td>400</td>
-<td>交易对当前状态不可交易</td>
+<td>Trading pair is not tradable currently</td>
 </tr>
 <tr>
 <td>45063</td>
 <td>400</td>
-<td>交易对不存在</td>
+<td>Trading pair do not exist</td>
 </tr>
 <tr>
 <td>45066</td>
 <td>400</td>
-<td>重复订单，请检查后重试</td>
+<td>Repeat order, please check and try again.</td>
 </tr>
 <tr>
 <td>45067</td>
 <td>400</td>
-<td>可用余额不足，请划转或充值后重试</td>
+<td>The available balance is not enough, please transfer or recharge and try again</td>
 </tr>
 <tr>
 <td>45068</td>
 <td>400</td>
-<td>当前委托数量超限，请重新输入</td>
+<td>Order quantity exceeded the system limit, please check and try again</td>
 </tr>
 <tr>
 <td>46000</td>
 <td>400</td>
-<td>无接口访问权限</td>
+<td>No access to the uri</td>
 </tr>
 <tr>
 <td>46002</td>
 <td>400</td>
-<td>IP不在白名单内</td>
+<td>IP is not in whitelist</td>
 </tr>
 <tr>
 <td>50000</td>
 <td>500</td>
-<td>服务端超时</td>
+<td>Server Timeout</td>
 </tr>
 </tbody></table>
 
