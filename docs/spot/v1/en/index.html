@@ -6,7 +6,7 @@
     <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <link href="images/favicon.ico" rel="icon" type="image/ico" />
-    <title>Antalpha API 文档</title>
+    <title>Antalpha Liquidity API doc</title>
     <style>
       .highlight table td { padding: 5px; }
 .highlight table pre { margin: 0; }
@@ -264,77 +264,69 @@
         <ul class="search-results"></ul>
       <ul id="toc" class="toc-list-h1">
           <li>
-            <a href="#api" class="toc-h1 toc-link" data-title="API简介">API简介</a>
+            <a href="#introduction" class="toc-h1 toc-link" data-title="Introduction">Introduction</a>
           </li>
           <li>
-            <a href="#2d07d50c97" class="toc-h1 toc-link" data-title="接入说明">接入说明</a>
+            <a href="#api-access" class="toc-h1 toc-link" data-title="API Access">API Access</a>
               <ul class="toc-list-h2">
                   <li>
-                    <a href="#acd1786863" class="toc-h2 toc-link" data-title="签名代码示例">签名代码示例</a>
+                    <a href="#rate-limit-rule" class="toc-h2 toc-link" data-title="Rate limit Rule">Rate limit Rule</a>
                   </li>
                   <li>
-                    <a href="#c1fd2fc5ac" class="toc-h2 toc-link" data-title="限频规则">限频规则</a>
+                    <a href="#authentication" class="toc-h2 toc-link" data-title="Authentication">Authentication</a>
+                  </li>
+                  <li>
+                    <a href="#signature-method" class="toc-h2 toc-link" data-title="Signature Method">Signature Method</a>
+                  </li>
+                  <li>
+                    <a href="#security-best-practice" class="toc-h2 toc-link" data-title="Security Best Practice">Security Best Practice</a>
                   </li>
               </ul>
           </li>
           <li>
-            <a href="#c64cd15fdc" class="toc-h1 toc-link" data-title="签名认证">签名认证</a>
+            <a href="#public-data" class="toc-h1 toc-link" data-title="Public Data">Public Data</a>
               <ul class="toc-list-h2">
                   <li>
-                    <a href="#34addae335" class="toc-h2 toc-link" data-title="签名说明">签名说明</a>
-                  </li>
-                  <li>
-                    <a href="#1fbac240b7" class="toc-h2 toc-link" data-title="签名步骤">签名步骤</a>
-                  </li>
-                  <li>
-                    <a href="#086e3797d7" class="toc-h2 toc-link" data-title="安全实践">安全实践</a>
+                    <a href="#instruments-info" class="toc-h2 toc-link" data-title="Instruments Info">Instruments Info</a>
                   </li>
               </ul>
           </li>
           <li>
-            <a href="#6fbfb00794" class="toc-h1 toc-link" data-title="公共数据">公共数据</a>
+            <a href="#market-data" class="toc-h1 toc-link" data-title="Market Data">Market Data</a>
               <ul class="toc-list-h2">
                   <li>
-                    <a href="#ccc7ef231c" class="toc-h2 toc-link" data-title="获取产品基础信息">获取产品基础信息</a>
+                    <a href="#get-tickers" class="toc-h2 toc-link" data-title="Get tickers">Get tickers</a>
+                  </li>
+                  <li>
+                    <a href="#get-order-book" class="toc-h2 toc-link" data-title="Get order book">Get order book</a>
+                  </li>
+                  <li>
+                    <a href="#get-candlesticks" class="toc-h2 toc-link" data-title="Get candlesticks">Get candlesticks</a>
                   </li>
               </ul>
           </li>
           <li>
-            <a href="#d9d514d202" class="toc-h1 toc-link" data-title="行情数据">行情数据</a>
+            <a href="#account" class="toc-h1 toc-link" data-title="Account">Account</a>
               <ul class="toc-list-h2">
                   <li>
-                    <a href="#b521f6f523" class="toc-h2 toc-link" data-title="获取行情信息">获取行情信息</a>
+                    <a href="#get-balance" class="toc-h2 toc-link" data-title="Get balance">Get balance</a>
                   </li>
                   <li>
-                    <a href="#6774cdf194" class="toc-h2 toc-link" data-title="获取深度">获取深度</a>
-                  </li>
-                  <li>
-                    <a href="#k" class="toc-h2 toc-link" data-title="获取K线数据">获取K线数据</a>
+                    <a href="#get-fee-rates" class="toc-h2 toc-link" data-title="Get fee rates">Get fee rates</a>
                   </li>
               </ul>
           </li>
           <li>
-            <a href="#bd9157656f" class="toc-h1 toc-link" data-title="账户信息">账户信息</a>
+            <a href="#trading" class="toc-h1 toc-link" data-title="Trading">Trading</a>
               <ul class="toc-list-h2">
                   <li>
-                    <a href="#bad06cdc35" class="toc-h2 toc-link" data-title="查看账户余额">查看账户余额</a>
+                    <a href="#place-order" class="toc-h2 toc-link" data-title="Place order">Place order</a>
                   </li>
                   <li>
-                    <a href="#c4541cdba9" class="toc-h2 toc-link" data-title="获取交易费率">获取交易费率</a>
-                  </li>
-              </ul>
-          </li>
-          <li>
-            <a href="#57aa173947" class="toc-h1 toc-link" data-title="现货交易">现货交易</a>
-              <ul class="toc-list-h2">
-                  <li>
-                    <a href="#fd6ce2a756" class="toc-h2 toc-link" data-title="下单">下单</a>
+                    <a href="#order-cancel" class="toc-h2 toc-link" data-title="Order Cancel">Order Cancel</a>
                   </li>
                   <li>
-                    <a href="#4e53c0fccd" class="toc-h2 toc-link" data-title="撤销订单">撤销订单</a>
-                  </li>
-                  <li>
-                    <a href="#0f20996842" class="toc-h2 toc-link" data-title="获取订单信息">获取订单信息</a>
+                    <a href="#get-order-info" class="toc-h2 toc-link" data-title="Get order info">Get order info</a>
                   </li>
                   <li>
                     <a href="#cee6a1fd93" class="toc-h2 toc-link" data-title="获取当前委托">获取当前委托</a>
@@ -355,113 +347,133 @@
     <div class="page-wrapper">
       <div class="dark-box"></div>
       <div class="content">
-        <h1 id='api'>API简介</h1>
-<p>欢迎使用 API！</p>
+        <h1 id='introduction'>Introduction</h1>
+<p>Welcome to Antalpha Liquidity API！</p>
 
-<p>此文档是唯一官方文档，此API提供的功能和服务会在此文档持续更新，并会发布公告进行通知。</p>
+<p>This is the official Antalpha Liquidity API document, and will be continuously updated.
+Antalpha Liquidity will also publish API announcement in advance for any API change.</p>
 
-<p>如何阅读本文档</p>
+<p><strong>How to read this document</strong></p>
 
-<p>文档左侧是目录，中间是正文，右侧是请求参数和响应结果的示例。</p>
+<p>The top of the document is the navigation menu for different API business;
+The language button in the top right is for different languages, it supports Chinese and English
+right now.
+The main content of each API document has three parts,
+the left hand side is the contents,
+the middle part is the document body,
+and the right hand side is the request and response samples.</p>
 
-<p>文档中的接口主要分为以下4类：</p>
+<p>The document is mainly divided into the following four categories:</p>
 
-<p><code>基础信息</code></p>
+<p><code>Basic Info</code></p>
 
-<p><code>行情数据</code></p>
+<p><code>Market Data</code></p>
 
-<p><code>账户信息</code></p>
+<p><code>Account Data</code></p>
 
-<p><code>现货交易</code></p>
-<h1 id='2d07d50c97'>接入说明</h1><h3 id='acd1786863'>签名代码示例</h3>
-<p>目前支持<a href="https://github.com/Antalpha-Liquidity/Api-demo">go</a>和<a href="https://github.com/Antalpha-Liquidity/Api-demo">java</a> demo</p>
-<h3 id='c1fd2fc5ac'>限频规则</h3>
-<p>限频规则针对接口进行限频，目前每个接口访问限制为1s内10次</p>
+<p><code>Trading</code></p>
+<h1 id='api-access'>API Access</h1><h2 id='rate-limit-rule'>Rate limit Rule</h2>
+<p>The rate limit rule limits the frequency of api access, and currently each api is limited to 10
+times within 1s.</p>
 
-<p>用户可根据Http Header中的信息调整访问策略</p>
-
-<ul>
-<li>rateLimit-times： 单轮请求数上限，单位：次数</li>
-<li>rateLimit-interval：请求数重置的时间间隔，单位：毫秒</li>
-<li>rateLimit-remaining：本轮剩余可用请求数，单位：次数</li>
-<li>rateLimit-reset：请求数上限重置时间，单位：毫秒</li>
-</ul>
-<h1 id='c64cd15fdc'>签名认证</h1><h2 id='34addae335'>签名说明</h2>
-<p>API 请求在通过 internet 传输的过程中极有可能被篡改，为了确保请求未被更改，除公共接口（基础信息，行情数据）外的私有接口均必须使用您的 API Key 做签名认证，以校验参数或参数值在传输途中是否发生了更改。（编码集统一 &quot;UTF-8&quot;）</p>
-
-<p>一个合法的请求由以下几部分组成：</p>
+<p>It is suggested to adjust visiting strategy according the HTTP Header below:</p>
 
 <ul>
-<li>方法请求地址：即访问服务器地址 api.liquidity.antalpha.com，比如 https://api.liquidity.antalpha.com/api/v1/order。</li>
-<li>API 访问密钥（AccessKeyId）：您申请的 API Key 中的 Access Key。</li>
-<li>签名方法（SignatureMethod）：用户计算签名的基于哈希的协议，此处使用 HmacSHA256。</li>
-<li>签名版本（SignatureVersion）：签名协议的版本，此处使用1。</li>
-<li>时间戳（Timestamp）：系统当前毫秒数。</li>
-<li>必选和可选参数：每个方法都有一组用于定义 API 调用的必需参数和可选参数。可以在每个方法的说明中查看这些参数及其含义。 请一定注意：对于 GET 请求，每个方法自带的参数都需要进行签名运算； 对于 POST 请求，每个方法自带的参数不进行签名认证，即 POST 请求中需要进行签名运算的只有 AccessKeyId、SignatureMethod、SignatureVersion、Timestamp 四个参数，其它参数放在 body 中。</li>
-<li>签名：签名计算得出的值，用于确保签名有效和未被篡改。</li>
+<li>rateLimit-times: time of rate limit time window</li>
+<li>rateLimit-interval: interval of rate limit time window</li>
+<li>rateLimit-remaining: the remaining count for current rate limit time window</li>
+<li>rateLimit-reset: the expiring timestamp for current rate limit time window</li>
 </ul>
-<h2 id='1fbac240b7'>签名步骤</h2><h3 id='api-key'>创建 API Key</h3>
-<p>主动申请</p>
+<h2 id='authentication'>Authentication</h2><h3 id='overview'>overview</h3>
+<p>The API request may be tampered during internet, therefore all private API must be signed by your
+API Key (Secrete Key).</p>
 
-<p>API Key 包括以下两部分</p>
+<p>Each API Key has permission property, please check the API permission, and make sure your API key
+has proper permission.</p>
+
+<p>A valid request consists of below parts:</p>
 
 <ul>
-<li>Access Key API 访问密钥</li>
-<li>Secret Key 签名认证加密所使用的密钥（仅申请时可见）</li>
+<li>API Path: for example https://api.liquidity.antalpha.com/api/v1/order</li>
+<li>API Access Key: The &#39;Access Key&#39; in your API Key</li>
+<li>Signature Method: The Hash method that is used to sign, it uses HmacSHA256</li>
+<li>Signature Version: The version for the signature protocol, it uses 1</li>
+<li>Timestamp: The UTC time when the request is sent, e.g. 2017-05-11T16:22:06. It is useful to
+prevent the request to be intercepted by third-party.</li>
+<li>Parameters: Each API Method has a group of parameters, you can refer to detailed document for each
+of them.</li>
+<li>For GET request, all the parameters must be signed.</li>
+<li>For POST request, the parameters needn&#39;t be signed and should be put in request body.</li>
+<li>Signature: The value after signed, it is guarantee the signature is valid and the request is not
+be tempered.</li>
 </ul>
-<h3 id='1fbac240b7-2'>签名步骤</h3>
-<p>规范要计算签名的请求 因为使用 HmacSHA256进行签名计算时，使用不同内容计算得到的结果会完全不同。所以在进行签名计算前，请先对请求进行规范化处理。下面以查询某订单详情请求为例进行说明：</p>
+<h2 id='signature-method'>Signature Method</h2>
+<p>The signature may be different if the request text is different, therefore the request should be
+normalized before signing. Below signing steps take the order query as an example:</p>
 
-<p>查询某订单详情</p>
+<p>This is a full URL to query one order:</p>
 
 <p><code>https://api.liquidity.antalpha.com/api/v1/order?AccessKeyId=e2xxxxxx-99xxxxxx-84xxxxxx-7xxxx&amp;SignatureMethod=HmacSHA256&amp;SignatureVersion=1&amp;Timestamp=1662022581951</code></p>
-<h4 id='1-get-post-n'>1. 请求方法（GET 或 POST），后面添加换行符 “\n”</h4>
+<h4 id='1-the-request-method-get-or-post-append-line-break-quot-n-quot'>1. The request Method (GET or POST), append line break &quot;\n&quot;</h4>
 <p><code>GET\n</code></p>
-<h4 id='2-n'>2. 添加小写的访问地址，后面添加换行符 “\n”</h4>
+<h4 id='2-the-host-with-lower-case-append-line-break-quot-n-quot'>2. The host with lower case, append line break &quot;\n&quot;</h4>
 <p><code>api.liquidity.antalpha.com\n</code></p>
-<h4 id='3-n'>3. 访问方法的路径，后面添加换行符 “\n”</h4>
+<h4 id='3-the-path-append-line-break-quot-n-quot'>3. The path, append line break &quot;\n&quot;</h4>
 <p><code>/api/v1/order\n</code></p>
-<h4 id='4-ascii'>4. 按照ASCII码的顺序对参数名进行排序。例如，下面是请求参数的原始顺序，进行过编码后</h4>
+<h4 id='4-the-parameters-are-url-encoded-and-ordered-based-on-ascii'>4. The parameters are URL encoded, and ordered based on ASCII</h4>
 <p><code>AccessKeyId=e2xxxxxx-99xxxxxx-84xxxxxx-7xxxxSignatureMethod=HmacSHA256SignatureVersion=1Timestamp=1662022581951</code></p>
 
-<p>使用 UTF-8 编码，且进行了 URI 编码，十六进制字符必须大写，如 “:” 会被编码为 “%3A” ，空格被编码为 “%20”。</p>
-<h4 id='5'>5. 经过排序之后</h4>
+<p>Use UTF-8 encoding and URL encoded, the hex must be upper case.
+For example, The semicolon &#39;:&#39; should be encoded as &#39;%3A&#39;, The space should be encoded as &#39;%20&#39;.</p>
+
+<p>Then above parameter should be ordered like below:</p>
+
 <p><code>AccessKeyId=e2xxxxxx-99xxxxxx-84xxxxxx-7xxxx</code><br>
 <code>SignatureMethod=HmacSHA256</code><br>
 <code>SignatureVersion=1</code><br>
 <code>Timestamp=1662022581951</code></p>
-<h4 id='6-amp'>6. 按照以上顺序，将各参数使用字符 “&amp;” 连接</h4>
+<h4 id='5-use-char-quot-amp-quot-to-concatenate-all-parameters'>5. Use char &quot;&amp;&quot; to concatenate all parameters</h4>
 <p><code>AccessKeyId=e2xxxxxx-99xxxxxx-84xxxxxx-7xxxx&amp;SignatureMethod=HmacSHA256&amp;SignatureVersion=1&amp;Timestamp=16620225819511</code></p>
-<h4 id='7'>7. 组成最终的要进行签名计算的字符串如下</h4>
+<h4 id='6-assemble-the-pre-signed-text'>6. Assemble the pre-signed text</h4>
 <p><code>POST\n</code><br>
 <code>api.liquidity.antalpha.com\n</code><br>
 <code>/api/v1/order\n</code><br>
 <code>AccessKeyId=e2xxxxxx-99xxxxxx-84xxxxxx-7xxxx&amp;SignatureMethod=HmacSHA256&amp;SignatureVersion=1&amp;Timestamp=1662022581951</code></p>
-<h4 id='8-secret-key'>8. 用上一步里生成的 “请求字符串” 和你的密钥 (Secret Key) 生成一个数字签名</h4>
-<p><code>4F65x5A2bLyMWVQj3Aqp+B4w+ivaA7n5Oi2SuYtCJ9o=</code></p>
-
-<ol>
-<li>将上一步得到的请求字符串和 RSA私钥作为两个参数，调用HmacSHA256验签函数获得验签信息。</li>
-<li>将此验签信息用base-64编码，得到的值作为此次接口调用的数字签名。</li>
-</ol>
-<h4 id='9'>9. 将生成的数字签名加入到请求的路径参数里</h4>
-<p>最终，发送到服务器的 API 请求应该为<br>
-<code>https://api.liquidity.antalpha.com/api/v1/order?AccessKeyId=e2xxxxxx-99xxxxxx-84xxxxxx-7xxxx&amp;SignatureMethod=HmacSHA256&amp;SignatureVersion=1&amp;Timestamp=1662022581951&amp;Signature=4F65x5A2bLyMWVQj3Aqp%2BB4w%2BivaA7n5Oi2SuYtCJ9o%3D</code></p>
-
-<ol>
-<li>把所有必须的认证参数添加到接口调用的路径参数里</li>
-<li>把数字签名在URL编码后加入到路径参数里，参数名为“Signature”。</li>
-</ol>
-<h2 id='086e3797d7'>安全实践</h2>
+<h4 id='7-use-the-pre-signed-text-and-your-secret-key-to-generate-a-signature'>7. Use the pre-signed text and your Secret Key to generate a signature</h4>
 <ul>
-<li><strong>强烈建议</strong>：在申请API Key时，请绑定您的IP地址，以此来保证您的API Key仅能在您自己的IP上使用。</li>
-<li><strong>强烈建议</strong>：不要将API Key暴露给任何人（包括第三方软件或机构），API Key代表了您的账户权限，API Key的暴露可能会对您的信息、资金造成损失，若API Key泄露，请尽快删除并重新创建。</li>
+<li>Use the pre-signed text in step 6 and your API Secret Key to generate hash code by HmacSHA256 hash
+function.</li>
+<li>Encode the hash code with base-64 to generate the signature.</li>
 </ul>
-<h1 id='6fbfb00794'>公共数据</h1><h2 id='ccc7ef231c'>获取产品基础信息</h2><h3 id='http'>HTTP 请求</h3>
+
+<p><code>4F65x5A2bLyMWVQj3Aqp+B4w+ivaA7n5Oi2SuYtCJ9o=</code></p>
+<h4 id='8-put-the-signature-into-request-url'>8. Put the signature into request URL</h4>
+<p>For Rest interface:</p>
+
+<ul>
+<li>Put all the parameters in the URL</li>
+<li>Encode signature by URL encoding and append in the URL with parameter name &quot;Signature&quot;.</li>
+</ul>
+
+<p>Finally, the request sent to API should be:<br>
+<code>https://api.liquidity.antalpha.com/api/v1/order?AccessKeyId=e2xxxxxx-99xxxxxx-84xxxxxx-7xxxx&amp;SignatureMethod=HmacSHA256&amp;SignatureVersion=1&amp;Timestamp=1662022581951&amp;Signature=4F65x5A2bLyMWVQj3Aqp%2BB4w%2BivaA7n5Oi2SuYtCJ9o%3D</code></p>
+<h3 id='demo'>demo</h3>
+<p>Currently, we provide <a href="https://github.com/Antalpha-Liquidity/Api-demo">go</a>
+and <a href="https://github.com/Antalpha-Liquidity/Api-demo">java</a> demo.</p>
+<h2 id='security-best-practice'>Security Best Practice</h2>
+<ul>
+<li>It is strongly suggested to bind your IP with your API Key to ensure that your API Key can only be
+used in your machine. Furthermore, your API Key will be expired after 90 days if it is not bound
+with any IP.</li>
+<li>It is strongly suggested not to share your API Key with anybody or third-party software, otherwise
+your personal information and asset may be stolen. If your expose your API Key by accident, please
+do delete the API Key and create a new one.</li>
+</ul>
+<h1 id='public-data'>Public Data</h1><h2 id='instruments-info'>Instruments Info</h2><h3 id='http-request'>HTTP Request</h3>
 <ul>
 <li>GET <code>/api/v1/public/instruments</code></li>
 </ul>
-<h3 id='1f9ac54b15'>请求参数</h3>
+<h3 id='request-parameters'>Request Parameters</h3>
 <table><thead>
 <tr>
 <th style="text-align: left">Name</th>
@@ -474,13 +486,13 @@
 <td style="text-align: left">instId</td>
 <td style="text-align: left">String</td>
 <td style="text-align: left">N</td>
-<td style="text-align: left">产品ID<br />如“SPOT_BTC/USDT”，如果同时有instId和instType，则以instId为准</td>
+<td style="text-align: left">Instrument ID, e.g. <code>SPOT_BTC/USDT</code>，if both instId and instType is sent，instType will be ignored.</td>
 </tr>
 <tr>
 <td style="text-align: left">instType</td>
 <td style="text-align: left">String</td>
 <td style="text-align: left">Y</td>
-<td style="text-align: left">产品类型<br /> SPOT：现货</td>
+<td style="text-align: left">Instrument type, currently only SPOT is supported</td>
 </tr>
 </tbody></table>
 
@@ -488,7 +500,7 @@
 <p>Response:</p>
 </blockquote>
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-  </span><span class="nl">"msg"</span><span class="p">:</span><span class="w"> </span><span class="s2">"操作成功"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"msg"</span><span class="p">:</span><span class="w"> </span><span class="s2">"success"</span><span class="p">,</span><span class="w">
   </span><span class="nl">"code"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w">
   </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
     </span><span class="p">{</span><span class="w">
@@ -504,7 +516,7 @@
   </span><span class="p">],</span><span class="w">
   </span><span class="nl">"ts"</span><span class="p">:</span><span class="w"> </span><span class="mi">1679903538458</span><span class="w">
 </span><span class="p">}</span><span class="w">
-</span></code></pre></div><h3 id='2213f4c32f'>响应数据</h3>
+</span></code></pre></div><h3 id='response-content'>Response Content</h3>
 <table><thead>
 <tr>
 <th style="text-align: left">Name</th>
@@ -517,56 +529,56 @@
 <td style="text-align: left">instId</td>
 <td style="text-align: left">String</td>
 <td style="text-align: left"></td>
-<td style="text-align: left">产品ID<br />如“SPOT_BTC/USDT”</td>
+<td style="text-align: left">Instrument ID</td>
 </tr>
 <tr>
 <td style="text-align: left">instType</td>
 <td style="text-align: left">String</td>
 <td style="text-align: left"></td>
-<td style="text-align: left">产品类型<br /> SPOT：现货</td>
+<td style="text-align: left">Instrument type</td>
 </tr>
 <tr>
 <td style="text-align: left">baseAsset</td>
 <td style="text-align: left">String</td>
 <td style="text-align: left"></td>
-<td style="text-align: left">标的币种，如 <code>BTC-USDT</code> 中的 <code>BTC</code></td>
+<td style="text-align: left">Base asset, e.g. <code>BTC</code> in <code>BTC/USDT</code></td>
 </tr>
 <tr>
 <td style="text-align: left">quoteAsset</td>
 <td style="text-align: left">String</td>
 <td style="text-align: left"></td>
-<td style="text-align: left">计价币种，如 <code>BTC-USDT</code> 中的<code>USDT</code></td>
+<td style="text-align: left">Quote asset, e.g. <code>USDT</code> in <code>BTC/USDT</code></td>
 </tr>
 <tr>
 <td style="text-align: left">baseTick</td>
 <td style="text-align: left">String</td>
 <td style="text-align: left"></td>
-<td style="text-align: left">标的币种（数量）最小精度</td>
+<td style="text-align: left">Base asset tick size, e.g. 0.0001</td>
 </tr>
 <tr>
 <td style="text-align: left">baseMin</td>
 <td style="text-align: left">String</td>
 <td style="text-align: left"></td>
-<td style="text-align: left">标的币种（数量）单笔下单最小值</td>
+<td style="text-align: left">Base asset minimum order size.</td>
 </tr>
 <tr>
 <td style="text-align: left">quoteTick</td>
 <td style="text-align: left">String</td>
 <td style="text-align: left"></td>
-<td style="text-align: left">计价币种（价格）最小精度</td>
+<td style="text-align: left">Quote asset tick size, e.g. 0.0001</td>
 </tr>
 <tr>
 <td style="text-align: left">quoteMin</td>
 <td style="text-align: left">String</td>
 <td style="text-align: left"></td>
-<td style="text-align: left">计价币种（价格）单笔下单最小值</td>
+<td style="text-align: left">Quote asset minimum order size.</td>
 </tr>
 </tbody></table>
-<h1 id='d9d514d202'>行情数据</h1><h2 id='b521f6f523'>获取行情信息</h2><h3 id='http-2'>HTTP 请求</h3>
+<h1 id='market-data'>Market Data</h1><h2 id='get-tickers'>Get tickers</h2><h3 id='http-request-2'>HTTP Request</h3>
 <ul>
 <li>GET <code>/api/v1/market/tickers</code></li>
 </ul>
-<h3 id='1f9ac54b15-2'>请求参数</h3>
+<h3 id='request-parameters-2'>Request Parameters</h3>
 <table><thead>
 <tr>
 <th style="text-align: left">Name</th>
@@ -579,13 +591,13 @@
 <td style="text-align: left">instId</td>
 <td style="text-align: left">String</td>
 <td style="text-align: left">N</td>
-<td style="text-align: left">产品ID<br />如“SPOT_BTC/USDT”，如果同时有instId和instType，则以instId为准</td>
+<td style="text-align: left">Instrument ID, e.g. <code>SPOT_BTC/USDT</code>，if both instId and instType is sent，instType will be ignored.</td>
 </tr>
 <tr>
 <td style="text-align: left">instType</td>
 <td style="text-align: left">String</td>
 <td style="text-align: left">Y</td>
-<td style="text-align: left">产品类型<br /> SPOT：现货</td>
+<td style="text-align: left">Instrument type, currently only SPOT is supported</td>
 </tr>
 </tbody></table>
 
@@ -593,7 +605,7 @@
 <p>Response:</p>
 </blockquote>
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-  </span><span class="nl">"msg"</span><span class="p">:</span><span class="w"> </span><span class="s2">"操作成功"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"msg"</span><span class="p">:</span><span class="w"> </span><span class="s2">"success"</span><span class="p">,</span><span class="w">
   </span><span class="nl">"code"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w">
   </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
     </span><span class="p">{</span><span class="w">
@@ -612,7 +624,7 @@
   </span><span class="p">],</span><span class="w">
   </span><span class="nl">"ts"</span><span class="p">:</span><span class="w"> </span><span class="mi">1679902737056</span><span class="w">
 </span><span class="p">}</span><span class="w">
-</span></code></pre></div><h3 id='2213f4c32f-2'>响应数据</h3>
+</span></code></pre></div><h3 id='response-content-2'>Response Content</h3>
 <table><thead>
 <tr>
 <th style="text-align: left">Name</th>
@@ -625,74 +637,74 @@
 <td style="text-align: left">instId</td>
 <td style="text-align: left">String</td>
 <td style="text-align: left"></td>
-<td style="text-align: left">产品ID<br />如“SPOT_BTC/USDT”</td>
+<td style="text-align: left">Instrument ID</td>
 </tr>
 <tr>
 <td style="text-align: left">instType</td>
 <td style="text-align: left">String</td>
 <td style="text-align: left"></td>
-<td style="text-align: left">产品类型<br /> SPOT：现货</td>
+<td style="text-align: left">Instrument Type</td>
 </tr>
 <tr>
 <td style="text-align: left">askPx</td>
 <td style="text-align: left">String</td>
 <td style="text-align: left"></td>
-<td style="text-align: left">卖一价</td>
+<td style="text-align: left">Best ask price</td>
 </tr>
 <tr>
 <td style="text-align: left">askSz</td>
 <td style="text-align: left">String</td>
 <td style="text-align: left"></td>
-<td style="text-align: left">卖一价对应的数量</td>
+<td style="text-align: left">Best ask size</td>
 </tr>
 <tr>
 <td style="text-align: left">bidPx</td>
 <td style="text-align: left">String</td>
 <td style="text-align: left"></td>
-<td style="text-align: left">买一价</td>
+<td style="text-align: left">Best bid price</td>
 </tr>
 <tr>
 <td style="text-align: left">bidSz</td>
 <td style="text-align: left">String</td>
 <td style="text-align: left"></td>
-<td style="text-align: left">买一价对应的数量</td>
+<td style="text-align: left">Best bid size</td>
 </tr>
 <tr>
 <td style="text-align: left">openPx</td>
 <td style="text-align: left">String</td>
 <td style="text-align: left"></td>
-<td style="text-align: left">24小时开盘价</td>
+<td style="text-align: left">Open price in the past 24 hours</td>
 </tr>
 <tr>
 <td style="text-align: left">highPx</td>
 <td style="text-align: left">String</td>
 <td style="text-align: left"></td>
-<td style="text-align: left">24小时最高价</td>
+<td style="text-align: left">Highest price in the past 24 hours</td>
 </tr>
 <tr>
 <td style="text-align: left">lowPx</td>
 <td style="text-align: left">String</td>
 <td style="text-align: left"></td>
-<td style="text-align: left">24小时最低价</td>
+<td style="text-align: left">Lowest price in the past 24 hours</td>
 </tr>
 <tr>
 <td style="text-align: left">lastPx</td>
 <td style="text-align: left">String</td>
 <td style="text-align: left"></td>
-<td style="text-align: left">最新价</td>
+<td style="text-align: left">Last traded price</td>
 </tr>
 <tr>
 <td style="text-align: left">ts</td>
 <td style="text-align: left">String</td>
 <td style="text-align: left"></td>
-<td style="text-align: left">ticker数据产生时间，Unix时间戳的毫秒数格式，如 <code>1597026383085</code></td>
+<td style="text-align: left">Ticker data generation time, Unix timestamp format in milliseconds, e.g. 1597026383085</td>
 </tr>
 </tbody></table>
-<h2 id='6774cdf194'>获取深度</h2><h3 id='http-3'>HTTP 请求</h3>
+<h2 id='get-order-book'>Get order book</h2><h3 id='http-request-3'>HTTP Request</h3>
 <ul>
 <li>GET <code>/api/v1/market/depth</code></li>
 </ul>
-<h3 id='1f9ac54b15-3'>请求参数</h3>
+<h3 id='request-parameters-3'>Request Parameters</h3>
 <table><thead>
 <tr>
 <th style="text-align: left">Name</th>
@@ -705,13 +717,13 @@
 <td style="text-align: left">instId</td>
 <td style="text-align: left">String</td>
 <td style="text-align: left">Y</td>
-<td style="text-align: left">产品ID<br />如“SPOT_BTC/USDT”</td>
+<td style="text-align: left">Instrument ID, e.g. <code>SPOT_BTC/USDT</code></td>
 </tr>
 <tr>
 <td style="text-align: left">sz</td>
 <td style="text-align: left">String</td>
 <td style="text-align: left">N</td>
-<td style="text-align: left">深度档位数量，默认 100; 可选值:[5, 10, 20, 50, 100, 400]</td>
+<td style="text-align: left">Order book depth per side, default returns to 100 depth data, options: [5, 10, 20, 50, 100, 400]</td>
 </tr>
 </tbody></table>
 
@@ -719,7 +731,7 @@
 <p>Response:</p>
 </blockquote>
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-  </span><span class="nl">"msg"</span><span class="p">:</span><span class="w"> </span><span class="s2">"操作成功"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"msg"</span><span class="p">:</span><span class="w"> </span><span class="s2">"success"</span><span class="p">,</span><span class="w">
   </span><span class="nl">"code"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w">
   </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
     </span><span class="p">{</span><span class="w">
@@ -740,7 +752,7 @@
   </span><span class="p">],</span><span class="w">
   </span><span class="nl">"ts"</span><span class="p">:</span><span class="w"> </span><span class="mi">1679905338772</span><span class="w">
 </span><span class="p">}</span><span class="w">
-</span></code></pre></div><h3 id='2213f4c32f-3'>响应数据</h3>
+</span></code></pre></div><h3 id='response-content-3'>Response Content</h3>
 <table><thead>
 <tr>
 <th style="text-align: left">Name</th>
@@ -753,26 +765,26 @@
 <td style="text-align: left">asks</td>
 <td style="text-align: left">array</td>
 <td style="text-align: left"></td>
-<td style="text-align: left">卖方深度</td>
+<td style="text-align: left">Order book on sell side</td>
 </tr>
 <tr>
 <td style="text-align: left">bids</td>
 <td style="text-align: left">array</td>
 <td style="text-align: left"></td>
-<td style="text-align: left">买方深度</td>
+<td style="text-align: left">Order book on buy side</td>
 </tr>
 <tr>
 <td style="text-align: left">ts</td>
 <td style="text-align: left">String</td>
 <td style="text-align: left"></td>
-<td style="text-align: left">深度产生时间</td>
+<td style="text-align: left">Order book generation time</td>
 </tr>
 </tbody></table>
-<h2 id='k'>获取K线数据</h2><h3 id='http-4'>HTTP 请求</h3>
+<h2 id='get-candlesticks'>Get candlesticks</h2><h3 id='http-request-4'>HTTP Request</h3>
 <ul>
 <li>GET <code>/api/v1/market/candles</code></li>
 </ul>
-<h3 id='1f9ac54b15-4'>请求参数</h3>
+<h3 id='request-parameters-4'>Request Parameters</h3>
 <table><thead>
 <tr>
 <th style="text-align: left">Name</th>
@@ -785,31 +797,31 @@
 <td style="text-align: left">instId</td>
 <td style="text-align: left">String</td>
 <td style="text-align: left">Y</td>
-<td style="text-align: left">产品ID<br />如“SPOT_BTC/USDT”</td>
+<td style="text-align: left">Instrument ID, e.g. <code>SPOT_BTC/USDT</code></td>
 </tr>
 <tr>
 <td style="text-align: left">bar</td>
 <td style="text-align: left">String</td>
 <td style="text-align: left">N</td>
-<td style="text-align: left">时间粒度，默认值<code>1m</code> 如 [1m/3m/5m/15m/30m/1h/2h/4h/6h/1d/1w/1M]</td>
+<td style="text-align: left">Bar size, the default is <code>1m</code>, e.g. [1m/3m/5m/15m/30m/1h/2h/4h/6h/1d/1w/1M]</td>
 </tr>
 <tr>
 <td style="text-align: left">start</td>
 <td style="text-align: left">String</td>
 <td style="text-align: left">N</td>
-<td style="text-align: left">筛选的开始时间戳，Unix时间戳的秒数格式</td>
+<td style="text-align: left">Pagination of data to return records earlier than the requested ts in seconds format, e.g. 1597026383</td>
 </tr>
 <tr>
 <td style="text-align: left">end</td>
 <td style="text-align: left">String</td>
 <td style="text-align: left">N</td>
-<td style="text-align: left">筛选的结束时间戳，Unix时间戳的秒数格式</td>
+<td style="text-align: left">Pagination of data to return records newer than the requested ts</td>
 </tr>
 <tr>
 <td style="text-align: left">limit</td>
 <td style="text-align: left">String</td>
 <td style="text-align: left">N</td>
-<td style="text-align: left">返回结果的数量，最大为300，默认100条</td>
+<td style="text-align: left">Number of results per request. The maximum is <code>300</code>. The default is <code>100</code>.</td>
 </tr>
 </tbody></table>
 
@@ -817,15 +829,20 @@
 <p>Response:</p>
 </blockquote>
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-  </span><span class="nl">"msg"</span><span class="p">:</span><span class="w"> </span><span class="s2">"操作成功"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"msg"</span><span class="p">:</span><span class="w"> </span><span class="s2">"success"</span><span class="p">,</span><span class="w">
   </span><span class="nl">"code"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w">
   </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
     </span><span class="p">[</span><span class="w">
-      </span><span class="s2">"1679873100"</span><span class="p">,</span><span class="w"> </span><span class="err">//ts</span><span class="p">,</span><span class="err">开始时间，Unix时间戳的秒数格式</span><span class="w">
-      </span><span class="s2">"20.43"</span><span class="p">,</span><span class="w">      </span><span class="err">//o</span><span class="p">,</span><span class="err">开盘价格</span><span class="w">
-      </span><span class="s2">"20.43"</span><span class="p">,</span><span class="w">      </span><span class="err">//h</span><span class="p">,</span><span class="err">最高价格</span><span class="w">
-      </span><span class="s2">"20.43"</span><span class="p">,</span><span class="w">      </span><span class="err">//l</span><span class="p">,</span><span class="err">最低价格</span><span class="w">
-      </span><span class="s2">"20.43"</span><span class="w">       </span><span class="err">//c</span><span class="p">,</span><span class="err">收盘价格(当前K线未结束的即为最新价)</span><span class="w">
+      </span><span class="s2">"1679873100"</span><span class="p">,</span><span class="w">
+      </span><span class="err">//</span><span class="w"> </span><span class="err">Opening</span><span class="w"> </span><span class="err">time</span><span class="w"> </span><span class="err">of</span><span class="w"> </span><span class="err">the</span><span class="w"> </span><span class="err">candlestick</span><span class="p">,</span><span class="w"> </span><span class="err">Unix</span><span class="w"> </span><span class="err">timestamp</span><span class="w"> </span><span class="err">format</span><span class="w"> </span><span class="err">in</span><span class="w"> </span><span class="err">seconds</span><span class="p">,</span><span class="w"> </span><span class="err">e.g.</span><span class="w"> </span><span class="mi">1597026383</span><span class="w">
+      </span><span class="s2">"20.43"</span><span class="p">,</span><span class="w">
+      </span><span class="err">//</span><span class="w"> </span><span class="err">Open</span><span class="w"> </span><span class="err">price</span><span class="w">
+      </span><span class="s2">"20.43"</span><span class="p">,</span><span class="w">
+      </span><span class="err">//</span><span class="w"> </span><span class="err">highest</span><span class="w"> </span><span class="err">price</span><span class="w">
+      </span><span class="s2">"20.43"</span><span class="p">,</span><span class="w">
+      </span><span class="err">//</span><span class="w"> </span><span class="err">Lowest</span><span class="w"> </span><span class="err">price</span><span class="w">
+      </span><span class="s2">"20.43"</span><span class="w">
+      </span><span class="err">//</span><span class="w"> </span><span class="err">Close</span><span class="w"> </span><span class="err">price</span><span class="w">
     </span><span class="p">],</span><span class="w">
     </span><span class="p">[</span><span class="w">
       </span><span class="s2">"1679873400"</span><span class="p">,</span><span class="w">
@@ -837,11 +854,11 @@
   </span><span class="p">],</span><span class="w">
   </span><span class="nl">"ts"</span><span class="p">:</span><span class="w"> </span><span class="mi">1679903108172</span><span class="w">
 </span><span class="p">}</span><span class="w">
-</span></code></pre></div><h1 id='bd9157656f'>账户信息</h1><h2 id='bad06cdc35'>查看账户余额</h2><h3 id='http-5'>HTTP 请求</h3>
+</span></code></pre></div><h1 id='account'>Account</h1><h2 id='get-balance'>Get balance</h2><h3 id='http-request-5'>HTTP Request</h3>
 <ul>
 <li>GET <code>/api/v1/account/balance</code></li>
 </ul>
-<h3 id='1f9ac54b15-5'>请求参数</h3>
+<h3 id='request-parameters-5'>Request Parameters</h3>
 <table><thead>
 <tr>
 <th style="text-align: left">Name</th>
@@ -854,7 +871,7 @@
 <td style="text-align: left">asset</td>
 <td style="text-align: left">String</td>
 <td style="text-align: left">N</td>
-<td style="text-align: left">币种，如 <code>BTC</code><br/>支持多币种查询（不超过20个），币种之间半角逗号分隔</td>
+<td style="text-align: left">Single asset or multiple assets (no more than 20) separated with comma, e.g. <code>BTC</code> or <code>BTC,ETH</code>.</td>
 </tr>
 </tbody></table>
 
@@ -862,7 +879,7 @@
 <p>Response:</p>
 </blockquote>
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-  </span><span class="nl">"msg"</span><span class="p">:</span><span class="w"> </span><span class="s2">"操作成功"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"msg"</span><span class="p">:</span><span class="w"> </span><span class="s2">"success"</span><span class="p">,</span><span class="w">
   </span><span class="nl">"code"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w">
   </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
     </span><span class="nl">"totalValue"</span><span class="p">:</span><span class="w"> </span><span class="s2">"99979608.982030863675555489362903"</span><span class="p">,</span><span class="w">
@@ -879,7 +896,7 @@
   </span><span class="p">},</span><span class="w">
   </span><span class="nl">"ts"</span><span class="p">:</span><span class="w"> </span><span class="mi">1679902397025</span><span class="w">
 </span><span class="p">}</span><span class="w">
-</span></code></pre></div><h3 id='2213f4c32f-4'>响应数据</h3>
+</span></code></pre></div><h3 id='response-content-4'>Response Content</h3>
 <table><thead>
 <tr>
 <th style="text-align: left">Name</th>
@@ -892,56 +909,58 @@
 <td style="text-align: left">totalValue</td>
 <td style="text-align: left">String</td>
 <td style="text-align: left"></td>
-<td style="text-align: left">美金估值总权益</td>
+<td style="text-align: left">The total amount of equity in USD</td>
 </tr>
 <tr>
 <td style="text-align: left">uTime</td>
 <td style="text-align: left">String</td>
 <td style="text-align: left"></td>
-<td style="text-align: left">账户信息更新时间</td>
+<td style="text-align: left">Update time of account information, millisecond format of Unix timestamp, e.g. 1597026383085</td>
 </tr>
 <tr>
 <td style="text-align: left">data</td>
 <td style="text-align: left">Array</td>
 <td style="text-align: left"></td>
-<td style="text-align: left">各币种资产详细信息</td>
+<td style="text-align: left">Detailed asset information in all currencies</td>
 </tr>
 <tr>
 <td style="text-align: left">&gt; asset</td>
 <td style="text-align: left">String</td>
 <td style="text-align: left"></td>
-<td style="text-align: left">币种，如 <code>BTC</code></td>
+<td style="text-align: left">Asset, e.g. <code>BTC</code></td>
 </tr>
 <tr>
 <td style="text-align: left">&gt; bal</td>
 <td style="text-align: left">String</td>
 <td style="text-align: left"></td>
-<td style="text-align: left">币种余额</td>
+<td style="text-align: left">balance</td>
 </tr>
 <tr>
 <td style="text-align: left">&gt; frozBal</td>
 <td style="text-align: left">String</td>
 <td style="text-align: left"></td>
-<td style="text-align: left">冻结数量</td>
+<td style="text-align: left">Frozen balance of the currency</td>
 </tr>
 <tr>
 <td style="text-align: left">&gt; avlBal</td>
 <td style="text-align: left">String</td>
 <td style="text-align: left"></td>
-<td style="text-align: left">可用余额</td>
+<td style="text-align: left">Available balance of the currency</td>
 </tr>
 <tr>
 <td style="text-align: left">&gt; uTime</td>
 <td style="text-align: left">String</td>
 <td style="text-align: left"></td>
-<td style="text-align: left">币种余额更新时间</td>
+<td style="text-align: left">Update time of currency balance information</td>
 </tr>
 </tbody></table>
-<h2 id='c4541cdba9'>获取交易费率</h2><h3 id='http-6'>HTTP 请求</h3>
+<h2 id='get-fee-rates'>Get fee rates</h2>
+<p>API Key Permission：Read</p>
+<h3 id='http-request-6'>HTTP Request</h3>
 <ul>
 <li>GET <code>/api/v1/account/tradeFee</code></li>
 </ul>
-<h3 id='1f9ac54b15-6'>请求参数</h3>
+<h3 id='request-parameters-6'>Request Parameters</h3>
 <table><thead>
 <tr>
 <th style="text-align: left">Name</th>
@@ -954,13 +973,13 @@
 <td style="text-align: left">instId</td>
 <td style="text-align: left">String</td>
 <td style="text-align: left">N</td>
-<td style="text-align: left">产品ID<br />如“SPOT_BTC/USDT”，如果同时有instId和instType，则以instId为准</td>
+<td style="text-align: left">Instrument ID, e.g. <code>SPOT_BTC/USDT</code>，if both instId and instType is sent，instType will be ignored.</td>
 </tr>
 <tr>
 <td style="text-align: left">instType</td>
 <td style="text-align: left">String</td>
 <td style="text-align: left">Y</td>
-<td style="text-align: left">产品类型<br /> SPOT：现货</td>
+<td style="text-align: left">Instrument type, currently only SPOT is supported</td>
 </tr>
 </tbody></table>
 
@@ -968,7 +987,7 @@
 <p>Response:</p>
 </blockquote>
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-  </span><span class="nl">"msg"</span><span class="p">:</span><span class="w"> </span><span class="s2">"操作成功"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"msg"</span><span class="p">:</span><span class="w"> </span><span class="s2">"success"</span><span class="p">,</span><span class="w">
   </span><span class="nl">"code"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w">
   </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
     </span><span class="p">{</span><span class="w">
@@ -980,7 +999,7 @@
   </span><span class="p">],</span><span class="w">
   </span><span class="nl">"ts"</span><span class="p">:</span><span class="w"> </span><span class="mi">1679902503029</span><span class="w">
 </span><span class="p">}</span><span class="w">
-</span></code></pre></div><h3 id='2213f4c32f-5'>响应数据</h3>
+</span></code></pre></div><h3 id='response-content-5'>Response Content</h3>
 <table><thead>
 <tr>
 <th style="text-align: left">Name</th>
@@ -993,28 +1012,30 @@
 <td style="text-align: left">instId</td>
 <td style="text-align: left">String</td>
 <td style="text-align: left"></td>
-<td style="text-align: left">产品ID<br />如&quot;SPOT_BTC/USDT&quot;</td>
+<td style="text-align: left">Instrument Id</td>
 </tr>
 <tr>
 <td style="text-align: left">instType</td>
 <td style="text-align: left">String</td>
 <td style="text-align: left"></td>
-<td style="text-align: left">产品类型<br /> SPOT：现货</td>
+<td style="text-align: left">Instrument Type</td>
 </tr>
 <tr>
 <td style="text-align: left">takerFee</td>
 <td style="text-align: left">String</td>
 <td style="text-align: left"></td>
-<td style="text-align: left">吃单手续费费率</td>
+<td style="text-align: left">Taker fee rate</td>
 </tr>
 <tr>
 <td style="text-align: left">makerFee</td>
 <td style="text-align: left">String</td>
 <td style="text-align: left"></td>
-<td style="text-align: left">挂单手续费费率</td>
+<td style="text-align: left">Maker fee rate</td>
 </tr>
 </tbody></table>
-<h1 id='57aa173947'>现货交易</h1><h2 id='fd6ce2a756'>下单</h2><h3 id='http-7'>HTTP 请求</h3>
+<h1 id='trading'>Trading</h1><h2 id='place-order'>Place order</h2>
+<p>API Key Permission：Trade</p>
+<h3 id='http-request-7'>HTTP Request</h3>
 <ul>
 <li>POST <code>/api/v1/order</code></li>
 </ul>
@@ -1032,7 +1053,7 @@
   </span><span class="nl">"ordAmt"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
   </span><span class="nl">"ordTag"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="w">
 </span><span class="p">}</span><span class="w">
-</span></code></pre></div><h3 id='1f9ac54b15-7'>请求参数</h3>
+</span></code></pre></div><h3 id='request-parameters-7'>Request Parameters</h3>
 <table><thead>
 <tr>
 <th style="text-align: left">Name</th>
@@ -1045,49 +1066,49 @@
 <td style="text-align: left">instId</td>
 <td style="text-align: left">String</td>
 <td style="text-align: left">Y</td>
-<td style="text-align: left">产品ID<br />如“SPOT_BTC/USDT”</td>
+<td style="text-align: left">Instrument Id</td>
 </tr>
 <tr>
 <td style="text-align: left">side</td>
 <td style="text-align: left">String</td>
 <td style="text-align: left">Y</td>
-<td style="text-align: left">订单方向<br/>buy：买<br />sell：卖</td>
+<td style="text-align: left">Order side, <code>buy</code> <code>sell</code></td>
 </tr>
 <tr>
 <td style="text-align: left">clOrdId</td>
 <td style="text-align: left">String</td>
 <td style="text-align: left">N</td>
-<td style="text-align: left">客户自定义的唯一订单ID,不可重复出现</td>
+<td style="text-align: left">Client Order ID as assigned by the client, should be unique</td>
 </tr>
 <tr>
 <td style="text-align: left">ordPx</td>
 <td style="text-align: left">String</td>
 <td style="text-align: left">N</td>
-<td style="text-align: left">订单价格</td>
+<td style="text-align: left">Order price. Only applicable to <code>limit</code> order.</td>
 </tr>
 <tr>
 <td style="text-align: left">ordType</td>
 <td style="text-align: left">String</td>
 <td style="text-align: left">Y</td>
-<td style="text-align: left">订单类型<br />limit：限价单<br />market：市价单</td>
+<td style="text-align: left">Order type, e.g. <code>market</code> <code>limit</code></td>
 </tr>
 <tr>
 <td style="text-align: left">ordQty</td>
 <td style="text-align: left">String</td>
 <td style="text-align: left">N</td>
-<td style="text-align: left">下单数量（标的币种）</td>
+<td style="text-align: left">Quantity to buy or sell in base asset.</td>
 </tr>
 <tr>
 <td style="text-align: left">ordAmt</td>
 <td style="text-align: left">String</td>
 <td style="text-align: left">N</td>
-<td style="text-align: left">下单数量（计价币种），仅市价买单需要</td>
+<td style="text-align: left">Amount to buy or sell in quote asset.</td>
 </tr>
 <tr>
 <td style="text-align: left">ordTag</td>
 <td style="text-align: left">string</td>
 <td style="text-align: left">N</td>
-<td style="text-align: left">订单标签</td>
+<td style="text-align: left">Order tag</td>
 </tr>
 </tbody></table>
 
@@ -1095,7 +1116,7 @@
 <p>Response:</p>
 </blockquote>
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-  </span><span class="nl">"msg"</span><span class="p">:</span><span class="w"> </span><span class="s2">"操作成功"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"msg"</span><span class="p">:</span><span class="w"> </span><span class="s2">"success"</span><span class="p">,</span><span class="w">
   </span><span class="nl">"code"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w">
   </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
     </span><span class="p">{</span><span class="w">
@@ -1113,7 +1134,7 @@
   </span><span class="p">],</span><span class="w">
   </span><span class="nl">"ts"</span><span class="p">:</span><span class="w"> </span><span class="mi">1679897698037</span><span class="w">
 </span><span class="p">}</span><span class="w">
-</span></code></pre></div><h3 id='2213f4c32f-6'>响应数据</h3>
+</span></code></pre></div><h3 id='response-content-6'>Response Content</h3>
 <table><thead>
 <tr>
 <th style="text-align: left">Name</th>
@@ -1126,64 +1147,66 @@
 <td style="text-align: left">instId</td>
 <td style="text-align: left">String</td>
 <td style="text-align: left"></td>
-<td style="text-align: left">产品ID<br />如“SPOT_BTC/USDT”</td>
+<td style="text-align: left">Instrument Id</td>
 </tr>
 <tr>
 <td style="text-align: left">ordId</td>
 <td style="text-align: left">String</td>
 <td style="text-align: left"></td>
-<td style="text-align: left">订单ID</td>
+<td style="text-align: left">Order ID</td>
 </tr>
 <tr>
 <td style="text-align: left">side</td>
 <td style="text-align: left">String</td>
 <td style="text-align: left"></td>
-<td style="text-align: left">订单方向<br/>buy：买<br />sell：卖</td>
+<td style="text-align: left">Order side</td>
 </tr>
 <tr>
 <td style="text-align: left">clOrdId</td>
 <td style="text-align: left">String</td>
 <td style="text-align: left"></td>
-<td style="text-align: left">客户自定义的唯一订单ID</td>
+<td style="text-align: left">Client Order ID</td>
 </tr>
 <tr>
 <td style="text-align: left">ordPx</td>
 <td style="text-align: left">String</td>
-<td style="text-align: left"></td>
-<td style="text-align: left">订单价格</td>
+<td style="text-align: left">N</td>
+<td style="text-align: left">Order price</td>
 </tr>
 <tr>
 <td style="text-align: left">ordType</td>
 <td style="text-align: left">String</td>
-<td style="text-align: left"></td>
-<td style="text-align: left">订单类型<br />limit：限价单<br />market：市价单</td>
+<td style="text-align: left">Y</td>
+<td style="text-align: left">Order type</td>
 </tr>
 <tr>
 <td style="text-align: left">ordQty</td>
 <td style="text-align: left">String</td>
-<td style="text-align: left"></td>
-<td style="text-align: left">下单数量（标的币种）</td>
+<td style="text-align: left">N</td>
+<td style="text-align: left">Quantity to buy or sell in base asset.</td>
 </tr>
 <tr>
 <td style="text-align: left">ordAmt</td>
 <td style="text-align: left">String</td>
-<td style="text-align: left"></td>
-<td style="text-align: left">下单数量（计价币种）</td>
+<td style="text-align: left">N</td>
+<td style="text-align: left">Amount to buy or sell in quote asset.</td>
 </tr>
 <tr>
 <td style="text-align: left">ordTag</td>
 <td style="text-align: left">String</td>
 <td style="text-align: left"></td>
-<td style="text-align: left">订单标签</td>
+<td style="text-align: left">Order tag</td>
 </tr>
 <tr>
 <td style="text-align: left">cTime</td>
 <td style="text-align: left">String</td>
 <td style="text-align: left"></td>
-<td style="text-align: left">订单创建时间</td>
+<td style="text-align: left">Order creation time</td>
 </tr>
 </tbody></table>
-<h2 id='4e53c0fccd'>撤销订单</h2><h3 id='http-8'>HTTP 请求</h3>
+<h2 id='order-cancel'>Order Cancel</h2>
+<p>API Key Permission：Trade</p>
+<h3 id='http-request-8'>HTTP Request</h3>
 <ul>
 <li>POST <code>/api/v1/cancelOrder</code></li>
 </ul>
@@ -1196,7 +1219,7 @@
   </span><span class="nl">"clOrdId"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
   </span><span class="nl">"ordId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"22149"</span><span class="w">
 </span><span class="p">}</span><span class="w">
-</span></code></pre></div><h3 id='1f9ac54b15-8'>请求参数</h3>
+</span></code></pre></div><h3 id='request-parameters-8'>Request Parameters</h3>
 <table><thead>
 <tr>
 <th style="text-align: left">Name</th>
@@ -1208,20 +1231,20 @@
 <tr>
 <td style="text-align: left">instId</td>
 <td style="text-align: left">String</td>
-<td style="text-align: left">Y</td>
-<td style="text-align: left">产品ID<br />如“SPOT_BTC/USDT”</td>
+<td style="text-align: left">N</td>
+<td style="text-align: left">Instrument ID</td>
 </tr>
 <tr>
 <td style="text-align: left">ordId</td>
 <td style="text-align: left">String</td>
 <td style="text-align: left">N</td>
-<td style="text-align: left">订单ID，若同时传ordId和clOrdId两个，以ordId为主；如果两个都不传，则撤销该产品ID下的所有订单；</td>
+<td style="text-align: left">Order id, when both ordId and clOrdId is sent，clOrdId will be ignored. If none of them is sent, all open order of the instrument id will be cancelled.</td>
 </tr>
 <tr>
 <td style="text-align: left">clOrdId</td>
 <td style="text-align: left">String</td>
 <td style="text-align: left">N</td>
-<td style="text-align: left">客户自定义的唯一订单ID</td>
+<td style="text-align: left">Client Order ID</td>
 </tr>
 </tbody></table>
 
@@ -1229,7 +1252,7 @@
 <p>Response:</p>
 </blockquote>
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-  </span><span class="nl">"msg"</span><span class="p">:</span><span class="w"> </span><span class="s2">"操作成功"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"msg"</span><span class="p">:</span><span class="w"> </span><span class="s2">"success"</span><span class="p">,</span><span class="w">
   </span><span class="nl">"code"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w">
   </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
     </span><span class="p">{</span><span class="w">
@@ -1240,7 +1263,7 @@
   </span><span class="p">],</span><span class="w">
   </span><span class="nl">"ts"</span><span class="p">:</span><span class="w"> </span><span class="mi">1679897917815</span><span class="w">
 </span><span class="p">}</span><span class="w">
-</span></code></pre></div><h3 id='2213f4c32f-7'>响应数据</h3>
+</span></code></pre></div><h3 id='response-content-7'>Response Content</h3>
 <table><thead>
 <tr>
 <th style="text-align: left">Name</th>
@@ -1253,26 +1276,28 @@
 <td style="text-align: left">instId</td>
 <td style="text-align: left">String</td>
 <td style="text-align: left"></td>
-<td style="text-align: left">产品ID</td>
+<td style="text-align: left">Instrument Id</td>
 </tr>
 <tr>
 <td style="text-align: left">ordId</td>
 <td style="text-align: left">String</td>
 <td style="text-align: left"></td>
-<td style="text-align: left">订单ID</td>
+<td style="text-align: left">Order Id</td>
 </tr>
 <tr>
 <td style="text-align: left">clOrdId</td>
 <td style="text-align: left">String</td>
 <td style="text-align: left"></td>
-<td style="text-align: left">客户自定义的唯一订单ID</td>
+<td style="text-align: left">Client Order ID</td>
 </tr>
 </tbody></table>
-<h2 id='0f20996842'>获取订单信息</h2><h3 id='http-9'>HTTP 请求</h3>
+<h2 id='get-order-info'>Get order info</h2>
+<p>API Key Permission：Read</p>
+<h3 id='http-request-9'>HTTP Request</h3>
 <ul>
 <li>GET <code>/api/v1/orderInfo</code></li>
 </ul>
-<h3 id='1f9ac54b15-9'>请求参数</h3>
+<h3 id='request-parameters-9'>Request Parameters</h3>
 <table><thead>
 <tr>
 <th style="text-align: left">Name</th>
@@ -1284,20 +1309,20 @@
 <tr>
 <td style="text-align: left">instId</td>
 <td style="text-align: left">String</td>
-<td style="text-align: left">Y</td>
-<td style="text-align: left">产品ID<br />如“SPOT_BTC/USDT”</td>
+<td style="text-align: left">N</td>
+<td style="text-align: left">Instrument ID</td>
 </tr>
 <tr>
 <td style="text-align: left">ordId</td>
 <td style="text-align: left">String</td>
 <td style="text-align: left">N</td>
-<td style="text-align: left">订单ID， <code>ordId</code>和<code>clOrdId</code>必须传一个，若传两个，以<code>ordId</code>为主</td>
+<td style="text-align: left">Order id, when both ordId and clOrdId is sent，clOrdId will be ignored.</td>
 </tr>
 <tr>
 <td style="text-align: left">clOrdId</td>
 <td style="text-align: left">String</td>
 <td style="text-align: left">N</td>
-<td style="text-align: left">客户自定义的唯一订单ID</td>
+<td style="text-align: left">Client Order ID</td>
 </tr>
 </tbody></table>
 
@@ -1305,7 +1330,7 @@
 <p>Response:</p>
 </blockquote>
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-  </span><span class="nl">"msg"</span><span class="p">:</span><span class="w"> </span><span class="s2">"操作成功"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"msg"</span><span class="p">:</span><span class="w"> </span><span class="s2">"success"</span><span class="p">,</span><span class="w">
   </span><span class="nl">"code"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w">
   </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
     </span><span class="nl">"instId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SPOT_ETC/BUSD"</span><span class="p">,</span><span class="w">
@@ -1321,7 +1346,7 @@
     </span><span class="nl">"fillAmt"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
     </span><span class="nl">"ordTag"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
     </span><span class="nl">"totalFee"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"feeAseet"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BUSD"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"feeAsset"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BUSD"</span><span class="p">,</span><span class="w">
     </span><span class="nl">"avgFillPx"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
     </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CANCELLED"</span><span class="p">,</span><span class="w">
     </span><span class="nl">"utime"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1679897917759"</span><span class="p">,</span><span class="w">
@@ -1329,7 +1354,7 @@
   </span><span class="p">},</span><span class="w">
   </span><span class="nl">"ts"</span><span class="p">:</span><span class="w"> </span><span class="mi">1679897995189</span><span class="w">
 </span><span class="p">}</span><span class="w">
-</span></code></pre></div><h3 id='2213f4c32f-8'>响应数据</h3>
+</span></code></pre></div><h3 id='response-content-8'>Response Content</h3>
 <table><thead>
 <tr>
 <th style="text-align: left">Name</th>
@@ -1342,103 +1367,103 @@
 <td style="text-align: left">instId</td>
 <td style="text-align: left">String</td>
 <td style="text-align: left"></td>
-<td style="text-align: left">产品ID<br />如“SPOT_BTC/USDT”</td>
+<td style="text-align: left">Instrument ID</td>
 </tr>
 <tr>
 <td style="text-align: left">instType</td>
 <td style="text-align: left">String</td>
 <td style="text-align: left"></td>
-<td style="text-align: left">产品类型<br />SPOT：现货</td>
+<td style="text-align: left">Instrument type</td>
 </tr>
 <tr>
 <td style="text-align: left">side</td>
 <td style="text-align: left">String</td>
 <td style="text-align: left"></td>
-<td style="text-align: left">订单方向<br/>buy：买<br />sell：卖</td>
+<td style="text-align: left">Order side</td>
 </tr>
 <tr>
 <td style="text-align: left">ordId</td>
 <td style="text-align: left">String</td>
 <td style="text-align: left"></td>
-<td style="text-align: left">订单ID</td>
+<td style="text-align: left">Order ID</td>
 </tr>
 <tr>
 <td style="text-align: left">clOrdId</td>
 <td style="text-align: left">String</td>
 <td style="text-align: left"></td>
-<td style="text-align: left">客户自定义的唯一订单ID</td>
+<td style="text-align: left">Client Order ID</td>
 </tr>
 <tr>
 <td style="text-align: left">ordPx</td>
 <td style="text-align: left">String</td>
 <td style="text-align: left"></td>
-<td style="text-align: left">订单价格</td>
+<td style="text-align: left">Order price</td>
 </tr>
 <tr>
 <td style="text-align: left">ordType</td>
 <td style="text-align: left">String</td>
 <td style="text-align: left"></td>
-<td style="text-align: left">订单类型<br />limit：限价单<br />market：市价单</td>
+<td style="text-align: left">Order type</td>
 </tr>
 <tr>
 <td style="text-align: left">ordQty</td>
 <td style="text-align: left">String</td>
 <td style="text-align: left"></td>
-<td style="text-align: left">下单数量（标的币种）</td>
+<td style="text-align: left">Quantity to buy or sell in base asset.</td>
 </tr>
 <tr>
 <td style="text-align: left">ordAmt</td>
 <td style="text-align: left">String</td>
 <td style="text-align: left"></td>
-<td style="text-align: left">下单数量（计价币种）</td>
+<td style="text-align: left">Amount to buy or sell in quote asset.</td>
 </tr>
 <tr>
 <td style="text-align: left">fillQty</td>
 <td style="text-align: left">String</td>
 <td style="text-align: left"></td>
-<td style="text-align: left">成交数量（标的币种）</td>
+<td style="text-align: left">Filled quantity in base asset.</td>
 </tr>
 <tr>
 <td style="text-align: left">fillAmt</td>
 <td style="text-align: left">String</td>
 <td style="text-align: left"></td>
-<td style="text-align: left">成交数量（计价币种）</td>
+<td style="text-align: left">Filled amount in quote asset.</td>
 </tr>
 <tr>
 <td style="text-align: left">ordTag</td>
 <td style="text-align: left">String</td>
 <td style="text-align: left"></td>
-<td style="text-align: left">订单标签</td>
+<td style="text-align: left">Order tag</td>
 </tr>
 <tr>
 <td style="text-align: left">totalFee</td>
 <td style="text-align: left">String</td>
 <td style="text-align: left"></td>
-<td style="text-align: left">总手续费</td>
+<td style="text-align: left">Total fee</td>
 </tr>
 <tr>
-<td style="text-align: left">feeAseet</td>
+<td style="text-align: left">feeAsset</td>
 <td style="text-align: left">String</td>
 <td style="text-align: left"></td>
-<td style="text-align: left">手续费币种</td>
+<td style="text-align: left">Fee asset</td>
 </tr>
 <tr>
 <td style="text-align: left">cTime</td>
 <td style="text-align: left">String</td>
 <td style="text-align: left"></td>
-<td style="text-align: left">订单创建时间</td>
+<td style="text-align: left">Order creation time</td>
 </tr>
 <tr>
 <td style="text-align: left">uTime</td>
 <td style="text-align: left">String</td>
 <td style="text-align: left"></td>
-<td style="text-align: left">订单最后更新时间</td>
+<td style="text-align: left">Order update time</td>
 </tr>
 <tr>
 <td style="text-align: left">avgFillPx</td>
 <td style="text-align: left">String</td>
 <td style="text-align: left"></td>
-<td style="text-align: left">平均成交均价</td>
+<td style="text-align: left">Average filled price. If none is filled, it will return &quot;&quot;.</td>
 </tr>
 <tr>
 <td style="text-align: left">status</td>
@@ -1447,11 +1472,13 @@
 <td style="text-align: left">订单状态<br />NEW：已创建 <br />CANCELLING：撤单中<br />PARTIAL_FILLED：部分成交<br />CANCELLED：已撤单 <br />PARTIAL_CANCELED：部分成交已撤单 <br />FILLED：完全成交</td>
 </tr>
 </tbody></table>
-<h2 id='cee6a1fd93'>获取当前委托</h2><h3 id='http-10'>HTTP 请求</h3>
+<h2 id='cee6a1fd93'>获取当前委托</h2>
+<p>API Key Permission：Read</p>
+<h3 id='http-request-10'>HTTP Request</h3>
 <ul>
 <li>GET <code>/api/v1/openOrders</code></li>
 </ul>
-<h3 id='1f9ac54b15-10'>请求参数</h3>
+<h3 id='request-parameters-10'>Request Parameters</h3>
 <table><thead>
 <tr>
 <th style="text-align: left">Name</th>
@@ -1508,7 +1535,7 @@
 <p>Response:</p>
 </blockquote>
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-  </span><span class="nl">"msg"</span><span class="p">:</span><span class="w"> </span><span class="s2">"操作成功"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"msg"</span><span class="p">:</span><span class="w"> </span><span class="s2">"success"</span><span class="p">,</span><span class="w">
   </span><span class="nl">"code"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w">
   </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
     </span><span class="p">{</span><span class="w">
@@ -1525,7 +1552,7 @@
       </span><span class="nl">"fillAmt"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
       </span><span class="nl">"ordTag"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
       </span><span class="nl">"totalFee"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"feeAseet"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BUSD"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"feeAsset"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BUSD"</span><span class="p">,</span><span class="w">
       </span><span class="nl">"avgFillPx"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
       </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"NEW"</span><span class="p">,</span><span class="w">
       </span><span class="nl">"utime"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1679898094933"</span><span class="p">,</span><span class="w">
@@ -1534,7 +1561,7 @@
   </span><span class="p">],</span><span class="w">
   </span><span class="nl">"ts"</span><span class="p">:</span><span class="w"> </span><span class="mi">1679898098638</span><span class="w">
 </span><span class="p">}</span><span class="w">
-</span></code></pre></div><h3 id='2213f4c32f-9'>响应数据</h3>
+</span></code></pre></div><h3 id='response-content-9'>Response Content</h3>
 <table><thead>
 <tr>
 <th style="text-align: left">Name</th>
@@ -1622,7 +1649,7 @@
 <td style="text-align: left">总手续费</td>
 </tr>
 <tr>
-<td style="text-align: left">feeAseet</td>
+<td style="text-align: left">feeAsset</td>
 <td style="text-align: left">String</td>
 <td style="text-align: left"></td>
 <td style="text-align: left">手续费币种</td>
@@ -1652,11 +1679,13 @@
 <td style="text-align: left">订单状态<br />NEW：已创建 <br />CANCELLING：撤单中<br />PARTIAL_FILLED：部分成交</td>
 </tr>
 </tbody></table>
-<h2 id='4212d667d1'>获取历史委托</h2><h3 id='http-11'>HTTP 请求</h3>
+<h2 id='4212d667d1'>获取历史委托</h2>
+<p>API Key Permission：Read</p>
+<h3 id='http-request-11'>HTTP Request</h3>
 <ul>
 <li>GET <code>/api/v1/hisOrders</code></li>
 </ul>
-<h3 id='1f9ac54b15-11'>请求参数</h3>
+<h3 id='request-parameters-11'>Request Parameters</h3>
 <table><thead>
 <tr>
 <th style="text-align: left">Name</th>
@@ -1743,7 +1772,7 @@
 <p>Response:</p>
 </blockquote>
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-  </span><span class="nl">"msg"</span><span class="p">:</span><span class="w"> </span><span class="s2">"操作成功"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"msg"</span><span class="p">:</span><span class="w"> </span><span class="s2">"success"</span><span class="p">,</span><span class="w">
   </span><span class="nl">"code"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w">
   </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
     </span><span class="p">{</span><span class="w">
@@ -1760,7 +1789,7 @@
       </span><span class="nl">"fillAmt"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
       </span><span class="nl">"ordTag"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
       </span><span class="nl">"totalFee"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"feeAseet"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BUSD"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"feeAsset"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BUSD"</span><span class="p">,</span><span class="w">
       </span><span class="nl">"avgFillPx"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
       </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CANCELLED"</span><span class="p">,</span><span class="w">
       </span><span class="nl">"utime"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1679897917759"</span><span class="p">,</span><span class="w">
@@ -1780,7 +1809,7 @@
       </span><span class="nl">"fillAmt"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
       </span><span class="nl">"ordTag"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
       </span><span class="nl">"totalFee"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.0015"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"feeAseet"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ETC"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"feeAsset"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ETC"</span><span class="p">,</span><span class="w">
       </span><span class="nl">"avgFillPx"</span><span class="p">:</span><span class="w"> </span><span class="s2">"20.7168"</span><span class="p">,</span><span class="w">
       </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"FILLED"</span><span class="p">,</span><span class="w">
       </span><span class="nl">"utime"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1679897802005"</span><span class="p">,</span><span class="w">
@@ -1789,7 +1818,7 @@
   </span><span class="p">],</span><span class="w">
   </span><span class="nl">"ts"</span><span class="p">:</span><span class="w"> </span><span class="mi">1679898148424</span><span class="w">
 </span><span class="p">}</span><span class="w">
-</span></code></pre></div><h3 id='2213f4c32f-10'>响应数据</h3>
+</span></code></pre></div><h3 id='response-content-10'>Response Content</h3>
 <table><thead>
 <tr>
 <th style="text-align: left">Name</th>
@@ -1877,7 +1906,7 @@
 <td style="text-align: left">总手续费</td>
 </tr>
 <tr>
-<td style="text-align: left">feeAseet</td>
+<td style="text-align: left">feeAsset</td>
 <td style="text-align: left">String</td>
 <td style="text-align: left"></td>
 <td style="text-align: left">手续费币种</td>
@@ -1907,11 +1936,13 @@
 <td style="text-align: left">订单状态<br />CANCELLED：已撤单 <br />PARTIAL_CANCELED：部分成交已撤单 <br />FILLED：完全成交</td>
 </tr>
 </tbody></table>
-<h2 id='106a02279b'>获取成交明细</h2><h3 id='http-12'>HTTP 请求</h3>
+<h2 id='106a02279b'>获取成交明细</h2>
+<p>API Key Permission：Read</p>
+<h3 id='http-request-12'>HTTP Request</h3>
 <ul>
 <li>GET <code>/api/v1/hisTrades</code></li>
 </ul>
-<h3 id='1f9ac54b15-12'>请求参数</h3>
+<h3 id='request-parameters-12'>Request Parameters</h3>
 <table><thead>
 <tr>
 <th style="text-align: left">Name</th>
@@ -2003,10 +2034,10 @@
       </span><span class="nl">"tradeId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"3"</span><span class="w">
     </span><span class="p">}</span><span class="w">
   </span><span class="p">],</span><span class="w">
-  </span><span class="nl">"msg"</span><span class="p">:</span><span class="w"> </span><span class="s2">"操作成功"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"msg"</span><span class="p">:</span><span class="w"> </span><span class="s2">"success"</span><span class="p">,</span><span class="w">
   </span><span class="nl">"ts"</span><span class="p">:</span><span class="w"> </span><span class="mi">1680084241409</span><span class="w">
 </span><span class="p">}</span><span class="w">
-</span></code></pre></div><h3 id='2213f4c32f-11'>响应数据</h3>
+</span></code></pre></div><h3 id='response-content-11'>Response Content</h3>
 <table><thead>
 <tr>
 <th style="text-align: left">Name</th>
@@ -2076,7 +2107,7 @@
 <td style="text-align: left">手续费</td>
 </tr>
 <tr>
-<td style="text-align: left">feeAseet</td>
+<td style="text-align: left">feeAsset</td>
 <td style="text-align: left">String</td>
 <td style="text-align: left"></td>
 <td style="text-align: left">手续费币种</td>

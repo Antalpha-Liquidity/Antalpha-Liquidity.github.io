@@ -270,9 +270,6 @@
             <a href="#2d07d50c97" class="toc-h1 toc-link" data-title="接入说明">接入说明</a>
               <ul class="toc-list-h2">
                   <li>
-                    <a href="#acd1786863" class="toc-h2 toc-link" data-title="签名代码示例">签名代码示例</a>
-                  </li>
-                  <li>
                     <a href="#c1fd2fc5ac" class="toc-h2 toc-link" data-title="限频规则">限频规则</a>
                   </li>
               </ul>
@@ -373,9 +370,7 @@
 <p><code>账户信息</code></p>
 
 <p><code>现货交易</code></p>
-<h1 id='2d07d50c97'>接入说明</h1><h3 id='acd1786863'>签名代码示例</h3>
-<p>目前支持<a href="https://github.com/Antalpha-Liquidity/Api-demo">go</a>和<a href="https://github.com/Antalpha-Liquidity/Api-demo">java</a> demo</p>
-<h3 id='c1fd2fc5ac'>限频规则</h3>
+<h1 id='2d07d50c97'>接入说明</h1><h3 id='c1fd2fc5ac'>限频规则</h3>
 <p>限频规则针对接口进行限频，目前每个接口访问限制为1s内10次</p>
 
 <p>用户可根据Http Header中的信息调整访问策略</p>
@@ -387,30 +382,27 @@
 <li>rateLimit-reset：请求数上限重置时间，单位：毫秒</li>
 </ul>
 <h1 id='c64cd15fdc'>签名认证</h1><h2 id='34addae335'>签名说明</h2>
-<p>API 请求在通过 internet 传输的过程中极有可能被篡改，为了确保请求未被更改，除公共接口（基础信息，行情数据）外的私有接口均必须使用您的 API Key 做签名认证，以校验参数或参数值在传输途中是否发生了更改。（编码集统一 &quot;UTF-8&quot;）</p>
+<p>API 请求在通过 internet 传输的过程中极有可能被篡改，为了确保请求未被更改，除公共接口（基础信息，行情数据）外的私有接口均必须使用您的
+API Key 做签名认证，以校验参数或参数值在传输途中是否发生了更改。（编码集统一 &quot;UTF-8&quot;）</p>
 
 <p>一个合法的请求由以下几部分组成：</p>
 
 <ul>
-<li>方法请求地址：即访问服务器地址 api.liquidity.antalpha.com，比如 https://api.liquidity.antalpha.com/api/v1/order。</li>
+<li>方法请求地址：即访问服务器地址
+api.liquidity.antalpha.com，比如 https://api.liquidity.antalpha.com/api/v1/order。</li>
 <li>API 访问密钥（AccessKeyId）：您申请的 API Key 中的 Access Key。</li>
 <li>签名方法（SignatureMethod）：用户计算签名的基于哈希的协议，此处使用 HmacSHA256。</li>
 <li>签名版本（SignatureVersion）：签名协议的版本，此处使用1。</li>
 <li>时间戳（Timestamp）：系统当前毫秒数。</li>
-<li>必选和可选参数：每个方法都有一组用于定义 API 调用的必需参数和可选参数。可以在每个方法的说明中查看这些参数及其含义。 请一定注意：对于 GET 请求，每个方法自带的参数都需要进行签名运算； 对于 POST 请求，每个方法自带的参数不进行签名认证，即 POST 请求中需要进行签名运算的只有 AccessKeyId、SignatureMethod、SignatureVersion、Timestamp 四个参数，其它参数放在 body 中。</li>
+<li>必选和可选参数：每个方法都有一组用于定义 API 调用的必需参数和可选参数。可以在每个方法的说明中查看这些参数及其含义。
+请一定注意：对于 GET 请求，每个方法自带的参数都需要进行签名运算； 对于 POST 请求，每个方法自带的参数不进行签名认证，即
+POST 请求中需要进行签名运算的只有 AccessKeyId、SignatureMethod、SignatureVersion、Timestamp
+四个参数，其它参数放在 body 中。</li>
 <li>签名：签名计算得出的值，用于确保签名有效和未被篡改。</li>
 </ul>
-<h2 id='1fbac240b7'>签名步骤</h2><h3 id='api-key'>创建 API Key</h3>
-<p>主动申请</p>
-
-<p>API Key 包括以下两部分</p>
-
-<ul>
-<li>Access Key API 访问密钥</li>
-<li>Secret Key 签名认证加密所使用的密钥（仅申请时可见）</li>
-</ul>
-<h3 id='1fbac240b7-2'>签名步骤</h3>
-<p>规范要计算签名的请求 因为使用 HmacSHA256进行签名计算时，使用不同内容计算得到的结果会完全不同。所以在进行签名计算前，请先对请求进行规范化处理。下面以查询某订单详情请求为例进行说明：</p>
+<h2 id='1fbac240b7'>签名步骤</h2>
+<p>规范要计算签名的请求 因为使用
+HmacSHA256进行签名计算时，使用不同内容计算得到的结果会完全不同。所以在进行签名计算前，请先对请求进行规范化处理。下面以查询某订单详情请求为例进行说明：</p>
 
 <p>查询某订单详情</p>
 
@@ -425,37 +417,43 @@
 <p><code>AccessKeyId=e2xxxxxx-99xxxxxx-84xxxxxx-7xxxxSignatureMethod=HmacSHA256SignatureVersion=1Timestamp=1662022581951</code></p>
 
 <p>使用 UTF-8 编码，且进行了 URI 编码，十六进制字符必须大写，如 “:” 会被编码为 “%3A” ，空格被编码为 “%20”。</p>
-<h4 id='5'>5. 经过排序之后</h4>
+
+<p>经过排序之后</p>
+
 <p><code>AccessKeyId=e2xxxxxx-99xxxxxx-84xxxxxx-7xxxx</code><br>
 <code>SignatureMethod=HmacSHA256</code><br>
 <code>SignatureVersion=1</code><br>
 <code>Timestamp=1662022581951</code></p>
-<h4 id='6-amp'>6. 按照以上顺序，将各参数使用字符 “&amp;” 连接</h4>
+<h4 id='5-amp'>5. 按照以上顺序，将各参数使用字符 “&amp;” 连接</h4>
 <p><code>AccessKeyId=e2xxxxxx-99xxxxxx-84xxxxxx-7xxxx&amp;SignatureMethod=HmacSHA256&amp;SignatureVersion=1&amp;Timestamp=16620225819511</code></p>
-<h4 id='7'>7. 组成最终的要进行签名计算的字符串如下</h4>
+<h4 id='6'>6. 组成最终的要进行签名计算的字符串如下</h4>
 <p><code>POST\n</code><br>
 <code>api.liquidity.antalpha.com\n</code><br>
 <code>/api/v1/order\n</code><br>
 <code>AccessKeyId=e2xxxxxx-99xxxxxx-84xxxxxx-7xxxx&amp;SignatureMethod=HmacSHA256&amp;SignatureVersion=1&amp;Timestamp=1662022581951</code></p>
-<h4 id='8-secret-key'>8. 用上一步里生成的 “请求字符串” 和你的密钥 (Secret Key) 生成一个数字签名</h4>
+<h4 id='7-secret-key'>7. 用上一步里生成的 “请求字符串” 和你的密钥 (Secret Key) 生成一个数字签名</h4>
 <p><code>4F65x5A2bLyMWVQj3Aqp+B4w+ivaA7n5Oi2SuYtCJ9o=</code></p>
 
 <ol>
 <li>将上一步得到的请求字符串和 RSA私钥作为两个参数，调用HmacSHA256验签函数获得验签信息。</li>
 <li>将此验签信息用base-64编码，得到的值作为此次接口调用的数字签名。</li>
 </ol>
-<h4 id='9'>9. 将生成的数字签名加入到请求的路径参数里</h4>
+<h4 id='8'>8. 将生成的数字签名加入到请求的路径参数里</h4>
 <p>最终，发送到服务器的 API 请求应该为<br>
 <code>https://api.liquidity.antalpha.com/api/v1/order?AccessKeyId=e2xxxxxx-99xxxxxx-84xxxxxx-7xxxx&amp;SignatureMethod=HmacSHA256&amp;SignatureVersion=1&amp;Timestamp=1662022581951&amp;Signature=4F65x5A2bLyMWVQj3Aqp%2BB4w%2BivaA7n5Oi2SuYtCJ9o%3D</code></p>
 
-<ol>
+<ul>
 <li>把所有必须的认证参数添加到接口调用的路径参数里</li>
 <li>把数字签名在URL编码后加入到路径参数里，参数名为“Signature”。</li>
-</ol>
+</ul>
+<h3 id='acd1786863'>签名代码示例</h3>
+<p>目前支持<a href="https://github.com/Antalpha-Liquidity/Api-demo">go</a>
+和<a href="https://github.com/Antalpha-Liquidity/Api-demo">java</a> demo</p>
 <h2 id='086e3797d7'>安全实践</h2>
 <ul>
 <li><strong>强烈建议</strong>：在申请API Key时，请绑定您的IP地址，以此来保证您的API Key仅能在您自己的IP上使用。</li>
-<li><strong>强烈建议</strong>：不要将API Key暴露给任何人（包括第三方软件或机构），API Key代表了您的账户权限，API Key的暴露可能会对您的信息、资金造成损失，若API Key泄露，请尽快删除并重新创建。</li>
+<li><strong>强烈建议</strong>：不要将API Key暴露给任何人（包括第三方软件或机构），API Key代表了您的账户权限，API
+Key的暴露可能会对您的信息、资金造成损失，若API Key泄露，请尽快删除并重新创建。</li>
 </ul>
 <h1 id='6fbfb00794'>公共数据</h1><h2 id='ccc7ef231c'>获取产品基础信息</h2><h3 id='http'>HTTP 请求</h3>
 <ul>
@@ -821,11 +819,16 @@
   </span><span class="nl">"code"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w">
   </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
     </span><span class="p">[</span><span class="w">
-      </span><span class="s2">"1679873100"</span><span class="p">,</span><span class="w"> </span><span class="err">//ts</span><span class="p">,</span><span class="err">开始时间，Unix时间戳的秒数格式</span><span class="w">
-      </span><span class="s2">"20.43"</span><span class="p">,</span><span class="w">      </span><span class="err">//o</span><span class="p">,</span><span class="err">开盘价格</span><span class="w">
-      </span><span class="s2">"20.43"</span><span class="p">,</span><span class="w">      </span><span class="err">//h</span><span class="p">,</span><span class="err">最高价格</span><span class="w">
-      </span><span class="s2">"20.43"</span><span class="p">,</span><span class="w">      </span><span class="err">//l</span><span class="p">,</span><span class="err">最低价格</span><span class="w">
-      </span><span class="s2">"20.43"</span><span class="w">       </span><span class="err">//c</span><span class="p">,</span><span class="err">收盘价格(当前K线未结束的即为最新价)</span><span class="w">
+      </span><span class="s2">"1679873100"</span><span class="p">,</span><span class="w">
+      </span><span class="err">//ts</span><span class="p">,</span><span class="err">开始时间，Unix时间戳的秒数格式</span><span class="w">
+      </span><span class="s2">"20.43"</span><span class="p">,</span><span class="w">
+      </span><span class="err">//o</span><span class="p">,</span><span class="err">开盘价格</span><span class="w">
+      </span><span class="s2">"20.43"</span><span class="p">,</span><span class="w">
+      </span><span class="err">//h</span><span class="p">,</span><span class="err">最高价格</span><span class="w">
+      </span><span class="s2">"20.43"</span><span class="p">,</span><span class="w">
+      </span><span class="err">//l</span><span class="p">,</span><span class="err">最低价格</span><span class="w">
+      </span><span class="s2">"20.43"</span><span class="w">
+      </span><span class="err">//c</span><span class="p">,</span><span class="err">收盘价格(当前K线未结束的即为最新价)</span><span class="w">
     </span><span class="p">],</span><span class="w">
     </span><span class="p">[</span><span class="w">
       </span><span class="s2">"1679873400"</span><span class="p">,</span><span class="w">
@@ -837,7 +840,9 @@
   </span><span class="p">],</span><span class="w">
   </span><span class="nl">"ts"</span><span class="p">:</span><span class="w"> </span><span class="mi">1679903108172</span><span class="w">
 </span><span class="p">}</span><span class="w">
-</span></code></pre></div><h1 id='bd9157656f'>账户信息</h1><h2 id='bad06cdc35'>查看账户余额</h2><h3 id='http-5'>HTTP 请求</h3>
+</span></code></pre></div><h1 id='bd9157656f'>账户信息</h1><h2 id='bad06cdc35'>查看账户余额</h2>
+<p>API Key 权限：读取</p>
+<h3 id='http-5'>HTTP 请求</h3>
 <ul>
 <li>GET <code>/api/v1/account/balance</code></li>
 </ul>
@@ -937,7 +942,9 @@
 <td style="text-align: left">币种余额更新时间</td>
 </tr>
 </tbody></table>
-<h2 id='c4541cdba9'>获取交易费率</h2><h3 id='http-6'>HTTP 请求</h3>
+<h2 id='c4541cdba9'>获取交易费率</h2>
+<p>API Key 权限：读取</p>
+<h3 id='http-6'>HTTP 请求</h3>
 <ul>
 <li>GET <code>/api/v1/account/tradeFee</code></li>
 </ul>
@@ -1014,7 +1021,9 @@
 <td style="text-align: left">挂单手续费费率</td>
 </tr>
 </tbody></table>
-<h1 id='57aa173947'>现货交易</h1><h2 id='fd6ce2a756'>下单</h2><h3 id='http-7'>HTTP 请求</h3>
+<h1 id='57aa173947'>现货交易</h1><h2 id='fd6ce2a756'>下单</h2>
+<p>API Key 权限：交易</p>
+<h3 id='http-7'>HTTP 请求</h3>
 <ul>
 <li>POST <code>/api/v1/order</code></li>
 </ul>
@@ -1183,7 +1192,9 @@
 <td style="text-align: left">订单创建时间</td>
 </tr>
 </tbody></table>
-<h2 id='4e53c0fccd'>撤销订单</h2><h3 id='http-8'>HTTP 请求</h3>
+<h2 id='4e53c0fccd'>撤销订单</h2>
+<p>API Key 权限：交易</p>
+<h3 id='http-8'>HTTP 请求</h3>
 <ul>
 <li>POST <code>/api/v1/cancelOrder</code></li>
 </ul>
@@ -1215,7 +1226,7 @@
 <td style="text-align: left">ordId</td>
 <td style="text-align: left">String</td>
 <td style="text-align: left">N</td>
-<td style="text-align: left">订单ID， <code>ordId</code>和<code>clOrdId</code>必须传一个，若传两个，以<code>ordId</code>为主</td>
+<td style="text-align: left">订单ID，若同时传ordId和clOrdId两个，以ordId为主；如果两个都不传，则撤销该产品ID下的所有订单；</td>
 </tr>
 <tr>
 <td style="text-align: left">clOrdId</td>
@@ -1268,7 +1279,9 @@
 <td style="text-align: left">客户自定义的唯一订单ID</td>
 </tr>
 </tbody></table>
-<h2 id='0f20996842'>获取订单信息</h2><h3 id='http-9'>HTTP 请求</h3>
+<h2 id='0f20996842'>获取订单信息</h2>
+<p>API Key 权限：读取</p>
+<h3 id='http-9'>HTTP 请求</h3>
 <ul>
 <li>GET <code>/api/v1/orderInfo</code></li>
 </ul>
@@ -1321,7 +1334,7 @@
     </span><span class="nl">"fillAmt"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
     </span><span class="nl">"ordTag"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
     </span><span class="nl">"totalFee"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"feeAseet"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BUSD"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"feeAsset"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BUSD"</span><span class="p">,</span><span class="w">
     </span><span class="nl">"avgFillPx"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
     </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CANCELLED"</span><span class="p">,</span><span class="w">
     </span><span class="nl">"utime"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1679897917759"</span><span class="p">,</span><span class="w">
@@ -1417,7 +1430,7 @@
 <td style="text-align: left">总手续费</td>
 </tr>
 <tr>
-<td style="text-align: left">feeAseet</td>
+<td style="text-align: left">feeAsset</td>
 <td style="text-align: left">String</td>
 <td style="text-align: left"></td>
 <td style="text-align: left">手续费币种</td>
@@ -1447,7 +1460,9 @@
 <td style="text-align: left">订单状态<br />NEW：已创建 <br />CANCELLING：撤单中<br />PARTIAL_FILLED：部分成交<br />CANCELLED：已撤单 <br />PARTIAL_CANCELED：部分成交已撤单 <br />FILLED：完全成交</td>
 </tr>
 </tbody></table>
-<h2 id='cee6a1fd93'>获取当前委托</h2><h3 id='http-10'>HTTP 请求</h3>
+<h2 id='cee6a1fd93'>获取当前委托</h2>
+<p>API Key 权限：读取</p>
+<h3 id='http-10'>HTTP 请求</h3>
 <ul>
 <li>GET <code>/api/v1/openOrders</code></li>
 </ul>
@@ -1525,7 +1540,7 @@
       </span><span class="nl">"fillAmt"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
       </span><span class="nl">"ordTag"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
       </span><span class="nl">"totalFee"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"feeAseet"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BUSD"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"feeAsset"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BUSD"</span><span class="p">,</span><span class="w">
       </span><span class="nl">"avgFillPx"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
       </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"NEW"</span><span class="p">,</span><span class="w">
       </span><span class="nl">"utime"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1679898094933"</span><span class="p">,</span><span class="w">
@@ -1622,7 +1637,7 @@
 <td style="text-align: left">总手续费</td>
 </tr>
 <tr>
-<td style="text-align: left">feeAseet</td>
+<td style="text-align: left">feeAsset</td>
 <td style="text-align: left">String</td>
 <td style="text-align: left"></td>
 <td style="text-align: left">手续费币种</td>
@@ -1652,7 +1667,9 @@
 <td style="text-align: left">订单状态<br />NEW：已创建 <br />CANCELLING：撤单中<br />PARTIAL_FILLED：部分成交</td>
 </tr>
 </tbody></table>
-<h2 id='4212d667d1'>获取历史委托</h2><h3 id='http-11'>HTTP 请求</h3>
+<h2 id='4212d667d1'>获取历史委托</h2>
+<p>API Key 权限：读取</p>
+<h3 id='http-11'>HTTP 请求</h3>
 <ul>
 <li>GET <code>/api/v1/hisOrders</code></li>
 </ul>
@@ -1760,7 +1777,7 @@
       </span><span class="nl">"fillAmt"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
       </span><span class="nl">"ordTag"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
       </span><span class="nl">"totalFee"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"feeAseet"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BUSD"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"feeAsset"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BUSD"</span><span class="p">,</span><span class="w">
       </span><span class="nl">"avgFillPx"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
       </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CANCELLED"</span><span class="p">,</span><span class="w">
       </span><span class="nl">"utime"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1679897917759"</span><span class="p">,</span><span class="w">
@@ -1780,7 +1797,7 @@
       </span><span class="nl">"fillAmt"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
       </span><span class="nl">"ordTag"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
       </span><span class="nl">"totalFee"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.0015"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"feeAseet"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ETC"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"feeAsset"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ETC"</span><span class="p">,</span><span class="w">
       </span><span class="nl">"avgFillPx"</span><span class="p">:</span><span class="w"> </span><span class="s2">"20.7168"</span><span class="p">,</span><span class="w">
       </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"FILLED"</span><span class="p">,</span><span class="w">
       </span><span class="nl">"utime"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1679897802005"</span><span class="p">,</span><span class="w">
@@ -1877,7 +1894,7 @@
 <td style="text-align: left">总手续费</td>
 </tr>
 <tr>
-<td style="text-align: left">feeAseet</td>
+<td style="text-align: left">feeAsset</td>
 <td style="text-align: left">String</td>
 <td style="text-align: left"></td>
 <td style="text-align: left">手续费币种</td>
@@ -1907,7 +1924,9 @@
 <td style="text-align: left">订单状态<br />CANCELLED：已撤单 <br />PARTIAL_CANCELED：部分成交已撤单 <br />FILLED：完全成交</td>
 </tr>
 </tbody></table>
-<h2 id='106a02279b'>获取成交明细</h2><h3 id='http-12'>HTTP 请求</h3>
+<h2 id='106a02279b'>获取成交明细</h2>
+<p>API Key 权限：读取</p>
+<h3 id='http-12'>HTTP 请求</h3>
 <ul>
 <li>GET <code>/api/v1/hisTrades</code></li>
 </ul>
@@ -2076,7 +2095,7 @@
 <td style="text-align: left">手续费</td>
 </tr>
 <tr>
-<td style="text-align: left">feeAseet</td>
+<td style="text-align: left">feeAsset</td>
 <td style="text-align: left">String</td>
 <td style="text-align: left"></td>
 <td style="text-align: left">手续费币种</td>
