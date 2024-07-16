@@ -1,0 +1,918 @@
+
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link href="images/icon.jpg" rel="icon" type="image/jpg" />
+    <title>API Documentation</title>
+    <style>
+      .highlight table td { padding: 5px; }
+.highlight table pre { margin: 0; }
+.highlight .gh {
+  color: #999999;
+}
+.highlight .sr {
+  color: #f6aa11;
+}
+.highlight .go {
+  color: #888888;
+}
+.highlight .gp {
+  color: #555555;
+}
+.highlight .gs {
+}
+.highlight .gu {
+  color: #aaaaaa;
+}
+.highlight .nb {
+  color: #f6aa11;
+}
+.highlight .cm {
+  color: #75715e;
+}
+.highlight .cp {
+  color: #75715e;
+}
+.highlight .c1 {
+  color: #75715e;
+}
+.highlight .cs {
+  color: #75715e;
+}
+.highlight .c, .highlight .ch, .highlight .cd, .highlight .cpf {
+  color: #75715e;
+}
+.highlight .err {
+  color: #960050;
+}
+.highlight .gr {
+  color: #960050;
+}
+.highlight .gt {
+  color: #960050;
+}
+.highlight .gd {
+  color: #49483e;
+}
+.highlight .gi {
+  color: #49483e;
+}
+.highlight .ge {
+  color: #49483e;
+}
+.highlight .kc {
+  color: #66d9ef;
+}
+.highlight .kd {
+  color: #66d9ef;
+}
+.highlight .kr {
+  color: #66d9ef;
+}
+.highlight .no {
+  color: #66d9ef;
+}
+.highlight .kt {
+  color: #66d9ef;
+}
+.highlight .mf {
+  color: #ae81ff;
+}
+.highlight .mh {
+  color: #ae81ff;
+}
+.highlight .il {
+  color: #ae81ff;
+}
+.highlight .mi {
+  color: #ae81ff;
+}
+.highlight .mo {
+  color: #ae81ff;
+}
+.highlight .m, .highlight .mb, .highlight .mx {
+  color: #ae81ff;
+}
+.highlight .sc {
+  color: #ae81ff;
+}
+.highlight .se {
+  color: #ae81ff;
+}
+.highlight .ss {
+  color: #ae81ff;
+}
+.highlight .sd {
+  color: #e6db74;
+}
+.highlight .s2 {
+  color: #e6db74;
+}
+.highlight .sb {
+  color: #e6db74;
+}
+.highlight .sh {
+  color: #e6db74;
+}
+.highlight .si {
+  color: #e6db74;
+}
+.highlight .sx {
+  color: #e6db74;
+}
+.highlight .s1 {
+  color: #e6db74;
+}
+.highlight .s, .highlight .sa, .highlight .dl {
+  color: #e6db74;
+}
+.highlight .na {
+  color: #a6e22e;
+}
+.highlight .nc {
+  color: #a6e22e;
+}
+.highlight .nd {
+  color: #a6e22e;
+}
+.highlight .ne {
+  color: #a6e22e;
+}
+.highlight .nf, .highlight .fm {
+  color: #a6e22e;
+}
+.highlight .vc {
+  color: #ffffff;
+  background-color: #272822;
+}
+.highlight .nn {
+  color: #ffffff;
+  background-color: #272822;
+}
+.highlight .nl {
+  color: #ffffff;
+  background-color: #272822;
+}
+.highlight .ni {
+  color: #ffffff;
+  background-color: #272822;
+}
+.highlight .bp {
+  color: #ffffff;
+  background-color: #272822;
+}
+.highlight .vg {
+  color: #ffffff;
+  background-color: #272822;
+}
+.highlight .vi {
+  color: #ffffff;
+  background-color: #272822;
+}
+.highlight .nv, .highlight .vm {
+  color: #ffffff;
+  background-color: #272822;
+}
+.highlight .w {
+  color: #ffffff;
+  background-color: #272822;
+}
+.highlight {
+  color: #ffffff;
+  background-color: #272822;
+}
+.highlight .n, .highlight .py, .highlight .nx {
+  color: #ffffff;
+  background-color: #272822;
+}
+.highlight .ow {
+  color: #f92672;
+}
+.highlight .nt {
+  color: #f92672;
+}
+.highlight .k, .highlight .kv {
+  color: #f92672;
+}
+.highlight .kn {
+  color: #f92672;
+}
+.highlight .kp {
+  color: #f92672;
+}
+.highlight .o {
+  color: #f92672;
+}
+    </style>
+    <link href="stylesheets/screen.css" rel="stylesheet" media="screen" />
+    <link href="stylesheets/print.css" rel="stylesheet" media="print" />
+      <script src="javascripts/all_nosearch.js"></script>
+  </head>
+
+  <body class="index" data-languages="[]">
+    <a href="#" id="nav-button">
+      <span>
+        <img src="images/navbar.png" alt="" />
+      </span>
+    </a>
+    <header>
+      <div class="flex_box">
+        <img src="images/logo2.svg" class="logo" alt="" />
+        <div class="nav_box">
+          <span class="nav_cell" style="display: none">
+            <a href="javascript:;" class="nav_first">v1<i class="icon_nav"></i></a>
+            <ul class="nav_ul">
+              <li>
+                <a href="/docs/spot/v1/en/" id="v1_url">v1</a>
+              </li>
+            </ul>
+          </span>
+          <span class="nav_cell nav_tab">
+            <a href="/docs/spot/v1/en/" id="btn_spot">现货</a>
+          </span>
+          <!--
+           <span class="nav_cell nav_tab">
+             <a href="/docs/dm/v1/en/" id="btn_dm">币本位交割合约</a>
+           </span>
+           <span class="nav_cell nav_tab">
+             <a href="/docs/coin_margined_swap/v1/en/" id="btn_coin_margined_swap">币本位永续合约</a>
+           </span>
+          <span class="nav_cell nav_tab">
+            <a href="/docs/usdt_swap/v1/en/" id="btn_usdt_swap">U本位合约</a>
+          </span>
+
+          <span class="nav_cell nav_tab">
+            <a href="/docs/option/v1/en/" id="btn_option">期权合约</a>
+          </span>
+          <span class="nav_cell nav_tab">
+            <a href="/docs/swap/v1/en/" id="btn_swap">永续合约</a>
+          </span> -->
+        </div>
+      </div>
+      <a href="/docs/spot/v1/cn/" class="lang" id="lang_box">简体中文</a>
+    </header>
+    <div class="toc-wrapper">
+      <ul id="toc" class="toc-list-h1">
+          <li>
+            <a href="#api" class="toc-h1 toc-link" data-title="资金调拨API文档">资金调拨API文档</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#api-2" class="toc-h2 toc-link" data-title="一、API简介">一、API简介</a>
+                  </li>
+                  <li>
+                    <a href="#b486b10bb5" class="toc-h2 toc-link" data-title="二、接入说明">二、接入说明</a>
+                  </li>
+                  <li>
+                    <a href="#4387075b7a" class="toc-h2 toc-link" data-title="三、签名认证">三、签名认证</a>
+                  </li>
+                  <li>
+                    <a href="#996ce96049" class="toc-h2 toc-link" data-title="四、业务枚举">四、业务枚举</a>
+                  </li>
+                  <li>
+                    <a href="#82ba285fa3" class="toc-h2 toc-link" data-title="五、接口明细">五、接口明细</a>
+                  </li>
+                  <li>
+                    <a href="#099432f8f3" class="toc-h2 toc-link" data-title="六、错误码">六、错误码</a>
+                  </li>
+                  <li>
+                    <a href="#0a4e1fbc63" class="toc-h2 toc-link" data-title="七、更新说明">七、更新说明</a>
+                  </li>
+              </ul>
+          </li>
+      </ul>
+    </div>
+    <div class="page-wrapper">
+      <div class="dark-box"></div>
+      <div class="content">
+        <h1 id='api'>资金调拨API文档</h1><h2 id='api-2'>一、API简介</h2>
+<p>欢迎使用 API，此API文档将描述资金调拨关联API接口详情以及接入、验签说明。</p>
+<h2 id='b486b10bb5'>二、接入说明</h2><h3 id='2-1-urls'>2.1 接入URLs</h3>
+<p><strong>REST API</strong></p>
+
+<ul>
+<li><a href="https://api.demo.antxchange.com/">https://api.satalpha.com</a></li>
+</ul>
+<h3 id='2-2'>2.2 限频规则</h3>
+<p>限频规则针对接口进行限频，目前每个接口访问限制为1s内10次</p>
+
+<p>用户可根据Http Header中的信息调整访问策略</p>
+
+<ul>
+<li>rateLimit-times： 单轮请求数上限，单位：次数</li>
+<li>rateLimit-interval：请求数重置的时间间隔，单位：毫秒</li>
+<li>rateLimit-remaining：本轮剩余可用请求数，单位：次数</li>
+<li>rateLimit-reset：请求数上限重置时间，单位：毫秒</li>
+</ul>
+<h2 id='4387075b7a'>三、签名认证</h2><h3 id='3-1'>3.1 签名说明</h3>
+<p>API 请求在通过 internet 传输的过程中极有可能被篡改，为了确保请求未被更改，除公共接口（基础信息，行情数据）外的私有接口均必须使用您的 API Key 做签名认证，以校验参数或参数值在传输途中是否发生了更改。（编码集统一 &quot;UTF-8&quot;）</p>
+
+<p>一个合法的请求由以下几部分组成：</p>
+
+<ul>
+<li>方法请求地址：即访问服务器地址 <a href="https://api.demo.antxchange.com/">https://api.satalpha.com</a>，比如https://api.satalpha.com/api/v1/transferFunds</li>
+<li>API 访问密钥（AccessKeyId）：您申请的 API Key 中的 Access Key。</li>
+<li>签名方法（SignatureMethod）：用户计算签名的基于哈希的协议，此处使用 HmacSHA256。</li>
+<li>签名版本（SignatureVersion）：签名协议的版本，此处使用1。</li>
+<li>时间戳（Timestamp）：系统当前毫秒数。</li>
+<li>必选和可选参数：每个方法都有一组用于定义 API 调用的必需参数和可选参数。可以在每个方法的说明中查看这些参数及其含义。 请一定注意：对于 GET 请求，每个方法自带的参数都需要进行签名运算； 对于 POST 请求，每个方法自带的参数不进行签名认证，即 POST 请求中需要进行签名运算的只有 AccessKeyId、SignatureMethod、SignatureVersion、Timestamp 四个参数，其它参数放在 body 中。</li>
+<li>签名：签名计算得出的值，用于确保签名有效和未被篡改。</li>
+</ul>
+<h3 id='3-2'>3.2 签名步骤</h3>
+<p>规范要计算签名的请求因为使用 HmacSHA256进行签名计算时，使用不同内容计算得到的结果会完全不同。所以在进行签名计算前，请先对请求进行规范化处理。下面以发起资金调拨请求为例进行说明：</p>
+
+<p>查询某订单详情</p>
+
+<ul>
+<li>https://api.satalpha.com/api/v1/transferFunds?AccessKeyId=e2xxxxxx-99xxxxxx-84xxxxxx-7xxxx&amp;SignatureMethod=HmacSHA256&amp;SignatureVersion=1&amp;Timestamp=1662022581951</li>
+</ul>
+<h3 id='1-get-post-n'>1. 请求方法（GET 或 POST），后面添加换行符 “\n”</h3>
+<p>GET\n</p>
+<h3 id='2-n'>2. 添加小写的访问地址，后面添加换行符 “\n”</h3>
+<p>api.satalpha.com\n</p>
+<h3 id='3-n'>3. 访问方法的路径，后面添加换行符 “\n”</h3>
+<p>/api/v1/transferFunds\n</p>
+<h3 id='4-ascii'>4. 按照ASCII码的顺序对参数名进行排序。例如，下面是请求参数的原始顺序，进行过编码后</h3>
+<p>AccessKeyId=e2xxxxxx-99xxxxxx-84xxxxxx-7xxxxSignatureMethod=HmacSHA256SignatureVersion=1Timestamp=1662022581951</p>
+
+<p>使用 UTF-8 编码，且进行了 URI 编码，十六进制字符必须大写，如 “:” 会被编码为 “%3A” ，空格被编码为 “%20”。</p>
+
+<p>经过排序之后</p>
+
+<p>AccessKeyId=e2xxxxxx-99xxxxxx-84xxxxxx-7xxxx</p>
+
+<p>SignatureMethod=HmacSHA256</p>
+
+<p>SignatureVersion=1</p>
+
+<p>Timestamp=1662022581951</p>
+<h3 id='5-amp'>5. 按照以上顺序，将各参数使用字符 “&amp;” 连接</h3>
+<p>AccessKeyId=e2xxxxxx-99xxxxxx-84xxxxxx-7xxxx&amp;SignatureMethod=HmacSHA256&amp;SignatureVersion=1&amp;Timestamp=16620225819511</p>
+<h3 id='6'>6. 组成最终的要进行签名计算的字符串如下</h3>
+<p>POST\n</p>
+
+<p>api.satalpha.com\n</p>
+
+<p>/api/v1/transferFunds\n</p>
+
+<p>AccessKeyId=e2xxxxxx-99xxxxxx-84xxxxxx-7xxxx&amp;SignatureMethod=HmacSHA256&amp;SignatureVersion=1&amp;Timestamp=1662022581951</p>
+<h3 id='7-secret-key'>7. 用上一步里生成的 “请求字符串” 和你的密钥 (Secret Key) 生成一个数字签名</h3>
+<p>1KFjiTRVlGSyzoNIEXIx8boXe7njFmjeHwiK4kKkEOY=</p>
+
+<ol>
+<li>将上一步得到的请求字符串和密钥作为两个参数，调用HmacSHA256验签函数获得验签信息。</li>
+<li>将此验签信息用base-64编码，得到的值作为此次接口调用的数字签名。</li>
+</ol>
+<h3 id='8'>8. 将生成的数字签名加入到请求的路径参数里</h3>
+<p>最终，发送到服务器的 API 请求应该为</p>
+
+<p>https://api.satalpha.com/api/v1/transferFunds?AccessKeyId=e2xxxxxx-99xxxxxx-84xxxxxx-7xxxx&amp;SignatureMethod=HmacSHA256&amp;SignatureVersion=1&amp;Timestamp=1662022581951&amp;Signature=4F65x5A2bLyMWVQj3Aqp%2BB4w%2BivaA7n5Oi2SuYtCJ9o%3D</p>
+
+<ul>
+<li>把所有必须的认证参数添加到接口调用的路径参数里</li>
+<li>把数字签名在URL编码后加入到路径参数里，参数名为“Signature”。</li>
+</ul>
+<h2 id='996ce96049'>四、业务枚举</h2>
+<p><strong>交易所枚举（ExchangeEnum）</strong></p>
+
+<table><thead>
+<tr>
+<th>枚举值</th>
+<th>说明</th>
+<th>备注</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>binance</td>
+<td>币安交易所</td>
+<td></td>
+</tr>
+<tr>
+<td>bingx</td>
+<td>bingx交易所</td>
+<td></td>
+</tr>
+<tr>
+<td>coinex</td>
+<td>coinex交易所</td>
+<td></td>
+</tr>
+<tr>
+<td>bybit</td>
+<td>bybit交易所</td>
+<td></td>
+</tr>
+<tr>
+<td>okx</td>
+<td>okx交易所</td>
+<td></td>
+</tr>
+<tr>
+<td>crypto</td>
+<td>crypto.com交易所</td>
+<td></td>
+</tr>
+<tr>
+<td>bitget</td>
+<td>bitget交易所</td>
+<td></td>
+</tr>
+<tr>
+<td>huobi</td>
+<td>huobi交易所</td>
+<td>新英文名htx</td>
+</tr>
+</tbody></table>
+
+<p><strong>账户类型枚举（AccountTypeEnum）</strong></p>
+
+<table><thead>
+<tr>
+<th>交易所</th>
+<th>枚举值</th>
+<th>备注</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>binance</td>
+<td>经典账户: Spot, Margin, USDT-M, Coin-M</td>
+<td></td>
+</tr>
+<tr>
+<td>统一账户: Spot, Margin-PM</td>
+<td>默认为Spot，托管子账户只支持现货账户</td>
+<td></td>
+</tr>
+<tr>
+<td>bingx</td>
+<td>Funding、USDT-M</td>
+<td>默认为资金账户</td>
+</tr>
+<tr>
+<td>coinex</td>
+<td>Spot、USDT-M</td>
+<td>默认为SPOT</td>
+</tr>
+<tr>
+<td>bybit</td>
+<td>经典账户: Spot, Funding, USDT-M, Coin-M</td>
+<td></td>
+</tr>
+<tr>
+<td>统一账户: Funding, Trading, Coin-M</td>
+<td>默认为Funding</td>
+<td></td>
+</tr>
+<tr>
+<td>okx</td>
+<td>Funding, Trading</td>
+<td>默认为Funding</td>
+</tr>
+<tr>
+<td>crypto</td>
+<td></td>
+<td>默认统一账户，无需传参</td>
+</tr>
+<tr>
+<td>bitget</td>
+<td>Spot, Margin, USDT-M, USDC-M, Coin-M</td>
+<td>默认为Spot</td>
+</tr>
+<tr>
+<td>huobi</td>
+<td>Spot,  USDT-M, Coin-M-Swap,Coin-M-Futures</td>
+<td>默认为Spot，Coin-M-Swap为币本位永续，Coin-M-Futures为币本位交割</td>
+</tr>
+</tbody></table>
+<h2 id='82ba285fa3'>五、接口明细</h2><h3 id='5-1'>5.1 资金调拨</h3><h3 id='http'>HTTP 请求</h3>
+<ul>
+<li>POST /api/v1/transferFunds</li>
+</ul>
+<h3 id='1f9ac54b15'>请求参数</h3>
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>clientTransferId</td>
+<td>String</td>
+<td>Y</td>
+<td>客户自定义划转id</td>
+</tr>
+<tr>
+<td>asset</td>
+<td>String</td>
+<td>Y</td>
+<td>划转资产名称</td>
+</tr>
+<tr>
+<td>fromExchange</td>
+<td>String</td>
+<td>Y</td>
+<td>源交易所，参考交易所枚举</td>
+</tr>
+<tr>
+<td>fromSubAccount</td>
+<td>String</td>
+<td>Y</td>
+<td>源子账户，参考交易所枚举</td>
+</tr>
+<tr>
+<td>fromAccountType</td>
+<td>String</td>
+<td>N</td>
+<td>出金账户类型，参考账户类型枚举</td>
+</tr>
+<tr>
+<td>toExchange</td>
+<td>String</td>
+<td>Y</td>
+<td>目的交易所，参考交易所枚举</td>
+</tr>
+<tr>
+<td>toSubAccount</td>
+<td>String</td>
+<td>Y</td>
+<td>目的子账户，参考交易所枚举</td>
+</tr>
+<tr>
+<td>toAccountType</td>
+<td>String</td>
+<td>N</td>
+<td>入金账户类型，参考账户类型枚举</td>
+</tr>
+<tr>
+<td>applyAmount</td>
+<td>Number</td>
+<td>Y</td>
+<td>发起金额，大于10U</td>
+</tr>
+</tbody></table>
+
+<blockquote>
+<p>Response:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight plaintext"><code>{
+  "msg": "success",
+  "code": 200,
+  "data": [
+    {
+      "clientTransferId": "4e8c51b7-97ac-4ef1-864f-7869f13c0c6f",
+      "transferId": "4e8c51b797ac4ef1864f7869f13c0c6f"
+    }
+  ],
+  "ts": 1679903538458
+}
+
+</code></pre></div><h3 id='2213f4c32f'>响应数据</h3>
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>clientTransferId</td>
+<td>String</td>
+<td>Y</td>
+<td>客户自定义划转id</td>
+</tr>
+<tr>
+<td>transferId</td>
+<td>String</td>
+<td>Y</td>
+<td>划转记录id</td>
+</tr>
+</tbody></table>
+<h3 id='5-2'>5.2 查询资金调拨记录</h3><h3 id='http-2'>HTTP 请求</h3>
+<ul>
+<li>GET /api/v1/transfer/record</li>
+</ul>
+<h3 id='1f9ac54b15-2'>请求参数</h3>
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>clientTransferId</td>
+<td>String</td>
+<td>N</td>
+<td>客户自定义划转id，与transferId二选一</td>
+</tr>
+<tr>
+<td>transferId</td>
+<td>String</td>
+<td>N</td>
+<td></td>
+</tr>
+</tbody></table>
+
+<blockquote>
+<p>Response:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight plaintext"><code>{
+    "msg": "success",
+    "code": 200,
+    "data": [
+        {
+            "clientTransferId": "4e8c51b7-97ac-4ef1-864f-7869f13c0c7f",
+            "asset": "USDT",
+            "fromExchange": "bingx",
+            "fromSubAccount": "4665179554",
+            "toExchange": "binance",
+            "toSubAccount": "someacccount@binance.com",
+            "applyAmount": "20",
+            "realAmount": "19",
+            "feeAmount": "1",
+            "externalStatus": "done",
+            "applyTime": 1715305243482,
+            "arriveTime": null,
+            "failReason": "exchange internal error."
+        }
+    ],
+    "ts": 1715306224948
+}
+</code></pre></div><h3 id='2213f4c32f-2'>响应数据</h3>
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>clientTransferId</td>
+<td>String</td>
+<td>Y</td>
+<td>客户自定义划转id</td>
+</tr>
+<tr>
+<td>transferId</td>
+<td>String</td>
+<td>Y</td>
+<td>划转记录id</td>
+</tr>
+<tr>
+<td>asset</td>
+<td>String</td>
+<td>Y</td>
+<td>划转资产名称</td>
+</tr>
+<tr>
+<td>fromExchange</td>
+<td>String</td>
+<td>Y</td>
+<td>源交易所</td>
+</tr>
+<tr>
+<td>fromSubAccount</td>
+<td>String</td>
+<td>Y</td>
+<td>源账户</td>
+</tr>
+<tr>
+<td>fromAccountType</td>
+<td>String</td>
+<td>N</td>
+<td>出金账户类型</td>
+</tr>
+<tr>
+<td>toExchange</td>
+<td>String</td>
+<td>Y</td>
+<td>目的交易所</td>
+</tr>
+<tr>
+<td>toSubAccount</td>
+<td>String</td>
+<td>Y</td>
+<td>目的账户</td>
+</tr>
+<tr>
+<td>toAccountType</td>
+<td>String</td>
+<td>N</td>
+<td>入金账户类型</td>
+</tr>
+<tr>
+<td>applyAmount</td>
+<td>String</td>
+<td>Y</td>
+<td>发起金额</td>
+</tr>
+<tr>
+<td>realAmount</td>
+<td>String</td>
+<td>N</td>
+<td>实际到账金额</td>
+</tr>
+<tr>
+<td>feeAmount</td>
+<td>String</td>
+<td>N</td>
+<td>提币手续费金额</td>
+</tr>
+<tr>
+<td>externalStatus</td>
+<td>String</td>
+<td>Y</td>
+<td>状态，pending:已提交，done:已完成，fail:失败</td>
+</tr>
+<tr>
+<td>applyTime</td>
+<td>Long</td>
+<td>Y</td>
+<td>提交时间</td>
+</tr>
+<tr>
+<td>arriveTime</td>
+<td>Long</td>
+<td>N</td>
+<td>到账时间</td>
+</tr>
+<tr>
+<td>failReason</td>
+<td>String</td>
+<td>N</td>
+<td>失败原因</td>
+</tr>
+</tbody></table>
+<h2 id='099432f8f3'>六、错误码</h2>
+<table><thead>
+<tr>
+<th>错误码</th>
+<th>状态码</th>
+<th>描述</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>200</td>
+<td>200</td>
+<td>成功</td>
+</tr>
+<tr>
+<td>40000</td>
+<td>400</td>
+<td>通用请求错误</td>
+</tr>
+<tr>
+<td>40002</td>
+<td>400</td>
+<td>{0}参数非法，请检查后重试</td>
+</tr>
+<tr>
+<td>45164</td>
+<td>400</td>
+<td>资金调拨记录已存在</td>
+</tr>
+<tr>
+<td>45165</td>
+<td>400</td>
+<td>资金调拨accessKeyId参数非法</td>
+</tr>
+<tr>
+<td>45166</td>
+<td>400</td>
+<td>不支持的资金调拨币种</td>
+</tr>
+<tr>
+<td>45169</td>
+<td>400</td>
+<td>跨所资金调拨记录正在处理中</td>
+</tr>
+<tr>
+<td>50000</td>
+<td>500</td>
+<td>服务端错误</td>
+</tr>
+</tbody></table>
+<h2 id='0a4e1fbc63'>七、更新说明</h2><h3 id='20240715'>20240715</h3>
+<ul>
+<li>划转记录查询接口新增transferId参数支持；</li>
+</ul>
+<h3 id='20240628'>20240628</h3>
+<ul>
+<li>新增支持火币交易所；</li>
+<li>完善bingx出入金账户枚举；</li>
+<li>新增错误码45169</li>
+</ul>
+<h3 id='20240615'>20240615</h3>
+<ul>
+<li>补充出入金账户类型字段以及对应枚举说明</li>
+</ul>
+<h3 id='20240606'>20240606</h3>
+<ul>
+<li>补充子账户各交易所默认转入转出账户</li>
+</ul>
+
+      </div>
+      <div class="dark-box">
+      </div>
+    </div>
+    <script>
+      const lang_btn = document.getElementById('lang_box');
+      const btn_spot = document.getElementById('btn_spot');
+      // const btn_dm = document.getElementById('btn_dm');
+      // const btn_coin_margined_swap = document.getElementById('btn_coin_margined_swap');
+      // const btn_usdt_swap = document.getElementById('btn_usdt_swap')
+      // const btn_option = document.getElementById('btn_option');
+      const v1_url = document.getElementById('v1_url');
+      const url = GetUrlRelativePath();
+
+      if(url.indexOf('cn') != -1){
+        //如果是中文环境
+        lang_btn.innerHTML = 'English';
+        btn_spot.innerHTML = '现货';
+        // btn_dm.innerHTML = '币本位交割合约';
+        // btn_coin_margined_swap.innerHTML = '币本位永续合约';
+        // btn_usdt_swap.innerHTML = 'U本位合约';
+        // btn_option.innerHTML = '期权合约';
+        lang_btn.href = url.replace('cn/', 'en/');
+        btn_spot.href = btn_spot.href.replace('en/', 'cn/');
+        // btn_dm.href = btn_dm.href.replace('en/', 'cn/');
+        // btn_coin_margined_swap.href = btn_coin_margined_swap.href.replace('en/', 'cn/');
+        // btn_usdt_swap.href = btn_usdt_swap.href.replace('en/', 'cn/');
+        // btn_option.href = btn_option.href.replace('en/', 'cn/');
+        v1_url.href = '/docs/spot/v1/cn/';
+      }else{
+        //如果是英文环境
+        lang_btn.innerHTML = '中文';
+        btn_spot.innerHTML = 'Spot';
+        // btn_dm.innerHTML = 'Coin-M Futures';
+        // btn_swap.innerHTML = 'SWAP API';
+        // btn_coin_margined_swap.innerHTML = 'Coin-M Swaps';
+        // btn_usdt_swap.innerHTML = 'USDT-M';
+        // btn_option.innerHTML = 'Option';
+        lang_btn.href = url.replace('en/', 'cn/');
+        btn_spot.href = btn_spot.href.replace('cn/', 'en/');
+        // btn_dm.href = btn_dm.href.replace('cn/', 'en/');
+        // btn_swap.href = btn_swap.href.replace('cn/', 'en/');
+        // btn_coin_margined_swap.href = btn_coin_margined_swap.href.replace('cn/', 'en/');
+        // btn_usdt_swap.href = btn_usdt_swap.href.replace('cn/', 'en/');
+        // btn_option.href = btn_option.href.replace('cn/', 'en/');
+        v1_url.href = '/docs/spot/v1/en/';
+      }
+
+      if(location.href.indexOf('docs/dm/v') > 0){
+        btn_spot.className = '';
+        btn_dm.className = 'current';
+        btn_coin_margined_swap.className = '';
+        btn_usdt_swap.className = '';
+        btn_option.className = '';
+      }
+      else if(location.href.indexOf('docs/coin_margined_swap/v') > 0){
+        btn_spot.className = '';
+        btn_dm.className = '';
+        btn_coin_margined_swap.className = 'current';
+        btn_usdt_swap.className = '';
+        btn_option.className = '';
+      } else if(location.href.indexOf('docs/usdt_swap/v') > 0){
+        btn_spot.className = '';
+        btn_dm.className = '';
+        btn_coin_margined_swap.className = '';
+        btn_usdt_swap.className = 'current';
+        btn_option.className = '';
+      } else if(location.href.indexOf('docs/option/v') > 0){
+        btn_spot.className = '';
+        btn_coin_margined_swap.className = '';
+        btn_usdt_swap.className = '';
+        btn_dm.className = '';
+        btn_option.className = 'current';
+      } else {
+        btn_spot.className = 'current';
+        /*btn_coin_margined_swap.className = '';
+        btn_usdt_swap.className = '';
+        btn_dm.className = '';
+        btn_option.className = '';*/
+      }
+      //显示语言切换按钮
+      lang_btn.style.display = 'block';
+      function GetUrlRelativePath(){
+        let url = document.location.toString();
+        let arrUrl = url.split("//");
+        let start = arrUrl[1].indexOf("/");
+        let relUrl = arrUrl[1].substring(start);
+        if(relUrl.indexOf("?") != -1){
+          relUrl = relUrl.split("?")[0];
+        }
+        if(relUrl.indexOf("#") != -1){
+          relUrl = relUrl.split("#")[0];
+        }
+        return relUrl;
+  　　}
+    </script>
+  </body>
+</html>
