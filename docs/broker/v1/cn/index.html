@@ -817,7 +817,8 @@ HmacSHA256进行签名计算时，使用不同内容计算得到的结果会完�
         btn_portfolio.innerHTML = '量化投资';
         btn_broker.innerHTML = '经纪商';
         lang_btn.href = url.replace('cn/', 'en/');
-        btn_spot.href = btn_spot.href.replace('en/', 'cn/');
+        btn_portfolio.href = btn_portfolio.href.replace('en/', 'cn/');
+        btn_broker.href = btn_broker.href.replace('en/', 'cn/');
         v1_url.href = '/docs/portfolio/v1/cn/';
       }else{
         //如果是英文环境
@@ -825,41 +826,18 @@ HmacSHA256进行签名计算时，使用不同内容计算得到的结果会完�
         btn_portfolio.innerHTML = 'Portfolio';
         btn_broker.innerHTML = 'Broker';
         lang_btn.href = url.replace('en/', 'cn/');
-        btn_spot.href = btn_spot.href.replace('cn/', 'en/');
+        btn_portfolio.href = btn_portfolio.href.replace('cn/', 'en/');
+        btn_broker.href = btn_broker.href.replace('cn/', 'en/');
         v1_url.href = '/docs/portfolio/v1/en/';
       }
 
-      if(location.href.indexOf('docs/dm/v') > 0){
-        btn_spot.className = '';
-        btn_dm.className = 'current';
-        btn_coin_margined_swap.className = '';
-        btn_usdt_swap.className = '';
-        btn_option.className = '';
-      }
-      else if(location.href.indexOf('docs/coin_margined_swap/v') > 0){
-        btn_spot.className = '';
-        btn_dm.className = '';
-        btn_coin_margined_swap.className = 'current';
-        btn_usdt_swap.className = '';
-        btn_option.className = '';
-      } else if(location.href.indexOf('docs/usdt_swap/v') > 0){
-        btn_spot.className = '';
-        btn_dm.className = '';
-        btn_coin_margined_swap.className = '';
-        btn_usdt_swap.className = 'current';
-        btn_option.className = '';
-      } else if(location.href.indexOf('docs/option/v') > 0){
-        btn_spot.className = '';
-        btn_coin_margined_swap.className = '';
-        btn_usdt_swap.className = '';
-        btn_dm.className = '';
-        btn_option.className = 'current';
+      if(location.href.indexOf('docs/broker/v') > 0){
+        // 经纪商目录
+        btn_portfolio.className = '';
+        btn_broker.className = 'current';
       } else {
-        btn_spot.className = 'current';
-        /*btn_coin_margined_swap.className = '';
-        btn_usdt_swap.className = '';
-        btn_dm.className = '';
-        btn_option.className = '';*/
+        btn_portfolio.className = 'current';
+        btn_broker.className = '';
       }
       //显示语言切换按钮
       lang_btn.style.display = 'block';
