@@ -367,9 +367,12 @@ POST 请求中需要进行签名运算的只有 AccessKeyId、SignatureMethod、
 HmacSHA256进行签名计算时，使用不同内容计算得到的结果会完全不同。所以在进行签名计算前，请先对请求进行规范化处理。下面以发起资金调拨请求为例进行说明：</p>
 
 <p>请求的API key与密钥对参考如下：</p>
-<div class="highlight"><pre class="highlight plaintext"><code>access key id: e2xxxxxx-99xxxxxx-84xxxxxx-7xxxx
-access secret: 1KFjiTRVlGSyzoNIEXIx8boXe7njFmjeHwiK4kKkEOY=
-</code></pre></div>
+
+<blockquote>
+<p>access key id: e2xxxxxx-99xxxxxx-84xxxxxx-7xxxx
+access secret: 1KFjiTRVlGSyzoNIEXIx8boXe7njFmjeHwiK4kKkEOY=</p>
+</blockquote>
+
 <p>资金调拨发起请求的URL如下：</p>
 
 <ul>
