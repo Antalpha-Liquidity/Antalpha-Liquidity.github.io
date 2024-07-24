@@ -297,6 +297,18 @@
                   <li>
                     <a href="#2213f4c32f-2" class="toc-h2 toc-link" data-title="响应数据">响应数据</a>
                   </li>
+                  <li>
+                    <a href="#5-3" class="toc-h2 toc-link" data-title="5.3 查询资金调拨记录列表">5.3 查询资金调拨记录列表</a>
+                  </li>
+                  <li>
+                    <a href="#http-3" class="toc-h2 toc-link" data-title="HTTP 请求">HTTP 请求</a>
+                  </li>
+                  <li>
+                    <a href="#1f9ac54b15-3" class="toc-h2 toc-link" data-title="请求参数">请求参数</a>
+                  </li>
+                  <li>
+                    <a href="#2213f4c32f-3" class="toc-h2 toc-link" data-title="响应数据">响应数据</a>
+                  </li>
               </ul>
           </li>
           <li>
@@ -486,13 +498,13 @@ HmacSHA256进行签名计算时，使用不同内容计算得到的结果会完�
 </thead><tbody>
 <tr>
 <td>binance</td>
-<td>经典账户: Spot, Margin, USDT-M, Coin-M 统一账户: Spot, Margin-PM</td>
+<td>经典账户: Spot, Margin, USDT-M, Coin-M 统一账户: Spot</td>
 <td>默认为Spot，托管子账户暂不支持</td>
 </tr>
 <tr>
 <td>bingx</td>
 <td>Funding、USDT-M</td>
-<td>默认为资金账户</td>
+<td>默认为Funding</td>
 </tr>
 <tr>
 <td>coinex</td>
@@ -598,15 +610,23 @@ HmacSHA256进行签名计算时，使用不同内容计算得到的结果会完�
 <p>Response:</p>
 </blockquote>
 <div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="p">{</span>
-  <span class="dl">"</span><span class="s2">msg</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">success</span><span class="dl">"</span><span class="p">,</span>
-  <span class="dl">"</span><span class="s2">code</span><span class="dl">"</span><span class="p">:</span> <span class="mi">200</span><span class="p">,</span>
-  <span class="dl">"</span><span class="s2">data</span><span class="dl">"</span><span class="p">:</span> <span class="p">[</span>
+  <span class="dl">"</span><span class="s2">msg</span><span class="dl">"</span>
+<span class="p">:</span>
+  <span class="dl">"</span><span class="s2">success</span><span class="dl">"</span><span class="p">,</span>
+      <span class="dl">"</span><span class="s2">code</span><span class="dl">"</span>
+<span class="p">:</span>
+  <span class="mi">200</span><span class="p">,</span>
+      <span class="dl">"</span><span class="s2">data</span><span class="dl">"</span>
+<span class="p">:</span>
+  <span class="p">[</span>
     <span class="p">{</span>
       <span class="dl">"</span><span class="s2">clientTransferId</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">4e8c51b7-97ac-4ef1-864f-7869f13c0c6f</span><span class="dl">"</span><span class="p">,</span>
       <span class="dl">"</span><span class="s2">transferId</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">4e8c51b797ac4ef1864f7869f13c0c6f</span><span class="dl">"</span>
     <span class="p">}</span>
   <span class="p">],</span>
-  <span class="dl">"</span><span class="s2">ts</span><span class="dl">"</span><span class="p">:</span> <span class="mi">1679903538458</span>
+      <span class="dl">"</span><span class="s2">ts</span><span class="dl">"</span>
+<span class="p">:</span>
+  <span class="mi">1679903538458</span>
 <span class="p">}</span>
 
 </code></pre></div><h2 id='2213f4c32f'>响应数据</h2>
@@ -662,28 +682,256 @@ HmacSHA256进行签名计算时，使用不同内容计算得到的结果会完�
 <p>Response:</p>
 </blockquote>
 <div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="p">{</span>
-    <span class="dl">"</span><span class="s2">msg</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">success</span><span class="dl">"</span><span class="p">,</span>
-    <span class="dl">"</span><span class="s2">code</span><span class="dl">"</span><span class="p">:</span> <span class="mi">200</span><span class="p">,</span>
-    <span class="dl">"</span><span class="s2">data</span><span class="dl">"</span><span class="p">:</span> <span class="p">[</span>
-        <span class="p">{</span>
-            <span class="dl">"</span><span class="s2">clientTransferId</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">4e8c51b7-97ac-4ef1-864f-7869f13c0c7f</span><span class="dl">"</span><span class="p">,</span>
-            <span class="dl">"</span><span class="s2">asset</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">USDT</span><span class="dl">"</span><span class="p">,</span>
-            <span class="dl">"</span><span class="s2">fromExchange</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">bingx</span><span class="dl">"</span><span class="p">,</span>
-            <span class="dl">"</span><span class="s2">fromSubAccount</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">4665179554</span><span class="dl">"</span><span class="p">,</span>
-            <span class="dl">"</span><span class="s2">toExchange</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">binance</span><span class="dl">"</span><span class="p">,</span>
-            <span class="dl">"</span><span class="s2">toSubAccount</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">someacccount@binance.com</span><span class="dl">"</span><span class="p">,</span>
-            <span class="dl">"</span><span class="s2">applyAmount</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">20</span><span class="dl">"</span><span class="p">,</span>
-            <span class="dl">"</span><span class="s2">realAmount</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">19</span><span class="dl">"</span><span class="p">,</span>
-            <span class="dl">"</span><span class="s2">feeAmount</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">1</span><span class="dl">"</span><span class="p">,</span>
-            <span class="dl">"</span><span class="s2">externalStatus</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">done</span><span class="dl">"</span><span class="p">,</span>
-            <span class="dl">"</span><span class="s2">applyTime</span><span class="dl">"</span><span class="p">:</span> <span class="mi">1715305243482</span><span class="p">,</span>
-            <span class="dl">"</span><span class="s2">arriveTime</span><span class="dl">"</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
-            <span class="dl">"</span><span class="s2">failReason</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">exchange internal error.</span><span class="dl">"</span>
-        <span class="p">}</span>
-    <span class="p">],</span>
-    <span class="dl">"</span><span class="s2">ts</span><span class="dl">"</span><span class="p">:</span> <span class="mi">1715306224948</span>
+  <span class="dl">"</span><span class="s2">msg</span><span class="dl">"</span>
+<span class="p">:</span>
+  <span class="dl">"</span><span class="s2">success</span><span class="dl">"</span><span class="p">,</span>
+      <span class="dl">"</span><span class="s2">code</span><span class="dl">"</span>
+<span class="p">:</span>
+  <span class="mi">200</span><span class="p">,</span>
+      <span class="dl">"</span><span class="s2">data</span><span class="dl">"</span>
+<span class="p">:</span>
+  <span class="p">[</span>
+    <span class="p">{</span>
+      <span class="dl">"</span><span class="s2">clientTransferId</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">4e8c51b7-97ac-4ef1-864f-7869f13c0c7f</span><span class="dl">"</span><span class="p">,</span>
+      <span class="dl">"</span><span class="s2">asset</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">USDT</span><span class="dl">"</span><span class="p">,</span>
+      <span class="dl">"</span><span class="s2">fromExchange</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">bingx</span><span class="dl">"</span><span class="p">,</span>
+      <span class="dl">"</span><span class="s2">fromSubAccount</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">4665179554</span><span class="dl">"</span><span class="p">,</span>
+      <span class="dl">"</span><span class="s2">toExchange</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">binance</span><span class="dl">"</span><span class="p">,</span>
+      <span class="dl">"</span><span class="s2">toSubAccount</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">someacccount@binance.com</span><span class="dl">"</span><span class="p">,</span>
+      <span class="dl">"</span><span class="s2">applyAmount</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">20</span><span class="dl">"</span><span class="p">,</span>
+      <span class="dl">"</span><span class="s2">realAmount</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">19</span><span class="dl">"</span><span class="p">,</span>
+      <span class="dl">"</span><span class="s2">feeAmount</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">1</span><span class="dl">"</span><span class="p">,</span>
+      <span class="dl">"</span><span class="s2">externalStatus</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">done</span><span class="dl">"</span><span class="p">,</span>
+      <span class="dl">"</span><span class="s2">applyTime</span><span class="dl">"</span><span class="p">:</span> <span class="mi">1715305243482</span><span class="p">,</span>
+      <span class="dl">"</span><span class="s2">arriveTime</span><span class="dl">"</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+      <span class="dl">"</span><span class="s2">failReason</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">exchange internal error.</span><span class="dl">"</span>
+    <span class="p">}</span>
+  <span class="p">],</span>
+      <span class="dl">"</span><span class="s2">ts</span><span class="dl">"</span>
+<span class="p">:</span>
+  <span class="mi">1715306224948</span>
 <span class="p">}</span>
 </code></pre></div><h2 id='2213f4c32f-2'>响应数据</h2>
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>clientTransferId</td>
+<td>String</td>
+<td>Y</td>
+<td>客户自定义划转id</td>
+</tr>
+<tr>
+<td>transferId</td>
+<td>String</td>
+<td>Y</td>
+<td>划转记录id</td>
+</tr>
+<tr>
+<td>asset</td>
+<td>String</td>
+<td>Y</td>
+<td>划转资产名称</td>
+</tr>
+<tr>
+<td>fromExchange</td>
+<td>String</td>
+<td>Y</td>
+<td>源交易所</td>
+</tr>
+<tr>
+<td>fromSubAccount</td>
+<td>String</td>
+<td>Y</td>
+<td>源账户</td>
+</tr>
+<tr>
+<td>fromAccountType</td>
+<td>String</td>
+<td>N</td>
+<td>出金账户类型</td>
+</tr>
+<tr>
+<td>toExchange</td>
+<td>String</td>
+<td>Y</td>
+<td>目的交易所</td>
+</tr>
+<tr>
+<td>toSubAccount</td>
+<td>String</td>
+<td>Y</td>
+<td>目的账户</td>
+</tr>
+<tr>
+<td>toAccountType</td>
+<td>String</td>
+<td>N</td>
+<td>入金账户类型</td>
+</tr>
+<tr>
+<td>applyAmount</td>
+<td>String</td>
+<td>Y</td>
+<td>发起金额</td>
+</tr>
+<tr>
+<td>realAmount</td>
+<td>String</td>
+<td>N</td>
+<td>实际到账金额</td>
+</tr>
+<tr>
+<td>feeAmount</td>
+<td>String</td>
+<td>N</td>
+<td>提币手续费金额</td>
+</tr>
+<tr>
+<td>externalStatus</td>
+<td>String</td>
+<td>Y</td>
+<td>状态，pending:已提交，done:已完成，fail:失败</td>
+</tr>
+<tr>
+<td>applyTime</td>
+<td>Long</td>
+<td>Y</td>
+<td>提交时间</td>
+</tr>
+<tr>
+<td>arriveTime</td>
+<td>Long</td>
+<td>N</td>
+<td>到账时间</td>
+</tr>
+<tr>
+<td>failReason</td>
+<td>String</td>
+<td>N</td>
+<td>失败原因</td>
+</tr>
+</tbody></table>
+<h2 id='5-3'>5.3 查询资金调拨记录列表</h2><h2 id='http-3'>HTTP 请求</h2>
+<ul>
+<li>GET /api/v1/transfer/recordList</li>
+</ul>
+<h2 id='1f9ac54b15-3'>请求参数</h2>
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>clientTransferId</td>
+<td>String</td>
+<td>N</td>
+<td>客户自定义划转id，与transferId二选一</td>
+</tr>
+<tr>
+<td>transferId</td>
+<td>String</td>
+<td>N</td>
+<td></td>
+</tr>
+<tr>
+<td>asset</td>
+<td>String</td>
+<td>N</td>
+<td>划转资产名称</td>
+</tr>
+<tr>
+<td>fromExchange</td>
+<td>String</td>
+<td>N</td>
+<td>源交易所，参考交易所枚举</td>
+</tr>
+<tr>
+<td>fromSubAccount</td>
+<td>String</td>
+<td>N</td>
+<td>源子账户，参考交易所枚举</td>
+</tr>
+<tr>
+<td>fromAccountType</td>
+<td>String</td>
+<td>N</td>
+<td>出金账户类型，参考账户类型枚举</td>
+</tr>
+<tr>
+<td>toExchange</td>
+<td>String</td>
+<td>N</td>
+<td>目的交易所，参考交易所枚举</td>
+</tr>
+<tr>
+<td>toSubAccount</td>
+<td>String</td>
+<td>N</td>
+<td>目的子账户，参考交易所枚举</td>
+</tr>
+<tr>
+<td>toAccountType</td>
+<td>String</td>
+<td>N</td>
+<td>入金账户类型，参考账户类型枚举</td>
+</tr>
+<tr>
+<td>pageSize</td>
+<td>Number</td>
+<td>N</td>
+<td>起始页，默认：1</td>
+</tr>
+<tr>
+<td>pageNum</td>
+<td>Number</td>
+<td>N</td>
+<td>分页数据长度，默认：10，最大：1000</td>
+</tr>
+</tbody></table>
+
+<blockquote>
+<p>Response:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="p">{</span>
+  <span class="dl">"</span><span class="s2">msg</span><span class="dl">"</span>
+<span class="p">:</span>
+  <span class="dl">"</span><span class="s2">success</span><span class="dl">"</span><span class="p">,</span>
+      <span class="dl">"</span><span class="s2">code</span><span class="dl">"</span>
+<span class="p">:</span>
+  <span class="mi">200</span><span class="p">,</span>
+      <span class="dl">"</span><span class="s2">data</span><span class="dl">"</span>
+<span class="p">:</span>
+  <span class="p">[</span>
+    <span class="p">{</span>
+      <span class="dl">"</span><span class="s2">clientTransferId</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">4e8c51b7-97ac-4ef1-864f-7869f13c0c7f</span><span class="dl">"</span><span class="p">,</span>
+      <span class="dl">"</span><span class="s2">asset</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">USDT</span><span class="dl">"</span><span class="p">,</span>
+      <span class="dl">"</span><span class="s2">fromExchange</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">bybit</span><span class="dl">"</span><span class="p">,</span>
+      <span class="dl">"</span><span class="s2">fromSubAccount</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">4665179554</span><span class="dl">"</span><span class="p">,</span>
+      <span class="dl">"</span><span class="s2">toExchange</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">binance</span><span class="dl">"</span><span class="p">,</span>
+      <span class="dl">"</span><span class="s2">toSubAccount</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">someacccount@binance.com</span><span class="dl">"</span><span class="p">,</span>
+      <span class="dl">"</span><span class="s2">applyAmount</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">20</span><span class="dl">"</span><span class="p">,</span>
+      <span class="dl">"</span><span class="s2">realAmount</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">19</span><span class="dl">"</span><span class="p">,</span>
+      <span class="dl">"</span><span class="s2">feeAmount</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">1</span><span class="dl">"</span><span class="p">,</span>
+      <span class="dl">"</span><span class="s2">externalStatus</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">done</span><span class="dl">"</span><span class="p">,</span>
+      <span class="dl">"</span><span class="s2">applyTime</span><span class="dl">"</span><span class="p">:</span> <span class="mi">1715305243482</span><span class="p">,</span>
+      <span class="dl">"</span><span class="s2">arriveTime</span><span class="dl">"</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+      <span class="dl">"</span><span class="s2">failReason</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">exchange internal error.</span><span class="dl">"</span>
+    <span class="p">}</span>
+  <span class="p">],</span>
+      <span class="dl">"</span><span class="s2">ts</span><span class="dl">"</span>
+<span class="p">:</span>
+  <span class="mi">1715306224948</span>
+<span class="p">}</span>
+</code></pre></div><h2 id='2213f4c32f-3'>响应数据</h2>
 <table><thead>
 <tr>
 <th>Name</th>
