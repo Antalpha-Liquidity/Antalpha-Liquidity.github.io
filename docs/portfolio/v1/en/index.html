@@ -243,10 +243,10 @@
     <div class="toc-wrapper">
       <ul id="toc" class="toc-list-h1">
           <li>
-            <a href="#introduction" class="toc-h1 toc-link" data-title="一、Introduction">一、Introduction</a>
+            <a href="#1-introduction" class="toc-h1 toc-link" data-title="1、Introduction">1、Introduction</a>
           </li>
           <li>
-            <a href="#connection-instructions" class="toc-h1 toc-link" data-title="二、Connection Instructions">二、Connection Instructions</a>
+            <a href="#2-connection-instructions" class="toc-h1 toc-link" data-title="2、Connection Instructions">2、Connection Instructions</a>
               <ul class="toc-list-h2">
                   <li>
                     <a href="#2-1-access-urls" class="toc-h2 toc-link" data-title="2.1 Access URLs">2.1 Access URLs</a>
@@ -257,7 +257,7 @@
               </ul>
           </li>
           <li>
-            <a href="#signature-authentication" class="toc-h1 toc-link" data-title="三、Signature Authentication">三、Signature Authentication</a>
+            <a href="#3-signature-authentication" class="toc-h1 toc-link" data-title="3、Signature Authentication">3、Signature Authentication</a>
               <ul class="toc-list-h2">
                   <li>
                     <a href="#3-1-signature-instructions" class="toc-h2 toc-link" data-title="3.1 Signature Instructions">3.1 Signature Instructions</a>
@@ -268,10 +268,10 @@
               </ul>
           </li>
           <li>
-            <a href="#business-enumerations" class="toc-h1 toc-link" data-title="四、Business Enumerations">四、Business Enumerations</a>
+            <a href="#4-business-enumerations" class="toc-h1 toc-link" data-title="4、Business Enumerations">4、Business Enumerations</a>
           </li>
           <li>
-            <a href="#api-details" class="toc-h1 toc-link" data-title="五、API Details">五、API Details</a>
+            <a href="#5-api-details" class="toc-h1 toc-link" data-title="5、API Details">5、API Details</a>
               <ul class="toc-list-h2">
                   <li>
                     <a href="#5-1-fund-transfer" class="toc-h2 toc-link" data-title="5.1 Fund Transfer">5.1 Fund Transfer</a>
@@ -312,10 +312,10 @@
               </ul>
           </li>
           <li>
-            <a href="#error-codes" class="toc-h1 toc-link" data-title="六、Error Codes">六、Error Codes</a>
+            <a href="#6-error-codes" class="toc-h1 toc-link" data-title="6、Error Codes">6、Error Codes</a>
           </li>
           <li>
-            <a href="#update-notes" class="toc-h1 toc-link" data-title="七、Update Notes">七、Update Notes</a>
+            <a href="#7-update-notes" class="toc-h1 toc-link" data-title="7、Update Notes">7、Update Notes</a>
               <ul class="toc-list-h2">
                   <li>
                     <a href="#20240715" class="toc-h2 toc-link" data-title="20240715">20240715</a>
@@ -336,9 +336,9 @@
     <div class="page-wrapper">
       <div class="dark-box"></div>
       <div class="content">
-        <h1 id='introduction'>一、Introduction</h1>
+        <h1 id='1-introduction'>1、Introduction</h1>
 <p>Welcome to the API documentation. This guide outlines the details of the fund transfer API interfaces, including instructions for access and signature authentication.</p>
-<h1 id='connection-instructions'>二、Connection Instructions</h1><h2 id='2-1-access-urls'>2.1 Access URLs</h2>
+<h1 id='2-connection-instructions'>2、Connection Instructions</h1><h2 id='2-1-access-urls'>2.1 Access URLs</h2>
 <p><strong>REST API</strong></p>
 
 <ul>
@@ -355,7 +355,7 @@
 <li>rateLimit-remaining：The remaining available requests in the current round, unit: times</li>
 <li>rateLimit-reset：The reset time for the request count upper limit, unit: milliseconds</li>
 </ul>
-<h1 id='signature-authentication'>三、Signature Authentication</h1><h2 id='3-1-signature-instructions'>3.1 Signature Instructions</h2>
+<h1 id='3-signature-authentication'>3、Signature Authentication</h1><h2 id='3-1-signature-instructions'>3.1 Signature Instructions</h2>
 <p>API requests transmitted over the internet are highly likely to be tampered with. To ensure that the requests have not been altered, all private interfaces (excluding public interfaces such as basic information and market data) must use your API Key for signature authentication to verify whether the parameters or parameter values have been changed during transmission. (The encoding set is unified as &quot;UTF-8&quot;)</p>
 
 <p>A valid request consists of the following parts:</p>
@@ -404,9 +404,9 @@ Please note: For GET requests, all parameters for each method must be included i
 <p>SignatureVersion=1</p>
 
 <p>Timestamp=1662022581951</p>
-<h3 id='5-5-connect-the-parameters-using-the-character-quot-amp-quot-according-to-the-above-order'>5. 5.Connect the parameters using the character &quot;&amp;&quot; according to the above order.</h3>
+<h3 id='5-connect-the-parameters-using-the-character-quot-amp-quot-according-to-the-above-order'>5. Connect the parameters using the character &quot;&amp;&quot; according to the above order.</h3>
 <p>AccessKeyId=e2xxxxxx-99xxxxxx-84xxxxxx-7xxxx&amp;SignatureMethod=HmacSHA256&amp;SignatureVersion=1&amp;Timestamp=16620225819511</p>
-<h3 id='6-6-form-the-final-string-to-be-used-for-signature-calculation-as-follows'>6. 6.Form the final string to be used for signature calculation as follows:</h3>
+<h3 id='6-form-the-final-string-to-be-used-for-signature-calculation-as-follows'>6. Form the final string to be used for signature calculation as follows:</h3>
 <p>POST\n</p>
 
 <p>api.satalpha.com\n</p>
@@ -430,7 +430,7 @@ Please note: For GET requests, all parameters for each method must be included i
 <li>Add all required authentication parameters to the URL path parameters.</li>
 <li>Add the URL-encoded digital signature to the path parameters with the parameter name &quot;Signature&quot;.</li>
 </ul>
-<h1 id='business-enumerations'>四、Business Enumerations</h1>
+<h1 id='4-business-enumerations'>4、Business Enumerations</h1>
 <p><strong>Exchange Enumerations</strong></p>
 
 <table><thead>
@@ -532,7 +532,7 @@ Please note: For GET requests, all parameters for each method must be included i
 <td>The default is Spot. Coin-M-Swap is Coin-Margined Perpetual, Coin-M-Futures is Coin-Margined Futures</td>
 </tr>
 </tbody></table>
-<h1 id='api-details'>五、API Details</h1><h2 id='5-1-fund-transfer'>5.1 Fund Transfer</h2><h2 id='http-request'>HTTP Request</h2>
+<h1 id='5-api-details'>5、API Details</h1><h2 id='5-1-fund-transfer'>5.1 Fund Transfer</h2><h2 id='http-request'>HTTP Request</h2>
 <ul>
 <li>POST /api/v1/transferFunds</li>
 </ul>
@@ -1008,7 +1008,7 @@ Please note: For GET requests, all parameters for each method must be included i
 <td>Failure Reason</td>
 </tr>
 </tbody></table>
-<h1 id='error-codes'>六、Error Codes</h1>
+<h1 id='6-error-codes'>6、Error Codes</h1>
 <table><thead>
 <tr>
 <th>Error Code</th>
@@ -1057,7 +1057,7 @@ Please note: For GET requests, all parameters for each method must be included i
 <td>Server error</td>
 </tr>
 </tbody></table>
-<h1 id='update-notes'>七、Update Notes</h1><h2 id='20240715'>20240715</h2>
+<h1 id='7-update-notes'>7、Update Notes</h1><h2 id='20240715'>20240715</h2>
 <ul>
 <li>The transfer record query interface now supports the transferId parameter.</li>
 </ul>
