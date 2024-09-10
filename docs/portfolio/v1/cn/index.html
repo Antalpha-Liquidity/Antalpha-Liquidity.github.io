@@ -234,7 +234,7 @@
             <a href="/docs/portfolio/v1/en/" id="btn_portfolio">量化投资</a>
           </span>
           <span class="nav_cell nav_tab">
-            <a href="/docs/broker/v1/en/" id="btn_broker">量化测试</a>
+            <a href="/docs/preinvest/v1/en/" id="btn_preinvest">量化测试</a>
           </span>
         </div>
       </div>
@@ -1088,7 +1088,7 @@ HmacSHA256进行签名计算时，使用不同内容计算得到的结果会完�
     <script>
       const lang_btn = document.getElementById('lang_box');
       const btn_portfolio = document.getElementById('btn_portfolio');
-      const btn_broker = document.getElementById('btn_broker');
+      const btn_preinvest = document.getElementById('btn_preinvest');
       const v1_url = document.getElementById('v1_url');
       const url = GetUrlRelativePath();
 
@@ -1096,29 +1096,29 @@ HmacSHA256进行签名计算时，使用不同内容计算得到的结果会完�
         //如果是中文环境
         lang_btn.innerHTML = 'English';
         btn_portfolio.innerHTML = '量化投资';
-        btn_broker.innerHTML = '量化测试';
+        btn_preinvest.innerHTML = '量化测试';
         lang_btn.href = url.replace('cn/', 'en/');
         btn_portfolio.href = btn_portfolio.href.replace('en/', 'cn/');
-        btn_broker.href = btn_broker.href.replace('en/', 'cn/');
+        btn_preinvest.href = btn_preinvest.href.replace('en/', 'cn/');
         v1_url.href = '/docs/portfolio/v1/cn/';
       }else{
         //如果是英文环境
         lang_btn.innerHTML = '中文';
         btn_portfolio.innerHTML = 'Portfolio';
-        btn_broker.innerHTML = 'Quantitative Test';
+        btn_preinvest.innerHTML = 'Pre-invest';
         lang_btn.href = url.replace('en/', 'cn/');
         btn_portfolio.href = btn_portfolio.href.replace('cn/', 'en/');
-        btn_broker.href = btn_broker.href.replace('cn/', 'en/');
+        btn_preinvest.href = btn_preinvest.href.replace('cn/', 'en/');
         v1_url.href = '/docs/portfolio/v1/en/';
       }
 
-      if(location.href.indexOf('docs/broker/v') > 0){
+      if(location.href.indexOf('docs/preinvest/v') > 0){
         // 经纪商目录
         btn_portfolio.className = '';
-        btn_broker.className = 'current';
+        btn_preinvest.className = 'current';
       } else {
         btn_portfolio.className = 'current';
-        btn_broker.className = '';
+        btn_preinvest.className = '';
       }
       //显示语言切换按钮
       lang_btn.style.display = 'block';
