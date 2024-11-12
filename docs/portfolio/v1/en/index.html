@@ -220,7 +220,7 @@
     </a>
     <header>
       <div class="flex_box">
-        <img src="images/logo3.png" class="logo" alt="" />
+        <img src="images/logo4.png" class="logo" alt="" />
         <div class="nav_box">
           <span class="nav_cell" style="display: none">
             <a href="javascript:;" class="nav_first">v1<i class="icon_nav"></i></a>
@@ -342,7 +342,7 @@
 <p><strong>REST API</strong></p>
 
 <ul>
-<li><a href="https://api.satalpha.com">https://api.satalpha.com</a></li>
+<li><a href="https://api.satsresearch.com">https://api.satsresearch.com</a></li>
 </ul>
 <h2 id='2-2-rate-limiting-rules'>2.2 Rate Limiting Rules</h2>
 <p>Rate limiting rules are applied to the interface. Currently, the restricting access to 10 requests per second per interface.</p>
@@ -361,7 +361,7 @@
 <p>A valid request consists of the following parts:</p>
 
 <ul>
-<li>Request Method Address: The server address to access, e.g., <a href="https://api.satalpha.com">https://api.satalpha.com</a>，such as https://api.satalpha.com/api/v1/transferFunds</li>
+<li>Request Method Address: The server address to access, e.g., <a href="https://api.satsresearch.com">https://api.satsresearch.com</a>，such as https://api.satsresearch.com/api/v1/transferFunds</li>
 <li>API Access Key (AccessKeyId): The Access Key in your API Key.</li>
 <li>Signature Method (SignatureMethod): The hash-based protocol used by the user to calculate the signature, in this case, HmacSHA256.</li>
 <li>Signature Version (SignatureVersion): The version of the signature protocol, here it is 1.</li>
@@ -382,12 +382,12 @@ Please note: For GET requests, all parameters for each method must be included i
 <p>The URL for initiating a fund transfer request is as follows:</p>
 
 <ul>
-<li>https://api.satalpha.com/api/v1/transferFunds?AccessKeyId=e2xxxxxx-99xxxxxx-84xxxxxx-7xxxx&amp;SignatureMethod=HmacSHA256&amp;SignatureVersion=1&amp;Timestamp=1662022581951</li>
+<li>https://api.satsresearch.com/api/v1/transferFunds?AccessKeyId=e2xxxxxx-99xxxxxx-84xxxxxx-7xxxx&amp;SignatureMethod=HmacSHA256&amp;SignatureVersion=1&amp;Timestamp=1662022581951</li>
 </ul>
 <h3 id='1-request-method-get-or-post-followed-by-a-newline-character-quot-n-quot'>1. Request method (GET or POST) followed by a newline character &quot;\n&quot;</h3>
 <p>POST\n</p>
 <h3 id='2-add-the-lowercase-access-address-followed-by-a-newline-character-quot-n-quot'>2. Add the lowercase access address followed by a newline character &quot;\n&quot;</h3>
-<p>api.satalpha.com\n</p>
+<p>api.satsresearch.com\n</p>
 <h3 id='3-access-method-path-followed-by-a-newline-character-quot-n-quot'>3. Access method path followed by a newline character &quot;\n&quot;</h3>
 <p>/api/v1/transferFunds\n</p>
 <h3 id='4-sort-the-parameter-names-in-ascii-order-for-example-here-is-the-original-sequence-of-request-parameters-after-encoding'>4. Sort the parameter names in ASCII order. For example, here is the original sequence of request parameters after encoding:</h3>
@@ -409,7 +409,7 @@ Please note: For GET requests, all parameters for each method must be included i
 <h3 id='6-form-the-final-string-to-be-used-for-signature-calculation-as-follows'>6. Form the final string to be used for signature calculation as follows:</h3>
 <p>POST\n</p>
 
-<p>api.satalpha.com\n</p>
+<p>api.satsresearch.com\n</p>
 
 <p>/api/v1/transferFunds\n</p>
 
@@ -424,7 +424,7 @@ Please note: For GET requests, all parameters for each method must be included i
 <h3 id='8-add-the-generated-digital-signature-to-the-request-39-s-path-parameters'>8. Add the generated digital signature to the request&#39;s path parameters.</h3>
 <p>Finally, the API request sent to the server should be:</p>
 
-<p>https://api.satalpha.com/api/v1/transferFunds?AccessKeyId=e2xxxxxx-99xxxxxx-84xxxxxx-7xxxx&amp;SignatureMethod=HmacSHA256&amp;SignatureVersion=1&amp;Timestamp=1662022581951&amp;Signature=kue9KfcycqO2eaqPB5LVtNgH/1Jz6qjzOOLXq2U47z0=</p>
+<p>https://api.satsresearch.com/api/v1/transferFunds?AccessKeyId=e2xxxxxx-99xxxxxx-84xxxxxx-7xxxx&amp;SignatureMethod=HmacSHA256&amp;SignatureVersion=1&amp;Timestamp=1662022581951&amp;Signature=d5qMEazCAgwpLyUyhwsmIUYZytfzgPjBO6ykluyjzi4=</p>
 
 <ul>
 <li>Add all required authentication parameters to the URL path parameters.</li>
@@ -798,7 +798,7 @@ Please note: For GET requests, all parameters for each method must be included i
 </tbody></table>
 <h2 id='5-3-get-transfer-records'>5.3 Get Transfer Records</h2><h2 id='http-request-3'>HTTP Request</h2>
 <ul>
-<li>GET /api/v1/transfer/recordList</li>
+<li>POST /api/v1/transfer/recordList</li>
 </ul>
 <h2 id='request-parameters-3'>Request Parameters</h2>
 <table><thead>
